@@ -1,15 +1,9 @@
-\maketitle
-
-\begin{abstract}
-    I need to add an abstract here. I think it will include things about the pervasive need across multiple disciplines to understand and quantify the functions of AIs. I will try to talk about different research areas and outline each of their needs and some of the methods that they currently  use. I hope to be able to identify several places for opportunity, and possibly introduce some fields to others.
-\end{abstract}
-
 \section{Introduction}
     Trying to outline the objectives and goals of this paper. A `Short' treatment of trust and its definitions. Address the definition that we are interested (human-autonomy interaction). Discuss different fields that are interested in trust. Review mechanisms that are used in each field. Propose introspection as the set of all of the used methods, plus those that are missing.
     
     Introduces the idea of trust (and references some of the work in this area). This paper introduces a topic called \emph{circumspection of artificial agents}, which is defined as agents that produce the tools to be circumspective. Or in other words they possess the tools to be \emph{introspective} and \emph{extrospective}. Highlights how circumspective tools are necessary for human-agent trust relationships. It highlights the work that has already been done in many other research fields, which is knows by other names and descriptions, and shows that they all have common themes.
 
-    This section needs to be used to explain the problem, and why it is interesting, in more detail. I need to cite papers \cite{Back1996-jp,Ernest2016}
+    This section needs to be used to explain the problem, and why it is interesting, in more detail. I need to cite papers
 
     Some ideas for content:
 
@@ -30,7 +24,18 @@
         \item 
     \end{itemize}
 
-    Trying out several citations. So and So \cite{Wang2016} said this. but \cite{Thompson1933} said something else. Hopefully \cite{Doyle2014} agrees with that, but it doesn't seem like \cite{Gelbart2015} does. I really liked reading \cite{Snoek2015}.
+    I am trying some citations \cite{Rasmussen2006-ne}. I hope this auto-complete works ok \cite{Snoek2012-tt}. Now I want to get the mcknight paper \cite{D_Harrison_McKnight2001-fa}.
+
+\section{Calibration of Trust}
+    As yet trust is not a quantity that can be directly measured. Rather, its relative magnitude must be observed through relative behavior. In an ideal relationship trust would be calibrated to elicit appropriate trust-behaviors. \cite{Parasuraman1997-co} was interested in understanding the use of automation which they defined as ``the execution by a machine agent (usually a computer) of a function that was previously carried out by a human''. Within this scope they define the following terms: a) \emph{misuse}, the overreliance on automation, b) \emph{disuse}, the underutilization of automation, and c) \emph{abuse}, inappropriate application of automation.
+
+    We propose that analogously the definitions of \emph{misuse}, \emph{disuse}, and \emph{abuse} can apply to the relationship between humans and autonomy, which we define as a system (such as an artificial software agent with processing power located on the internet or on a physical robot) that is able to independently act in uncertain environments to accomplish some goal. We define the total set of actions as $\mathcal{T}$, the set of misue actions as $\mathcal{M}$, the set of disuse actions as $\mathcal{D}$, and the set of abuse actions as $\mathcal{A}$. With these definitions the set of inappropriate actions $\mathcal{I}$ would be the union of $\mathcal{I} = \mathcal{M}\cup\mathcal{D}\cup\mathcal{A}$. Having defined the set of inappropriate actions, we define the set of appropriate actions $\mathcal{U}$ as the compliment of the set of inappropriate actions $\mathcal{U} = \mathcal{I}^\prime$.
+    
+	\begin{figure}
+    	\centering
+     	\includegraphics[width=0.6\textwidth]{Figures/misuse_disuse_abuse}
+    	\caption{Graphic representing the total space of user actions, in which the inappropriate uses $\mathcal{M}$, $\mathcal{D}$, and $\mathcal{A}$ lie. The set of inappropriate uses $\mathcal{I}$ is the union of $\mathcal{M}$, $\mathcal{D}$, and $\mathcal{A}$. The appropriate set of actions $\mathcal{U}$ is the compliment of \mathcal{I}, or the part of $\mathcal{T}$ that does not include $\mathcal{I}$.}
+    \end{figure}
 
 \section{Different key points}
     \subsection{exemplar}
