@@ -1,6 +1,6 @@
 \listfiles
 \RequirePackage{rotating}
-\documentclass[manuscript, natbib=true, review, screen]{acmart}
+\documentclass[manuscript, review, screen, authordraft]{acmart}
 
 % bibliography
 % using biblatex isn't very smart because journals are pretty picky. Instead use the default natbib package
@@ -8,13 +8,14 @@
 % \addbibresource{References.bib}
 
 %\setcitestyle{super,sort&compress}
-\citestyle{acmauthoryear}
+% \citestyle{acmauthoryear}
 \usepackage{booktabs} % For formal tables
 
 \usepackage[ruled]{algorithm2e} % For algorithms
+\usepackage{subcaption}
 
 % Metadata Information
-\acmJournal{CIE}
+\acmJournal{CSUR}
 \acmVolume{VV}
 \acmNumber{NN}
 \acmArticle{AA}
@@ -36,6 +37,9 @@
 % DOI
 \acmDOI{0000001.0000001}
 
+% some useful shortcut commands
+\newcommand{\Pl}{\textbf{Pl}}
+\newcommand{\R}{\textbf{R}}
 
 % Document starts
 \begin{document}
