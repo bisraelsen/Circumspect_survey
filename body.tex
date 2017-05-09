@@ -32,20 +32,18 @@
 	\begin{figure}[htbp]
     	\centering
      	\includegraphics[width=0.9\textwidth]{Figures/AI_capabilities}
-    	\caption{List of the capabilities of an artificial general intelligence. In this paper an AI is defined as a system that possesses at least one of the capabilities illustrated. \textbf{The Social Intelligence and Creativity capabilities are not going to be considered in this paper\ldots add something further about that}}
+    	\caption{List of the capabilities of an artificial general intelligence. In this paper an AI is defined as a system that possesses at least one of the capabilities illustrated.}
         \label{fig:AIcapabilities}
     \end{figure}
 
-
-    Concretely, the following systems currently exist and possess the following AI capabilities.
+    Concretely, the following systems currently exist and may possess the listed AI capabilities.
     
     \begin{enumerate}
-         \item an unmanned aerial system (UAS) might possess the ability to plan, perceive, and move
+         \item An unmanned aerial system (UAS) possesses the ability to plan, perceive, and move
          \item A personal assistant might be capable of interaction, learning, and reasoning.
          \item An image classifier might possess the capability to learn image classes from labeled examples and predict the class of never-before-seen new images.
          \item \textbf{More???}
      \end{enumerate}
-    
 
 \section{The Case for Human-AI Trust}
     Many would not be surprised to know that trust is critical in interpersonal relationships, and that it affects the dynamics of systems as simple as interpersonal relationships to more complicated ones such as financial markets \cite{Fukuyama1995-un} and governments. Consequently, researchers in psychology, sociology, and economics have historically sought to understand the fundamental principles of trust, each with the aim of understanding their field better \cite{Gambetta1988-pi}. Moral philosophers have also thought intently about the topic \cite{Baier1986-im}.
@@ -79,27 +77,36 @@
     
     In order to ensure that humans use autonomous systems appropriately it is critical that the user TRBs be calibrated to elicit behaviors that are within $\mathcal{U}$. This can be done by influencing the user trust.
 
-    A simple feedback loop, as illustrated in Figure \ref{fig:SimpleTrust_loop} will allow the AI to calibrate the TRBs of the user by providing feedback that will be called assurances in this paper. Figure \ref{fig:SimpleTrust_dist} serves as a simple example illustrating the possible disparity between the user TRB distribution and the appropriate TRB distribution. In this case assurances would be used to minimize the difference between the two distributions.
-
+    Generally trust between a human and AI could be depicted as in Figure \ref{fig:SimpleTrust_two_way}, where each has TRBs that must be calibrated, and each provides certain feedback, which will be called assurances, in order to do so. In a more simple scenario, where the AI implicitly trusts the human user the trust relationship can be depicted as shown in Figure \ref{fig:SimpleTrust_one_way}, where only the user has TRBs that are being calibrated.
 
 	\begin{figure*}[htbp]
         \centering
         \begin{subfigure}[t]{0.48\textwidth}
             \centering
-            \includegraphics[width=0.95\textwidth]{Figures/SimpleTrust_loop}
-            \caption{Simple Feedback loop that allows an AI to influence User Trust in order to calibrate the TRBs.} 
-            \label{fig:SimpleTrust_loop}%
+            \includegraphics[width=0.95\textwidth]{Figures/SimpleTrust_two_way}
+            \caption{Diagram showing a general case of a two-way trust relationship between an AI and a human. Arrows that are not connected to boxes represent some action outside of the trust loop.} 
+            \label{fig:SimpleTrust_two_way}%
         \end{subfigure}
         \hfill
         \begin{subfigure}[t]{0.48\textwidth}
             \centering
-            \includegraphics[width=0.95\textwidth]{Figures/SimpleTrust_dist}
-            \caption{A hypothetical user TRB distribution and the appropriate TRB distribution. Calibrating TRBs involves making the two distributions as similar as possible.}
-            \label{fig:SimpleTrust_dist}%
+            \includegraphics[width=0.95\textwidth]{Figures/SimpleTrust_one_way}
+            \caption{Diagram illustrating a general one-way trust relationship between a human and an AI. In this case the AI has, what could be considered perfect trust in the user.}
+            \label{fig:SimpleTrust_one_way}%
         \end{subfigure}
-        \caption{Calibration of User Trust-Related Behaviors}
+        \caption{Feedback Loops For One and Two-way human-AI Trust Relationships}
         \label{fig:SimpleTrust}
     \end{figure}
+    
+    Figure \ref{fig:SimpleTrust_dist} serves as a simple example illustrating the possible disparity between the user TRB distribution and the appropriate TRB distribution. In this case assurances would be used to minimize the difference between the two distributions.
+
+	\begin{figure}[htbp]
+    	\centering
+     	\includegraphics[width=0.4\textwidth]{Figures/SimpleTrust_dist.png}
+    	\caption{Diagram illustrating the point that a hypothetical user TRB distribution might not match the appropriate TRB distribution. In this case the AI should provide assurances in order to minimize the difference between the two.}
+        \label{fig:SimpleTrust_dist}
+    \end{figure}
+
 
 \section{Assurances}
     The term assurances was introduced in the previous section as the name by which feedback will be known in a human-AI trust relationship. A more detailed definition and discussion is merited.
@@ -169,28 +176,3 @@
 
     \textbf{Perhaps a table showing the field vs. the AI capability?}, this would help to illustrate the varying needs by fields. Perhaps highlight oversights?
 
-\section{Methodology}
-    In this paper I am focusing on a human-autonomy relationship between a single human user (User), and a single autonomous system (Autonomy). Furthermore, I will only be considering a one-way trust relationship, that is that the autonomy has perfect trust towards a user and that trust does not change with time. 
-
-    here are the assumptions:
-
-    \begin{itemize}
-        \item 1:1 relationship (i.e. not groups)
-        \item Focus on Belief and Behavior classes (faster time scale)
-        \item Autonomy is honest and friendly
-        \item others \ldots
-        \item assume that the AI has a better idea of true distribution than the user (AI, may also need to learn with experience)
-    \end{itemize}
-
-
-\section{Conclusion}
-    Revisit the key ideas of the paper:
-
-    \begin{itemize}
-        \item trust is a key factor for human-agent interaction
-        \item many fields care about it
-        \item circumspection is a common framework
-        \item circumspection has several key properties that encompass the different research fields
-    \end{itemize}
-
-\newpage
