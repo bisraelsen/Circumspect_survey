@@ -1,7 +1,10 @@
 \section{Trust-Related Behaviors}
-add stuff
+Something that is well accepted among researchers of all disciplines is that trust results in some kind of behavior or action, this idea was highlighted by \citet{Lewis1985-pr}.  \citet{McKnight2001-fa} calls it `trust-related behaviors` (TRBs). In the case of a human-AIA relationship these TRBs could include the kinds of tasks the human user assigns to the AIA, or whether the decision a human makes to use a plan produced by the AIA or not. 
+
+This again highlights why influencing a user's trust can be the key to attain proper utilization of an AIA. In attempting to understand and create assurances, it is critical to understand trust because it plays a large role in how a human (designer, or user) will act; it applies when risk, uncertainty, and/or interdependence exits \cite{McKnight2001}.
+
 \subsection{Calibration of Trust-Related Behaviors}
-    As yet, trust is not a quantity that can be directly measured. Rather, its relative magnitude must be observed through changes in TRBs. \citet{Parasuraman1997-co} were interested in understanding the use of automation which they defined as ``\ldots the execution by a machine agent (usually a computer) of a function that was previously carried out by a human''. Within this scope they define the following terms: a) \emph{misuse}, the overreliance on automation, b) \emph{disuse}, the underutilization of automation, and c) \emph{abuse}, inappropriate application of automation.
+    As yet, trust is not a quantity that can be directly measured. Rather, its relative magnitude must be observed through changes in TRBs. \citet{Parasuraman1997-co} were interested in understanding the use of automation which they defined as ``\ldots the execution by a machine agent (usually a computer) of a function that was previously carried out by a human''. Within this scope they define the following terms: a) \emph{misuse}, the overreliance on automation, b) \emph{disuse}, the underutilization of automation, and c) \emph{abuse}, inappropriate application of automation (where \emph{application} in this case means the choice to deploy automation in a certain context, such as installing a robot in a factory).
 
     Here it is proposed that, analogously, the definitions of \emph{misuse}, \emph{disuse}, and \emph{abuse} can apply to the relationship between humans and autonomy (where autonomy is defined as a system, such as an artificial agent with processing power possibly located on a physical robot, that is able to independently act in uncertain environments to accomplish a goal).
     
@@ -10,7 +13,7 @@ add stuff
 	\begin{figure}[htbp]
     	\centering
      	\includegraphics[width=0.4\textwidth]{Figures/misuse_disuse_abuse}
-    	\caption{Graphic representing the total space of user actions, in which the inappropriate uses $\mathcal{M}$, $\mathcal{D}$, and $\mathcal{A}$ lie. The set of inappropriate uses $\mathcal{I}$ is the union of $\mathcal{M}$, $\mathcal{D}$, and $\mathcal{A}$. The appropriate set of actions $\mathcal{U}$ is the compliment of \mathcal{I}, or the part of $\mathcal{T}$ that does not include $\mathcal{I}$.}
+    	\caption{Graphic representing the total space of user actions, in which the inappropriate uses $\mathcal{M}$, $\mathcal{D}$, and $\mathcal{A}$ lie. The set of inappropriate uses $\mathcal{I}$ is the union of $\mathcal{M}$, $\mathcal{D}$, and $\mathcal{A}$. The appropriate set of actions $\mathcal{U}$ is the compliment of $\mathcal{I}$, or the part of $\mathcal{T}$ that does not include $\mathcal{I}$.}
         \label{fig:appropriate_use}
     \end{figure}
     
@@ -18,24 +21,24 @@ add stuff
 
     Generally trust between a human and AI could be depicted as in Figure \ref{fig:SimpleTrust_two_way}, where each has TRBs that must be calibrated, and each provides certain feedback, which will be called assurances, in order to do so. In a more simple scenario, where the AI implicitly trusts the human user the trust relationship can be depicted as shown in Figure \ref{fig:SimpleTrust_one_way}, where only the user has TRBs that are being calibrated.
 
-	\begin{figure*}[htbp]
-        \centering
-        \begin{subfigure}[t]{0.48\textwidth}
-            \centering
-            \includegraphics[width=0.95\textwidth]{Figures/SimpleTrust_two_way}
-            \caption{Diagram showing a general case of a two-way trust relationship between an AI and a human. Arrows that are not connected to boxes represent some action outside of the trust loop.} 
-            \label{fig:SimpleTrust_two_way}%
-        \end{subfigure}
-        \hfill
-        \begin{subfigure}[t]{0.48\textwidth}
-            \centering
-            \includegraphics[width=0.95\textwidth]{Figures/SimpleTrust_one_way}
-            \caption{Diagram illustrating a general one-way trust relationship between a human and an AI. In this case the AI has, what could be considered perfect trust in the user.}
-            \label{fig:SimpleTrust_one_way}%
-        \end{subfigure}
-        \caption{Feedback Loops For One and Two-way human-AI Trust Relationships}
-        \label{fig:SimpleTrust}
-    \end{figure}
+	% \begin{figure*}[htbp]
+        % \centering
+        % \begin{subfigure}[t]{0.48\textwidth}
+            % \centering
+            % \includegraphics[width=0.95\textwidth]{Figures/SimpleTrust_two_way}
+            % \caption{Diagram showing a general case of a two-way trust relationship between an AI and a human. Arrows that are not connected to boxes represent some action outside of the trust loop.}
+            % \label{fig:SimpleTrust_two_way}%
+        % \end{subfigure}
+        % \hfill
+        % \begin{subfigure}[t]{0.48\textwidth}
+            % \centering
+            % \includegraphics[width=0.95\textwidth]{Figures/SimpleTrust_one_way}
+            % \caption{Diagram illustrating a general one-way trust relationship between a human and an AI. In this case the AI has, what could be considered perfect trust in the user.}
+            % \label{fig:SimpleTrust_one_way}%
+        % \end{subfigure}
+        % \caption{Feedback Loops For One and Two-way human-AI Trust Relationships}
+        % \label{fig:SimpleTrust}
+    % \end{figure}
     
     Figure \ref{fig:SimpleTrust_dist} serves as a simple example illustrating the possible disparity between the user TRB distribution and the appropriate TRB distribution. In this case assurances would be used to minimize the difference between the two distributions.
 

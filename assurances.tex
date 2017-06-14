@@ -1,4 +1,18 @@
 \section{Assurances}
+    ## Assurances
+Here assurances should be defined. Maybe I should just simply define it as "inputs to trust", and then get into more detail during the actual survey portion of the paper?
+
+* intentional, unintentional
+    * most research lies in unintentional or "characteristic" assurances. i.e. the machine is reliable, or it looks weird.
+    * a couple of papers mention intentional assurances (McKnight in a couple places somewhere, Corritore, others)
+    * There are a couple of papers that directly look at intentional assurances, and are asking about trust.
+    * Other papers talk about intentional assurances but don't understand the trust literature.
+* atomic, composite
+    * Self-confidence is a composite assurance
+    * Mostly atomic assurances out there, I think
+* Difference between planning-competence assurance, and learning-competence assurance
+    * Is there a bias towards one field? Probably learning...
+
     The term assurances was introduced in the previous section as the name by which feedback will be known in a human-AI trust relationship. A more detailed definition and discussion is merited.
 
     \citet{McKnight2001-fa} alludes to this kind of feedback in an e-commerce relationship as `Web Vendor Interventions' and mentions some possible actions that might be used in that specific application. They go as far as making a diagram that indicates that these interventions could affect the `Trusting Beliefs', `Trusting Intentions', and `Trust-Related Behaviors' (see Figure \ref{fig:UserTrust}).
@@ -15,18 +29,18 @@
         \label{fig:Assurance_classes}
     \end{sidewaysfigure}
 
-    Figure \ref{fig:Assurance_classes} shows the hierarchy of proposed assurance classes. The categories mirror those of the trust model proposed by \citet{McKnight2001-fa}, but with the emphasis on what an AI has the ability to influence. The colored boxes identify the different classes assurances. All classes are included here for completeness and generality. Although, due to practical limitations it might hypothetically possible for an AI to influence a persons general `Trusting stance' given enough time\footnote{One might imagine a AI that specifically speaks to the human about the benefits or drawbacks about trusting even though there might not be evidence to do so, similar to the role a counselor might play}, .
+    Figure \ref{fig:Assurance_classes} shows the hierarchy of proposed assurance classes. The categories mirror those of the trust model proposed by \citet{McKnight2001-fa}, but with the emphasis on what an AI has the ability to most readily influence (and consequently where most research is found). The colored boxes identify the different classes assurances. All classes are included here for completeness and generality. Although, due to practical limitations it might hypothetically possible for an AI to influence a persons general `Trusting stance' given enough time\footnote{One might imagine a AI that specifically speaks to the human about the benefits or drawbacks about trusting even though there might not be evidence to do so, similar to the role a counselor might play}, .
 
-    Talk about the two classes of assurances: Passive and Active.
+    Talk about the two classes of assurances: Unintentional and Intentional.
 
     \begin{description}
-        \item [Passive:] Assurances that are not purposfully given by AI. Could be compared to non-verbal communication\ldots well not quite
+        \item [Unintentional:] Assurances that are not purposfully given by AI. Could be compared to non-verbal communication\ldots well not quite
         \begin{itemize}
             \item Such as success in completing the task (of course the autonomy wants to, but the outcome is independent).
             \item The way an autonomous vehicle looks when it is driving (something with weird driving habits for whatever reason might engender less trust). 
             \item 
         \end{itemize}
-        \item [Active:] Assurances that are purposefully given by AI.
+        \item [Intentional:] Assurances that are purposefully given by AI.
         \begin{itemize}
             \item Legible motion
             \item $R^2$
@@ -36,7 +50,7 @@
         \end{itemize}
     \end{description}
 
-    Each type of assurance can be given in passive or active ways. Perhaps they can be treated analogously to actions and words, specifically `actions speak louder than words' or `passive assurances speak louder than active ones'. The point is that actually doing something instead of just saying it will do a lot for bolstering trust. What is better saying: I can do this, or actually doing it?
+    Each type of assurance can be given in unintentional or intentional ways. Perhaps they can be treated analogously to actions and words, specifically `actions speak louder than words' or `unintentional assurances speak louder than intentional ones'. The point is that actually doing something instead of just saying it will do a lot for bolstering trust. What is better saying: I can do this, or actually doing it?
 
     However, for the case of calibrating TRBs it is proposed that the classes should be constrained as shown in Figure \ref{fig:Assurance_classes}. An AI that is trying to calibrate the TRBs of a user (as opposed to just influencing them to its own benefit), should not actively try to convice the user that it should have faith in autonomy, or that it is benevolent, or that the institutional system should be trusted.
 
