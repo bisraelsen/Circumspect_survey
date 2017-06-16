@@ -1,35 +1,24 @@
 \section{Assurances}
-    ## Assurances
-Here assurances should be defined. Maybe I should just simply define it as "inputs to trust", and then get into more detail during the actual survey portion of the paper?
-
-* intentional, unintentional
-    * most research lies in unintentional or "characteristic" assurances. i.e. the machine is reliable, or it looks weird.
-    * a couple of papers mention intentional assurances (McKnight in a couple places somewhere, Corritore, others)
-    * There are a couple of papers that directly look at intentional assurances, and are asking about trust.
-    * Other papers talk about intentional assurances but don't understand the trust literature.
-* atomic, composite
-    * Self-confidence is a composite assurance
-    * Mostly atomic assurances out there, I think
-* Difference between planning-competence assurance, and learning-competence assurance
-    * Is there a bias towards one field? Probably learning...
-
-    The term assurances was introduced in the previous section as the name by which feedback will be known in a human-AI trust relationship. A more detailed definition and discussion is merited.
+    The term assurances was introduced in the previous section as the name by which feedback will be known in a human-AIA trust relationship. A more detailed definition and discussion is merited.
 
     \citet{McKnight2001-fa} alludes to this kind of feedback in an e-commerce relationship as `Web Vendor Interventions' and mentions some possible actions that might be used in that specific application. They go as far as making a diagram that indicates that these interventions could affect the `Trusting Beliefs', `Trusting Intentions', and `Trust-Related Behaviors' (see Figure \ref{fig:UserTrust}).
     
-    \citet{Lillard2016-yg} coined the term `assurances' as the ability of an autonomous system to affect the user's trust, and states that it is important to note that while generally the term assurance has a positive connotation; in this setting it must encompass both positive (increasing trust) and negative (decreasing trust) feedback.
+    The term is perhaps earliest used in the context of human-automation relationships by \citet{Sheridan1984-kx}. More recently, and formally, \citet{Lillard2016-yg} defined the term `assurances' as (modified to fit the AIA terminology):
+    
+    \begin{description}
+        \item [Assurances:] The AIA's ability to affect the user's trust. As used here, the term is not intended to have a positive or negative connotation -- assurances can decrease trust.
+    \end{description}
 
-    This work is meant to be related to that of \citet{Lillard2016-yg}, but more general. Here the assurance framework is set in a more general light, although with the goal of being applied in a very similar application. Instead of treating or at least inferring that the user-autonomy trust loop is very strict and well structured, and that user trust does not take into account the institutional component proposed by \citet{McKnight2001-fa}, we re-institute the notion of institutional trust into the human-autonomy relationships.
+	\begin{figure}[htbp]
+    	\centering
+     	\includegraphics[width=0.4\textwidth]{Figures/Assurance_mapping.pdf}
+    	\caption{Assurances act as a mapping between AIA capabilities and the components of User trust. Shown in this figure, An example of assurances that operate on planning algorithms and output something that is interpreted by the user, and will affect their trust.}
+        \label{fig:assurance_mapping}
+    \end{figure}
+    
+    
 
-    Regarding the relationship with the work of \citet{McKnight2001-fa}, adopt the position that besides being applied to the e-commerce industry their trust model also applies to relationships between humans and autonomy (as in \citet{Lillard2016-yg}). However, it is argued that assurances cannot directly have an affect on the user TRBs. This premise is that no autonomy (or vendor) should be able to control the TRBs of a human.
-
-	\begin{sidewaysfigure}[htbp]
-        \includegraphics[width=8in]{Figures/Assurances.pdf}%
-    	\caption{\textbf{Diagram delineating the possible classes of assurances, and suggesting those classes that directly apply in calibration of TRBs \ldots obviously needs to be finished \ldots}}
-        \label{fig:Assurance_classes}
-    \end{sidewaysfigure}
-
-    Figure \ref{fig:Assurance_classes} shows the hierarchy of proposed assurance classes. The categories mirror those of the trust model proposed by \citet{McKnight2001-fa}, but with the emphasis on what an AI has the ability to most readily influence (and consequently where most research is found). The colored boxes identify the different classes assurances. All classes are included here for completeness and generality. Although, due to practical limitations it might hypothetically possible for an AI to influence a persons general `Trusting stance' given enough time\footnote{One might imagine a AI that specifically speaks to the human about the benefits or drawbacks about trusting even though there might not be evidence to do so, similar to the role a counselor might play}, .
+    Figure \ref{fig:Assurance_classes} shows the hierarchy of proposed assurance classes. The categories mirror those of the trust model proposed by \citet{McKnight2001-fa}, but with the emphasis on what an AIA has the ability to most readily influence (and consequently where most research is found). The colored boxes identify the different classes assurances. All classes are included here for completeness and generality. Although, due to practical limitations it might hypothetically be possible for an AIA to influence a persons general `Trusting stance' given enough time\footnote{One might imagine an AIA that specifically speaks to the human about the benefits or drawbacks about trusting even though there might not be evidence to do so, similar to the role a counselor might play}.
 
     Talk about the two classes of assurances: Unintentional and Intentional.
 

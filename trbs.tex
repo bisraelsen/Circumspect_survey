@@ -1,14 +1,20 @@
-\section{Trust-Related Behaviors}
-Something that is well accepted among researchers of all disciplines is that trust results in some kind of behavior or action, this idea was highlighted by \citet{Lewis1985-pr}.  \citet{McKnight2001-fa} calls it `trust-related behaviors` (TRBs). In the case of a human-AIA relationship these TRBs could include the kinds of tasks the human user assigns to the AIA, or whether the decision a human makes to use a plan produced by the AIA or not. 
+\section{Trust-Related Behaviors} \label{sec:trbs}
+Something that is well accepted among researchers of all disciplines is that trust results in some kind of behavior or action, this idea was highlighted by \citet{Lewis1985-pr}.  \citet{McKnight2001-fa} calls it `trust-related behaviors` (TRBs), which is the term that will be used in this survey.
 
-This again highlights why influencing a user's trust can be the key to attain proper utilization of an AIA. In attempting to understand and create assurances, it is critical to understand trust because it plays a large role in how a human (designer, or user) will act; it applies when risk, uncertainty, and/or interdependence exits \cite{McKnight2001}.
+In the case of a human-AIA relationship these TRBs could include the kinds of tasks the human user assigns to the AIA, or whether the decision a human makes to use a plan produced by the AIA or not. 
 
 \subsection{Calibration of Trust-Related Behaviors}
-    As yet, trust is not a quantity that can be directly measured. Rather, its relative magnitude must be observed through changes in TRBs. \citet{Parasuraman1997-co} were interested in understanding the use of automation which they defined as ``\ldots the execution by a machine agent (usually a computer) of a function that was previously carried out by a human''. Within this scope they define the following terms: a) \emph{misuse}, the overreliance on automation, b) \emph{disuse}, the underutilization of automation, and c) \emph{abuse}, inappropriate application of automation (where \emph{application} in this case means the choice to deploy automation in a certain context, such as installing a robot in a factory).
-
-    Here it is proposed that, analogously, the definitions of \emph{misuse}, \emph{disuse}, and \emph{abuse} can apply to the relationship between humans and autonomy (where autonomy is defined as a system, such as an artificial agent with processing power possibly located on a physical robot, that is able to independently act in uncertain environments to accomplish a goal).
+    As yet, trust is not a quantity that can be directly measured. Rather, its relative magnitude must be observed through changes in TRBs, or qualitative surveys -- of the two TRBs are the more objective measure. \citet{Parasuraman1997-co} were interested in understanding the use of automation which they defined as ``\ldots the execution by a machine agent (usually a computer) of a function that was previously carried out by a human''. Within this scope they define the following terms:
     
-    To be more formal, let the total set of TRBs as $\mathcal{T}$. Then as subsets of $\mathcal{T}$ define the set of misue actions as $\mathcal{M}$, the set of disuse actions as $\mathcal{D}$, and the set of abuse actions as $\mathcal{A}$. Next, define the total set of innapropriate TRBs $\mathcal{I}$ as the union of $\mathcal{I} = \mathcal{M}\cup \mathcal{D}\cup\mathcal{A}$. Having defined the set of inappropriate actions, the set of appropriate TRBs can be defined as $\mathcal{U}$, the compliment of the set of inappropriate TRBs $\mathcal{U} = \mathcal{I}^\prime$. This is illustrated in Figure \ref{fig:appropriate_use}, where the set of appropriate actions $\mathcal{U}$ is the gray colored area (i.e. all TRBs \emph{not} in either of the three sets of inappropriate TRBs).
+    \begin{description}
+        \item [Misuse:] The overreliance on automation
+        \item [Disuse:] The underutilization of automation
+        \item [Abuse:] Inappropriate application of automation (where \emph{application} in this case means the choice to deploy automation in a certain context, such as the choice to install a robot in a factory).
+    \end{description}
+
+    Here it is proposed that, by extension, the definitions of \emph{misuse}, \emph{disuse}, and \emph{abuse} can apply to the relationship between humans and AIAs. According to the diagram in Figure \ref{fig:SimpleTrust_one_way} the AIA will try to influence the user's TRBs by way of assurances. The goal of an AIA shoud be that the user should not misuse, disuse, or abuse the AIA.
+    
+    To be more formal, let the total set of TRBs as $\mathcal{T}$. Then as subsets of $\mathcal{T}$ define the set of misue actions as $\mathcal{M}$, the set of disuse actions as $\mathcal{D}$, and the set of abuse actions as $\mathcal{A}$. Next, define the total set of innapropriate TRBs $\mathcal{I}$ as the union of $\mathcal{I} = \mathcal{M}\cup \mathcal{D}\cup\mathcal{A}$. Having defined the set of inappropriate actions, the set of appropriate TRBs can be defined as $\mathcal{U}$, the compliment of the set of inappropriate TRBs $\mathcal{U} = \mathcal{I}^\prime$. This is illustrated in Figure \ref{fig:appropriate_use}, where the set of appropriate actions $\mathcal{U}$ is the gray colored area (i.e. all TRBs \emph{not} in either of the three sets of inappropriate TRBs). \textbf{This is probably too complicated, I could probably just say that $\mathcal{U}$ is the set of all actions not included in either of M,A, or D}.
     
 	\begin{figure}[htbp]
     	\centering
@@ -17,9 +23,11 @@ This again highlights why influencing a user's trust can be the key to attain pr
         \label{fig:appropriate_use}
     \end{figure}
     
-    In order to ensure that humans use autonomous systems appropriately it is critical that the user TRBs be calibrated to elicit behaviors that are within $\mathcal{U}$. This can be done by influencing the user trust.
+    Given this definition, in order to ensure that humans use AIAs appropriately, it is critical that the user TRBs be calibrated to elicit behaviors that are within $\mathcal{U}$. This can be done by influencing the user trust. This is a point that, to some extent, has been informally mentioned in \citet{Muir1994-ow,Muir1987-mk,Lillard2016-yg,Lee2004-pv}. An aim of this paper is to more formally investigate that topic.
 
-    Generally trust between a human and AI could be depicted as in Figure \ref{fig:SimpleTrust_two_way}, where each has TRBs that must be calibrated, and each provides certain feedback, which will be called assurances, in order to do so. In a more simple scenario, where the AI implicitly trusts the human user the trust relationship can be depicted as shown in Figure \ref{fig:SimpleTrust_one_way}, where only the user has TRBs that are being calibrated.
+    From the perspective of a benevolent AIA, the user's TRBs should lay within $\mathcal{U}$, this in contrast to a malicious AIA that tries to manipulate the TRBs of a human to overlap $\mathcal{I}$ to some extent. There is a valid argument that many of today's systems that ignore TRBs and assurances are unwittingly malicious in that they do not actively attempt to guide user's TRBs to lay withing $\mathcal{U}$.
+
+    % Generally trust between a human and AI could be depicted as in Figure \ref{fig:SimpleTrust_two_way}, where each has TRBs that must be calibrated, and each provides certain feedback, which will be called assurances, in order to do so. In a more simple scenario, where the AI implicitly trusts the human user the trust relationship can be depicted as shown in Figure \ref{fig:SimpleTrust_one_way}, where only the user has TRBs that are being calibrated.
 
 	% \begin{figure*}[htbp]
         % \centering
@@ -40,12 +48,12 @@ This again highlights why influencing a user's trust can be the key to attain pr
         % \label{fig:SimpleTrust}
     % \end{figure}
     
-    Figure \ref{fig:SimpleTrust_dist} serves as a simple example illustrating the possible disparity between the user TRB distribution and the appropriate TRB distribution. In this case assurances would be used to minimize the difference between the two distributions.
+    % Figure \ref{fig:SimpleTrust_dist} serves as a simple example illustrating the possible disparity between the user TRB distribution and the appropriate TRB distribution. In this case assurances would be used to minimize the difference between the two distributions.
 
-	\begin{figure}[htbp]
-    	\centering
-     	\includegraphics[width=0.4\textwidth]{Figures/SimpleTrust_dist.png}
-    	\caption{Diagram illustrating the point that a hypothetical user TRB distribution might not match the appropriate TRB distribution. In this case the AI should provide assurances in order to minimize the difference between the two.}
-        \label{fig:SimpleTrust_dist}
-    \end{figure}
-
+	% \begin{figure}[htbp]
+        % \centering
+         % \includegraphics[width=0.4\textwidth]{Figures/SimpleTrust_dist.png}
+        % \caption{Diagram illustrating the point that a hypothetical user TRB distribution might not match the appropriate TRB distribution. In this case the AI should provide assurances in order to minimize the difference between the two.}
+        % \label{fig:SimpleTrust_dist}
+    % \end{figure}
+%
