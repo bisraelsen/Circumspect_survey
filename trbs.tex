@@ -1,9 +1,9 @@
-\section{Trust-Related Behaviors} \label{sec:trbs}
+\subsection{Trust-Related Behaviors} \label{sec:trbs}
 Something that is well accepted among researchers of all disciplines is that trust results in some kind of behavior or action, this idea was highlighted by \citet{Lewis1985-pr}.  \citet{McKnight2001-fa} calls it `trust-related behaviors` (TRBs), which is the term that will be used in this survey.
 
 In the case of a human-AIA relationship these TRBs could include the kinds of tasks the human user assigns to the AIA, or whether the decision a human makes to use a plan produced by the AIA or not. 
 
-\subsection{Calibration of Trust-Related Behaviors}
+\subsubsection{Calibration of Trust-Related Behaviors}
     As yet, trust is not a quantity that can be directly measured. Rather, its relative magnitude must be observed through changes in TRBs, or qualitative surveys -- of the two TRBs are the more objective measure. \citet{Parasuraman1997-co} were interested in understanding the use of automation which they defined as ``\ldots the execution by a machine agent (usually a computer) of a function that was previously carried out by a human''. Within this scope they define the following terms:
     
     \begin{description}
@@ -23,7 +23,13 @@ In the case of a human-AIA relationship these TRBs could include the kinds of ta
         \label{fig:appropriate_use}
     \end{figure}
     
-    Given this definition, in order to ensure that humans use AIAs appropriately, it is critical that the user TRBs be calibrated to elicit behaviors that are within $\mathcal{U}$. This can be done by influencing the user trust. This is a point that, to some extent, has been informally mentioned in \citet{Muir1994-ow,Muir1987-mk,Lillard2016-yg,Lee2004-pv}. An aim of this paper is to more formally investigate that topic.
+    Given this definition, in order to ensure that humans use AIAs appropriately, it is critical that the user TRBs be calibrated to elicit behaviors that are within $\mathcal{U}$. This can be done by influencing the user trust. This is a point that, to some extent, has been informally mentioned in \citet{Muir1994-ow,Muir1987-mk,Lillard2016-yg,Lee2004-pv,Hutchins2015-if}. An aim of this paper is to more formally investigate that topic.
+
+    A critical oversight of the those who mention is that they suggest calibrating \emph{trust} as opposed to TRBs. \citet{Dzindolet2003-ts} studied the effect of performance feedback on user's self-reported trust, and found that it increased, however the appropriate TRBs toward the system didn't reflect the level of self-reported trust. This shows the danger of calibrating ``trust'', as opposed to calibrating the TRBs.
+
+    Calibrating TRBs focuses on concrete and measurable behaviors that are universally applicable. In contrast, calibrating trust involves influencing a quantify that is directly immeasurable, and that, when measured indirectly, is subject to the biases, uncertainties, and fundamental differences of humans. Viewing the task from this point of view, the findings of \citeauthor{Dzindolet2003-ts} are not surprising.
+
+    \textbf{I'd like to go off on a little rant about this, but I'm not sure if it is appropriate. There is a TON of literature that talks about calibrating trust. Calibrating trust is asking for trouble, when we actually care about TRBs. VERY LITTLE RESEARCH  (none?) HAS BEEN DONE CONSIDERING ONLY TRBS, IT IS MOSTLY JUST SELF-REPORTED TRUST, WHICH DZINDOLET HAS SHOWN TO BE SHAKY GROUND}
 
     From the perspective of a benevolent AIA, the user's TRBs should lay within $\mathcal{U}$, this in contrast to a malicious AIA that tries to manipulate the TRBs of a human to overlap $\mathcal{I}$ to some extent. There is a valid argument that many of today's systems that ignore TRBs and assurances are unwittingly malicious in that they do not actively attempt to guide user's TRBs to lay withing $\mathcal{U}$.
 

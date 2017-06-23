@@ -1,4 +1,4 @@
-\section{User Trust}
+\subsection{User Trust}
     In designing assurances, which affect trust-based user behaviors, it is critical to know what drives those behaviors. Because of this some time must be spent to understand what trust is. 
 
     Trust is critical in interpersonal relationships, and it affects the dynamics of systems as simple as interpersonal relationships \cite{Lewicki2006-hj}, to more complicated ones such as financial markets and governments \cite{Fukuyama1995-un}. Consequently, researchers in psychology, sociology, and economics have historically sought to understand the fundamental principles of trust, each with the aim of understanding their field better \cite{Gambetta1988-pi}. Moral philosophers have also thought intently about the topic \cite{Baier1986-im}.
@@ -18,16 +18,20 @@
 
         That humans actually do feel trust towards machines has been experimentally confirmed several times in research using common subjective psychological questionairres. Some examples include: \citet{Muir1996-gt,Reeves1997-ad,Groom2007-bz,Mcknight2011-gv,Riley1996-qm,Bainbridge2011-pl,Kaniarasu2012-mo,Salem2015-md,Desai2012-rc, Freedy2007-sg, Wang2016-id, Inagaki1998-cl, Kaniarasu2013-ho}.
 
-        \citet{Mcknight2011-gv} argue that trust in technology is different than trust in people, and perform an experiment to validate their claim. The experiment was based around how students use MS Excel. In \cite{Tripp2011-cq} they run experiments with three different levels of technology: MS Access, a recommender system, and Faceobook. They found that `human-like' trust applied more to Facebook, while `system-like' trust applied more to MS Access. They conclude that if the system is ``human enough'' then a human trust model is appropriate, but caution that it is important to check first.
+        As shown, several academic experiments have investigated the possibility of trust existing between humans and, according to the terminology of this survey, AIAs. All found that some level of trust can be formed in such relationships. \citet{Lacher2014-yc} points out that people trust an AIA at different levels. For example an operator would have different perspectives on trust based on their level of interaction with the AIA. For example the designer of an AIA would trust differently than an end user, due to the differing nature of the trust relationship from one to the other.
 
-        \cite{Lankton2008-ct} report results on Facebook. Review some of the trust in automation literature, like Muir. Also include trust in information systems, trust in online environments, and interpersonal trust. I need to finish looking at this paper... I just started reading it.
+        \citet{Lankton2008-ct} claims, and finds some support for the idea, that trust in technology is fundamentally different from interpersonal trust between humans. They demonstrate the validity of the hypothesis by using a survey of 427 college students regarding Facebook. However, the authors point out that this study was based on a single set of survey data about facebook, and may not be unbiased or apply to other technologies. Beyond this, it is the author's opinion that the `fundamental differences' they point out are not that divergent from the human-human trust model.
 
-        As shown, several academic experiments have investigated the possibility of trust existing between humans and, according to the terminology of this survey, AIAs. All found that some level of trust can be formed in such relationships.
+        \citet{Tripp2011-cq} perform what could be considered as a follow-up experiment to \cite{Lankton2008-ct} to further investigate the variation of trust between humans and different levels of technology. They run experiments with three different levels of technology: MS Access, a recommender system, and Faceobook. They found that `human-like' trust applied more to Facebook, while `system-like' trust applied more to MS Access. They conclude that if the system is ``human enough'' then a human trust model is appropriate, but caution that it is important to check first.
 
-    \subsection{A Model of Trust}
-        Returning to the main focus of this section, we now present a model of trust, with the expectation that this model will cast insights on assurances that can be used later.
+        Given this research, we will take the position of presenting a human-human trust model and using it as a basis for human-AIA trust. With the understanding that the applicability of the model varies with the complexity of the AIA. For example from something in the lower-left quadrant of \ref{fig:StrongWeak} to the upper-right quadrant.
 
-        In work relating to business management \cite{McKnight1998-ty} performed what is, to my knowledge, the first multi-disciplinary survey and unification of trust literature, and condensed it into a single typology. That model is shown, with some minor adaptations, in Figure \ref{fig:UserTrust}. Notice that the three main dimensions --- Dispositional Trust, Institutional Trust, and Interpersonal Trust --- are connected in such a way as to indicate some causal relationships between them.
+    \subsection{A Model of Human-AIA Trust}
+        Returning to the main focus of this section, we now present a model of human-AIA trust, with the expectation that this model will cast insights on assurances that can be used later. It should be noted that \emph{this model} is being present as one model that can be helpful in understanding assurances, but it may not be \emph{the} perfect model. As research advances it will probably change, and the ideas of assurances will naturally change as well. \textbf{needs work}.
+
+        This has been recently attempted in the context of human-AIA relationships \cite{Lahijanian2016-nd}, but with an overly simplistic reduction of trust. The reality is that trust is extremely complex, and so dealing with it in the setting of human-AIA relationships is going to be complex.
+
+        In work relating to business management \citet{McKnight1998-ty} and later in \cite{McKnight2001-fa} performed what is, to my knowledge, the first multi-disciplinary survey and unification of trust literature, and condensed it into a single typology. That model is shown, with some minor adaptations, in Figure \ref{fig:UserTrust}. Notice that the three main dimensions --- Dispositional Trust, Institutional Trust, and Interpersonal Trust --- are connected in such a way as to indicate some causal relationships between them.
 
         \begin{figure}[htbp]
             \centering
@@ -39,7 +43,7 @@
         The categories are defined as follows:
 
         \begin{description}
-            \item [modify:] Perhaps provide examples in the human-AIA context to help ground the definitions
+            \item [***NOTE***:] \textbf{Perhaps provide examples in the human-AIA context to help ground the definitions}
             \item [Disposition to Trust:] The extent to which one displays a consistent tendency to be willing to depend on others in general across a broad spectrum of situations and persons
             \item [Institution-Based Trust:] One believes that favorable conditions are in place that are conducive to situational success in an endeavor or aspect of one's life
             \item [Trusting Beliefs:] One believes that the other party has one or more characteristics beneficial to oneself
@@ -54,10 +58,10 @@
             \label{fig:Assurance_classes}
         \end{sidewaysfigure}
 
-    \subsection{Distrust}
-        For completeness it is important to mention distrust, although it will not be a topic of direct interest in this paper. As reviewed and discussed in \cite{Lewicki1998-ox}, and formalized in \cite{McKnight2001-gz} low trust is not the same as distrust, neither is low distrust the same as trust. \citet{McKnight2001-gz} suggest that ``the emotional intensity of distrust distinguishes it from trust''. They explain that distrust comes from emotions like: wariness, caution, and fear. Whereas, trust stems from emotions like: hope, safety, and confidence. Trust and distrust are orthogonal elements that define a person's TRB towards a trustee. \citet{Lewicki1998-ox} list several behaviors that stem from different combinations of trust and distrust; these are shown in Figure \ref{fig:distrust_table}.
+    \subsection{A Note Regarding Distrust}
+        For completeness it is important to mention distrust, although it will not be a that is directly addressed in this paper. As reviewed and discussed by \citet{Lewicki1998-ox}, and formalized in \cite{McKnight2001-hm,McKnight2001-gz} low trust is not the same as distrust, neither is low distrust the same as trust. \citet{McKnight2001-gz} suggest that ``the emotional intensity of distrust distinguishes it from trust''. They explain that distrust comes from emotions like: wariness, caution, and fear. Whereas, trust stems from emotions like: hope, safety, and confidence. Trust and distrust are orthogonal elements that define a person's TRB towards a trustee. \citet{Lewicki1998-ox} list several behaviors that stem from different combinations of trust and distrust; these are shown in Figure \ref{fig:distrust_table}.
 
-        \begin{figure}[htbp]
+        \begin{figure}[!htbp]
             \centering
             \includegraphics[width=0.6\textwidth]{Figures/distrust_table}
             \caption{Trust--Distrust table from \cite{Lewicki1998-ox}}
