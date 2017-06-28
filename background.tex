@@ -3,34 +3,40 @@
 What do people who talk about `comprehensible', `interpretable', `opaque', and `explainable' really care about? This paper tries to provide a more formal look at what components of a user's trust these methods would want to influence.
 
 \subsection{Motivation}
-    Because everyone wants to trust their AIs, whether that be a single classification or regression algorithm, or a more interactive personal assistant that can understand language and communicate. Everyone wants to know how to trust these systems. \textbf{this needs to be better, discuss how trust really leads to actions (which will be better defined later)}
+    Generally, humans have always wanted to trust the tools and systems that they create. To this end many metrics and methods have been created to help assure the designers and users that the tools and systems are in fact capable of being applied in certain ways.
 
-	\begin{sidewaysfigure}[htbp]
-        \includegraphics[width=7.5in]{Figures/WhoCares_cleaned}%
-    	\caption{A diagram showing some of the academic disciplines that want to trust AIs more fully}
-        \label{fig:WhoCares}
-    \end{sidewaysfigure}
+    The situation has grown more complicated in recent years because the advanced capabilities of the systems that we are creating can at times be difficult for those who designed them to comprehend and predict. These are systems that have been designed to learn from extremely large amounts of data and expected to regularly perform on never before encountered data. They have been designed to perform tasks that might take humans entire lifetimes to complete. 
 
-    \paragraph{Interpretable Science} use data to find causes and insight
-    \paragraph{Reliable Machine Learning} safety guarantees for robots that have been deployed in real-world environments
-    \paragraph{Computer Science} Understand how algorithms will function on real data
-    \paragraph{AI/ML} interpret how/why theoretical models function
-    \paragraph{Government/Law} Regulations on the interpretability of certain algorithms, usage for assistants to lawyers.
-    \paragraph{Cognitive Assistance} Ability for user to understand why information was presented
-    \paragraph{Medicine} understand why data-driven models give predictions
-    \paragraph{HCI} help humans and computers interact in a more natural way (where human-human relationships are typically the definition of normal)
-    \paragraph{Robust Learning/Planning}
-    
-    \textbf{NEED MUCH BETTER BACKGROUND AND MOTIVATION!!!}
+    Below is a small sample of some research areas that exist and a possible reason why they -- perhaps unknowingly -- have an interest in creating trustworthy systems.
+	% \begin{sidewaysfigure}[htbp]
+        % \includegraphics[width=7.5in]{Figures/WhoCares_cleaned}%
+        % \caption{A diagram showing some of the academic disciplines that want to trust AIs more fully}
+        % \label{fig:WhoCares}
+    % \end{sidewaysfigure}
+%
+    \begin{description}
+        \item [Interpretable Science:] Need to trust that the models created are valid, and be able to draw insights from them
+        \item [Reliable Machine Learning:] Need to have safety guarantees for AIAs that have been deployed in real-world environments
+        \item [Algorithms:] Need to trust how algorithms will perform on empirical data
+        \item [AI/ML:] Interpret how/why theoretical models function, to be able to trust them to function properly
+        \item [Government:] Regulations on the interpretability of certain algorithms
+        \item [Cognitive Assistance:] Need to trust and understand recommendations given by automated personal assistants
+        \item [Medicine:] Understand why data-driven models give predictions so that the predictions can be safely followed
+        \item [HCI:] Help humans and computers interact in a more natural way, this involves finding ways for humans to trust computers more fully 
+    \end{description}
+
+    Revisiting a key point from the introduction, humans want to design assurances to help them appropriately trust AIAs. There are a few research fields that have formally and explicitly considered trust between humans and technology. Some examples are: e-commerce, automation, and human-robot interaction. However, due to their main goals they have not focused on explicitly designed assurances that affect trust, rather they studied implicit properties of systems that affect human trust.
+
+    Conversely, there are other research fields that have informally considered how to affect the trust of designers and users using explicitly designed assurances, but due to their informal treatment of trust it is unknown how effective these designed assurances might be.
+
+    \input{methodology.tex}
 
 \subsection{Related Work}
-    \textbf{spend a little time speaking about what Austin actually did, give an intro to his work}This paper is meant to be related to that of \citet{Lillard2016-yg}, but more general. Here the assurance framework is set in a more general light, albeit with the goal of being applied in a very similar application. Instead of treating, or at least inferring, that the user-autonomy trust loop is very strict and well structured, and that user trust does not take into account the institutional component proposed by \citet{McKnight2001-fa}, we re-institute the notion of institutional trust into the human-autonomy relationships.
+    \citet{Lillard2016-yg} addressed the role of assurances in the relationship between humans and autonomous systems. This paper is clearly related. Here the assurance framework is presented in a way that is both more general and more detailed, albeit with the same end goal of being applied in a very similar application. Instead of treating, or at least inferring, that the user-autonomy trust loop is very strict and well structured, and that user trust does not take into account the institutional component proposed by \citet{McKnight2001-fa}, we re-institute the notion of institutional trust into the human-autonomy relationships.
 
-    Regarding the relationship with the work of \citet{McKnight2001-fa}, we adopt the position that besides being applied to the e-commerce industry their trust model also applies to relationships between humans and autonomy (as in \citet{Lillard2016-yg}). However, here it is argued that assurances cannot directly have an affect on the user TRBs. This premise is that no autonomy (or vendor) should be able to control the TRBs of a human.
+    Regarding the relationship with the work of \citet{McKnight2001-fa}, who made a typology of interpersonal trust,  we adopt the position that besides being applied to the e-commerce industry their trust model also applies to relationships between humans and AIAs (as in \citet{Lillard2016-yg}). However, here it is argued that assurances cannot directly have an affect on the user TRBs. The premise is that no autonomy (or vendor) should be able to control the TRBs of a human.
 
-    The contributions of this work are to illuminate the connection between general AIA capabilities and general user trust. To classify assurances into several different groups. To suggest that TRBs need to be calibrated \emph{not} trust.
-
-
+    The contributions of this work are to illuminate the connection between general AIA capabilities and general user trust. To classify assurances. To suggest that TRBs need to be calibrated \emph{not} trust. \textbf{add more here}
 
 \input{aias.tex}
 \input{trust.tex}
