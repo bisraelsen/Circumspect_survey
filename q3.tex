@@ -1,19 +1,52 @@
 \subsection{Quadrant III.}
-The papers in this section do not treat trust formally, and in fact may not mentions at all, but are directly interested in the ability of humans to interpret and understand what AIAs are doing.
+The papers in this section do not treat trust formally, and in fact may not mention it at all, but are directly interested in the ability of humans to interpret and understand what AIAs are doing.
 
-Reviews: \cite{Lacave2002-cu},\cite{Van_Belle2012-dt},
+\subsubsection{Performance Prediction}
+    \citet{Zhang2014-he} are concerned with the performance of vision systems; particularly with the common occurrence of vision systems to failure `silently', that is with no warning. They suggest that the two possible solutions are to: 1) analyze the output of the vision system to assess its confidence, and 2) analyze the input itself in order to assess the classifier's confidence. They pursue the second, with the goal of minimizing failures as well as trying to verify the safety of a classifier. They argue that the second method is more desirable because it can be applied to any classifier. In essence they learn a model of the training error associated with different images and then use this to predict the error on test images. They demonstrate that their methods on several different classification tasks and show that it predicts failure ``surprisingly reliably''.
 
-\paragraph{performance prediction}
-\cite{Zhang2014-he}, \cite{Gurau2016-hs}, \cite{Kaipa2015-hy}, \cite{Churchill2015-ei}, \cite{Amodei2016-xi},\cite{Zhang2014-he},\cite{Kuter2015-qh} (counter-examples), \cite{Hutchins2015-if} (competency boundaries)
+    % \citet{Churchill2015-ei} use a Gaussian Process (GP) to model uncertainty of a localization map during a training phase. Uncertainties may come from the lighting conditions that poorly affect the video used for localization. Later during testing, the uncertainty information can be used when the robot is planning and moving within the map. They mention that this technique could apply to other types of mapping that use topological localizers, and laser-based systems.
 
-\paragraph{interpretable models}
-\cite{Van_Belle2012-dt}, \cite{Jovanovic2016-gw}, \cite{Ruping2006-xj},\cite{Otte2013-oo}, \cite{Caruana2015-za},\cite{Ridgeway1998-lv}, \cite{Otte2013-oo},\cite{Kadous1999-rx},\cite{Choi2016-by}, \cite{Huysmans2011-th}, \cite{Van_Belle2013-ph}, \cite{Huang2016-vd}, \cite{Park2016-ld}, theory guided models: \cite{Zycinski2012-jj}, \cite{Kumar2016-yw}
+    \citet{Gurau2016-hs} (following from ideas in \citet{Churchill2015-ei}) consider the task of predicting the performance of a robot's navigation when using cameras for localization. Their aim was to have the robot operate autonomously only when it was confident that it could do so, otherwise it would request human assistance. To achieve this they make use of GPS localized observations and `Experience Based Navigation' (EBN) to identify which past experience matches the current state of the robot. Using this approach they are able to reduce the number of mistakes that the robot makes when navigating in a real scenario.
 
-\paragraph{visualization and DR}
-\cite{Venna2007-yj}, \cite{Turner2016-jq},\cite{Van_Belle2013-ph}, \cite{Hutchins2015-if}, \cite{Lipton2016-ug}, \cite{Ribeiro2016-uc}, \cite{Montavon2015-mv}, \cite{Abdollahi2016-vn}, \cite{Vellido2012-nm}
+    \citet{Kaipa2015-hy} also consider the confidence of a visual classifier, but with the application being a robot that is picking an object out of a bin. To do this they utilize the `Iterative Closest Point' (ICP) method to match which points in a point cloud are likely associated with the object of interest in the bin. With that information the robot can then asses how confidently it can perform the task and if its confidence is below some threshold it will request assistance from a human. 
 
-\paragraph{designed behavior}
-\cite{Dwork2012-fq}, \cite{Amodei2016-xi},
+    \citet{Kuter2015-qh} recognize that plans can be fragile, and suggest that the planner calculate its stability. That is to say, how sensitive is the plan to uncertainties. The suggest `counter planning' and `plan repair' so that the autonomous system can identify likely contingencies and then adapt the plan to account for those contingencies. If the system \emph{is} able to adapt to contingencies then it will have a higher `self-confidence'. This allows humans to be able to understand the system better, and trust it more appropriately.
+
+    \citet{Hutchins2015-if} consider the fact that autonomous systems have components, and that those components have `competency boundaries'. That is to say that different sensors, planners, and actuators have different capabilities in different conditions. For example a GPS has high competency in an open-air situation, but very low competency inside of a tunnel or building. They suggest that these competency boundaries be quantified, and then displayed to a user, so the user better understands the system's capabilities and can trust it more.
+
+\subsubsection{Interpretable Models}
+    A well-known concept is that there is a trade-off between accuracy and interpretability. \cite{Van_Belle2012-dt} ask this question in the context of making clinical decision support systems for use in the medical field. To this end they propose an `interval coded scoring' system that imposes a constraint that each variable has a constant effect on the estimated risk. They demonstrate the method on two datasets. They show that their method can be visualized using scoring tables, and color bars. The point out that the method needs to be extended in order to detect interaction effects automatically, and to handle multi-class decision support systems.
+
+    \cite{Ruping2006-xj}, specifically asks how classification can be more interpretable. He reviews several possible methods, and states that ratings by experts is perhaps the most accurate way, although it is at the same time subjective. To address the accuracy-interpretability trade-off he investigates using a simpler global model, and a more complex local model (\citet{Otte2013-oo} and \cite{Ribeiro2016-uc} implement these ideas as well). This allows simple interpretation of global properties, but more complex local models to maintain accuracy. While his focus was on classification, the methods could also be useful in regression as well.
+
+    Later in \citet{Van_Belle2013-ph} the challenge that some of the highest performing ML models are too complicated to be interpreted. They investigate different `interpretable' and visualization methods in order to understand what opportunities they find. They suggest that there are three methods that help ascertain the level of interpretability and potential utility of models: 1) Map to domain knowledge, 2) Ensure safe operation across the full operational range of model inputs, and 3) Accurately model non-linear effects (compare to categories proposed by \cite{Lipton2016-ug}. They analyze some of the existing methods (nomograms, rule induction, graphical models, data visualization) and point out their weaknesses. They finish by pointing to more recent research in sparse and interpretable models, and suggest that it is a promising line of research. In summary they discuss that each `interpretable' method has its benefits and weaknesses and there is no methods that clearly out-performs any other.
+
+    \cite{Caruana2015-za} are interested in predicting the probability that a patient will be re-admitted to the hospital within thirty days. They also mention the trade-off between accuracy and interpretability, and propose a generalized additive model with pairwise interactions ($GA^2M$) model. A generalized additive model is generally thought of as interpretable as the effects of individual variables can easily be quantified, however GAMs suffer from low accuracy. In a comparison with other methods they show that adding pairwise interactions allows the model to be as accurate as the current methods, while still maintaining reasonable interpretability.
+
+    \citet{Choi2016-by} modifies a recursive attention neural network to remove recurrence on the hidden state vector, and instead add recurrence on the doctor visits and diagnoses. In this way the model is able to predict possible diagnoses in time, and a visualization can be that that indicates the critical visits and diagnoses that lead to that prediction. This methods is promising because it restructures an advanced learning model in a way that useful information can be extracted.
+
+    \cite{Abdollahi2016-vn} construct a conditional restricted Boltzmann machine (RBM) in order to create a collaborative filtering algorithm, that can suggest `explainable' items, while maintaining accuracy. 
+
+    \cite{Ridgeway1998-lv} recognize that boosting methods, or classifiers with voting methods, are very accurate but not interpretable. They propose boosting by `weight of evidence' (WoE), where WoE refers to having a weight that indicates whether the observation is positively or negatively correlated to the class. Each weight can then be used to gain some understanding about how the observation affects the calssification. They demonstrate its utility using multiple experiments that it has performance on par with AdaBoost, and with a Naive Bayes classifier. 
+
+    \citet{Huysmans2011-th} investigate decision trees, decision tables, propositional if-then rules, and oblique rule sets in order to understand which is the most interpretable and perform an experiment to identify which method works most effectively. The experiment involved interpreting a model and answering questions about what the correct classification would be. They made several interesting observations. First, they confirmed that a model with larger representation leads to lower answer accuracy responses. They found that overall decision trees and decision tables were the most interpretable, but that different tasks made the tree or table more desirable (the layout of the data in a table can be superior for certain `look-up' tasks).
+
+    One drawback with decision trees is that the rules can get very complicated in a large tree. \citet{Park2016-ld} investigate how to make rules in decision trees more `intuitive'. They propose a method that learns chains of decisions that together increase the ratio of positive class. They present a method that is called $\alphs$-Carving decision Chain (ACDC), and say that it is a greedy alternative to a general framework known as RuleLists (\citet{Wang2015-ww}). 
+
+
+    Similarly, \citet{Jovanovic2016-gw} use `Tree-Lasso' logistic regression with domain knowledge. Specifically they use medical diagnostic codes to group similar conditions and then use `Tree-Lasso' regression that uses that information to make a more sparse model. \citet{Zycinski2012-jj} also use domain knowledge to structure the data matrix before feature selection and classification. 
+
+    \cite{Morrison2016-fz} address the situation where an analytical model is available but imperfect. They use a chemical kinetics application where the theoretical reaction equations are well known, and then add a `stochastic operator' over the top of the known model to account for uncertainties. One drawback for this method is that it requires a lot of domain knowledge, but in the areas of science and engineering where physical models are well understood this type of approach could be useful to indicate the performance of the system with regards to the theoretical model.
+
+\subsubsection{Visualization and Dimensionality Reduction}
+    In many real applications there are too many individual variables for a human to attend to. In this situation dimensionality reduction (DR) and visualization are tools that can be used to help make a model or data easier to understand. \cite{Venna2007-yj} discusses dimensionality reduction as a tool for data visualization, and reviews many linear and non-linear methods. \citet{Vellido2012-nm} also discusses the importance of DR for making ML models interpretable.
+
+    In an interesting application to time series \citet{Kadous1999-rx} asks how comprehensible descriptions of multivariate time series can be learned, with the end goal of interpreting Australian sign language. He focuses on reducing the feature space fed into a learning algorithm (i.e. The data was gathered using an instrumented glove. Naive Bayes), And does so using `parameterized event primitives' (PEPs), which are commonly occurring events or patterns that are expected to occur. He shows that his method reduced test error while also having more comprehensible features. It seems likely that parameterized primitives might be automatically learned.
+
+% \paragraph{designed behavior}
+    % Another approach to being able to trust a system that has been investigated, is that of purposfully designing behavior in such a way as to comply with certain requirements.
+%
+    % \cite{Dwork2012-fq} is one of the few who have directly looked at this question with an explicit focus on making the results of classifiers `fair'. Their work is driven by the interface between ML and the public. They propose making a metric that quantifies the similarity between individuals, and then designing \ldots you know, I don't really like this method. It seems pretty specifically to me.
 
 \paragraph{explanation}
 \cite{Swartout1983-ko},\cite{Rouse1986-dz},\cite{Wallace2001-fm}, \cite{Lomas2012-ie} -- translating POMDP decisions to natural language
@@ -23,3 +56,8 @@ Reviews: \cite{Lacave2002-cu},\cite{Van_Belle2012-dt},
 
 \paragraph{human-involved learning}
 \cite{Freitas2006-qo} -- give a couple concrete examples
+
+Reviews: \cite{Lacave2002-cu},\cite{Van_Belle2012-dt},
+
+
+They suggest that risk-sensitive performance criteria need to be designed in order to make exploration safe, they also suggest using trust policies during learning. They also bring up the need to consider how the system should respond to distributional shift, once it has been detected, and also discuss the importance of counter-factual reasoning. They mention that studying `transparency' in ML algorithms is important so that designers can understand what AIAs are doing in the first place.
