@@ -18,7 +18,7 @@
         \label{fig:AIcapabilities}
     \end{figure}
 
-    As noted by \cite{Tripp2011-cq} technology spans a wide spectrum of capabilities. With regards to autonomous systems one might consider anything from a thermostat, to a Tesla autopilot. While most of the current focus is geared towards our capability to trust `advanced' technology, for the purposes of this survey I wish to take a more holistic view and use the term Artificially Intelligent Agent (AIA) to encompass a broad range of technologies that can be considered automatic by some sense of the word.
+    As noted by \cite{Tripp2011-cq} technology spans a wide spectrum of capabilities. With regards to autonomous systems one might consider anything from a thermostat, to a Tesla autopilot. While most of the current focus is geared towards our capability to trust `advanced' technology, for the purposes of this survey I wish to take a more holistic view and use the term Artificially Intelligent Agent (AIA) to encompass a broad range of technologies that can be considered automatic by some sense of the word. \nisarcomm{need to reconcile with earlier disclaimer on restricting your attention, e.g. to ignore things like gain/phase margin}
 
     It should be noted that the categories are not clearly separable; for instance where does the capability to plan end, and reasoning begin? Similar questions could be asked of the other capabilities. Regardless, given this set of capabilities an AIA can then be defined as:
     
@@ -27,7 +27,7 @@
         \item[Artificially Intelligent Agent:] an agent that possess, to some extent, at least one of the capabilities shown in the figure \ref{fig:AIcapabilities}. 
     \end{description}
 
-    Of course, with such a broad definition, there will also be a broad range of different AIAs. I wish to classify that range based on two axes: adaptability, and capability. In the AI community Low adaptability has been termed `narrow' and high adaptability has been termed `broad'. Similarly, low capability has been termed `weak' and high capability `strong'. Figure \ref{fig:StrongWeak} is a depiction of these two axes, and where some typical AIAs might fall in that space.
+    Of course, with such a broad definition, there will also be a broad range of different AIAs. \edit{It is argued here that it is most useful} to classify that range along two axes: adaptability, and capability. \nisarcomm{What do you mean by `adaptability'? What do you mean by `capability'?} In the AI community Low adaptability has been termed `narrow' and high adaptability has been termed `broad'. Similarly, low capability has been termed `weak' and high capability `strong'. Figure \ref{fig:StrongWeak} is a depiction of these two axes, and where some typical AIAs might fall in that space.
 
 	\begin{figure}[htbp]
     	\centering
@@ -36,19 +36,18 @@
         \label{fig:StrongWeak}
     \end{figure}
 
-    To make sure the point is clear, the research discipline called machine learning (ML) is a subset of the AI research landscape. Individual ML algorithms might be thought of as being a narrowly scoped AI that is contained within only one of the AGI capabilities. Concretely, the following systems currently exist and may possess the listed AIA capabilities.
+    To make sure the point is clear, the research discipline called machine learning (ML) is a subset of the AI research landscape. Individual ML algorithms might be thought of as being a narrowly scoped AI that is contained within only one of the AIA capabilities. \nisarcomm{Next sentence is a non-sequitur -- seems to be missing a transition to next list.} Concretely, the following systems currently exist and may possess the listed AIA capabilities.
 
     \begin{enumerate}
-         \item An autonomous bottle capping machine might \textbf{perceive} bottles, and perform \textbf{manipulates} parts to place a cap on them
-         \item An unmanned aerial system (UAS) might possess the ability to \textbf{plan} missions, \textbf{perceive} its location, and \textbf{move} its components to accomplish that plan
+         \item An autonomous bottle capping machine might \textbf{perceive} bottles, and \textbf{manipulates} parts to place caps on them
+         \item An unmanned aerial system (UAS) might possess the ability to \textbf{plan} missions, \textbf{perceive} its location, and execute \textbf{motion} of its components to carry out a plan
          \item A virtual personal assistant might be capable of \textbf{interacting} with a user, \textbf{learn} the user's preferences, and \textbf{reason} about what assistance the user needs
          \item An image classifier might possess the capability to \textbf{learn} image classes from labeled examples and predict the class of never-before-seen new images.
      \end{enumerate}
 
-    Arguably I might just use the term artificial intelligence (AI) instead of AIA, however the term AI carries too much ambiguity (in its fullest meaning it would possess all capabilities from figure \ref{fig:AIcapabilities}, and more). Using AIA allows me to broadly include \emph{any} system in the adaptability/capability plane. Figure \ref{fig:StrongWeak} shows some examples of AIAs and their places on the plane.
+\nisarcomm{Remove first person voice}    Arguably I might just use the term artificial intelligence (AI) instead of AIA, however the term AI carries too much ambiguity (in its fullest meaning it would possess all capabilities from figure \ref{fig:AIcapabilities}, and more). Using AIA allows me to broadly include \emph{any} system in the adaptability/capability plane. Figure \ref{fig:StrongWeak} shows some examples of AIAs and their places on the plane.
 
-    One might also question the need to define AIAs in the first place. This is to aid in the search for assurances. As will be shown later, assurances span the range of AIAs so that an automation system might be able to use similar assurances to a self-driving car, and vice-versa.
+    One might also question the need to define AIAs in the first place. This is to aid in the search \edit{for and understanding of} assurances. As will be shown later, assurances span the range of AIAs \nisarcomm{not sure what `assurances span the range of AIAs' means -- assurances are features of AIAs, not AIAs themselves...}, so that an automation system \edit{such as a ...} might be able to use similar assurances \edit{(or more generally, similar principles of assurance) as might} a self-driving car, and vice-versa.
 
-    This definition while \emph{extremely} broad is still useful because it encompasses many of the systems that are currently being marketed as ``artificially intelligent'' at this time. More importantly, many of the assurances that exist for the simplest AIA (e.g. a simple k-means classifier) can be extended for use in more advanced AIAs. In other words, using the proposed definition of an AIA sets the appropriate scope for the body of research that is likely to contain assurances that apply to AIAs.
-
-    The definition of AIA and understanding of the range of capabilities helps to understand what kinds of assurances might be needed. For example an assurance from an AIA that can plan will probably differ in design and/or application from that of an AIA that can perceive.
+    This definition, while broad, is still useful because it encompasses many of the systems that are typically described %currently being marketed (you're not in business school)
+    as ``artificially intelligent''. More importantly, many of the assurances that exist for the simplest AIAs (e.g. a simple k-means classifier) can be extended for use in more advanced AIAs. In other words, the definition of AIAs sets an appropriate scope for the bodies of research that are likely to contain assurances and assurance principles that \edit{can be generalized/extended} to any intelligent computing system. The definition of AIAs and their range of capabilities also helps to understand and establish what kinds of assurances might be needed \edit{in future systems}. For example assurances from an AIA that can only carry out planning tasks will probably differ in design and/or application from assurances from an AIA that can \edit{only} carry out perception tasks. 
