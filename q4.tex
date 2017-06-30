@@ -1,19 +1,50 @@
-\subsection{Quadrant IV.}
-Need to add different categories here. should be something like:
-\subsubsection{Validation and Verification} \cite{Da_Veiga2012-gh} (constrained GP model), \cite{Da_Silva2016-qb}, \cite{Nishi2016-zq}, \cite{Hadfield-Menell2016-ws}, \cite{Weng_Wong2014-tj}, \cite{Conner2007-uw}, 
-\subsubsection{Active Learning} \cite{Paul2011-vr}, \cite{Holub2008-pe}, \cite{Joshi2009-ws}, \cite{Kapoor2010-cy}, \cite{Triebel2013-ow}, \cite{MacKay1992-sp}
-\subsubsection{Representation learning and Feature Selection} \cite{Bengio2013-uv}, \cite{Guyon2003-fj}, \cite{Haury2011-zi}, \cite{Mikolov2013-lt}(word2vec, I want to say something about how things are ranked by similarity, and this gives some notion of how a word is represented, i.e. interpretable encoding)
-\subsubsection{Risk averse Agents} \cite{Curran2016-ij},  \cite{Lipton2016-dq}
-\subsubsection{Safety and Learning under nonstationarity} \cite{Sugiyama2013-ci}, \cite{Garcia2015-rs},\cite{Quinonero-Candela2009-fj}
+\subsection{Quadrant IV.}\label{sec:q4}
+This section provides our perspective on some of the research disciplines that are working on techniques that will be critical to designing effective assurances.
+
+\subsubsection{Validation and Verification}
+    Validation and Verification (V\&V) typically refers to using formal methods to guarantee the performance of a system within in some set of specifications. Not all practitioners are aware that V\&V provides ways to assure users, arguably they probably have this idea in their mind, but have not considered how to communicate the existence and implications of V\&V to users.
+
+    While not a typical approach we claim that \citet{Da_Veiga2012-gh} discuss a form of V\&V. They are concerned with classification and regression with constraints. More specifically they are concerned about making GPs with inequality constraints, and present a method to do this by using conditional expectation of the truncated multinormal distribution (or Tallis formulas). This is not the only work that references constraining GPs. Nor is it the only work that considers constrained modeling, but it would take too long to review all of those papers. The main claim here is that constrained models are a verified way to guarantee the properties of a model within some specifications.
+
+    In relation to a system of cooperative multi-agent system \citet{Da_Silva2016-qb} ask how their performance can be verifiable. They suggest a `top-down' and `bottom-up' approach. When high level planning happens from the top, and then verifiable motion planning happens from the bottom up. In this way agents move in a verified way, while being able to satisfy a higher level plan. This is similar to work by \citet{Conner2007-uw}, except they directly consider multi-agent systems instead of a single vehicle.
+
+    V\&V is especially challenging in real environments where specifications are commonly violated. \citet{Weng_Wong2014-tj} address this challenge by using `environment characterization' as a runtime verification to not violations of the environment. When a violation is detected they use recovery that can give correct actions in order to ensure safety and continued progress to the goal if possible. \citet{Nishi2016-zq} proposes something similar in being able to quantify the degree of confidence in the estimated world state, and then calculating confidence limits on planning.
+
+    \citet{Hadfield-Menell2016-ws}, in considering an AI safety problem, address the problem of verifying that a robot can be turned off, even when it might have an objective function that indicates that disabling the `off-switch'will reduce the chance of failure. This kind of scenario, or something like it, can easily occur with a capable enough AIA, and a complex enough set of objectives that might result in unintended consequences. They propose that one objective would be for the robot to maximize value for the human, and to not assume that it know how to perfectly measure that value.
+
+\subsubsection{Safety and Learning under nonstationarity, risk averse} \textbf{this is very related to V\&V, but different in that there aren't necessarily formal proofs?}
+    Generally stationary data is assumed in supervised ML. \citet{Sugiyama2013-ci} considers what to do when there is `covariate shift' (or when both training and test data change distribution, but their relation does not change between training and test phases), and `class-balance change' (where the class-prior probabilities are different in training and test phases, but the input distribution of each class does not change). They design and present tools that help diagnose and treat those conditions (this is follow on work for some of what is presented in \citet{Quinonero-Candela2009-fj} where they consider dataset shift). 
+
+    \citet{Garcia2015-rs} perform a survey about safe reinforcement learning (RL). They state that there are two main methods: 1) modifying the optimality criterion with a safety factor, and 2) modification of the exploration process through the incorporation of external knowledge. And present a hierarchy of approaches and implementations. Safe RL is a particularly important area that requires assurances, as the systems are designed specifically to evolve without supervision.
+
+    As one example \citet{Lipton2016-dq}, design a reinforcement learner that has a deep Q-network (DQN) and a `supervised danger model'. Basically, the danger model stores the likelihood of entering a catastrophe state within a `short number of steps', this model can be learned by detecting catastrophes through experience and can be improved over time.  In this way they show that their method, they call `intrinsic fear', is able to overcome the sensitive nature of DQNs. There is a clear limitation of the danger model in that it does not contain useful information until a catastrophe is detected.
+    
+    \citet{Curran2016-ij} in a more specific application, asks how a robot can learn when a task is too risky, and then avoid those situations, or ask for help. To do this they use a hierarchical POMDP planner that explicitly represents failures as additional state-action pairs. In this way the resulting policy can be averse to risk.
+    
+
+\subsubsection{Active Learning}
+\citet{Paul2011-vr}, \citet{Holub2008-pe}, \citet{Joshi2009-ws}, \citet{Kapoor2010-cy}, \citet{Triebel2013-ow}, \citet{MacKay1992-sp}
+
+\subsubsection{Representation learning and Feature Selection} \citet{Bengio2013-uv}, \citet{Guyon2003-fj}, \citet{Haury2011-zi}, \citet{Mikolov2013-lt}(word2vec, I want to say something about how things are ranked by similarity, and this gives some notion of how a word is represented, i.e. interpretable encoding)
+
+
+
+
 \subsubsection{Probabilistic Classification}
-Introspection stuff -- \cite{Grimmett2013-gj}, \cite{Triebel2013-ku}, \cite{Triebel2016-kj}, \cite{Berczi2015-rd}, \cite{Grimmett2016-yc}, \cite{Dequaire2016-kh}
-\subsubsection{Empirical Performance Prediction} \cite{Hutter2006-ak}, \cite{Leyton-Brown2009-yr}
-\subsubsection{Theory Guided Data Science} \cite{Faghmous2014-og}
-\subsubsection{Understanding ML methods} \cite{Bakry2015-td}, \cite{Konolige1985-vx} (introspection theory, provides capabilities to generate assurances),  
-\subsubsection{More robust methods} \cite{Bashivan2015-fc},  \cite{Tellex2012-hn}
-\subsubsection{Model checking} \cite{Titman2008-ct}, \cite{Laskey1995-jp} (sensitivity analysis), \cite{Sinharay2006-yc} (model diagnostics), \cite{Titman2012-zw} (HMM goodness of fit), \cite{MacKay_Altman2004-fl} (GOF for HMMs), \cite{Dannemann2008-ch}, \cite{Titman2010-qx}, \cite{Johnson2004-mv}, \cite{Yuan2012-tb}, \cite{Spiegelhalter2002-ia}
-\subsubsection{Representation of Uncertainty} \cite{Laskey2015-gz}, \cite{Costa2012-fa}
+Introspection stuff -- \citet{Grimmett2013-gj}, \citet{Triebel2013-ku}, \citet{Triebel2016-kj}, \citet{Berczi2015-rd}, \citet{Grimmett2016-yc}, \citet{Dequaire2016-kh}
+
+\subsubsection{Empirical Performance Prediction} \citet{Hutter2006-ak}, \citet{Leyton-Brown2009-yr}
+
+\subsubsection{Theory Guided Data Science} \citet{Faghmous2014-og}
+
+\subsubsection{Understanding ML methods} \citet{Bakry2015-td}, \citet{Konolige1985-vx} (introspection theory, provides capabilities to generate assurances),  
+
+\subsubsection{More robust methods} \citet{Bashivan2015-fc},  \citet{Tellex2012-hn}
+
+\subsubsection{Model checking} \citet{Titman2008-ct}, \citet{Laskey1995-jp} (sensitivity analysis), \citet{Sinharay2006-yc} (model diagnostics), \citet{Titman2012-zw} (HMM goodness of fit), \citet{MacKay_Altman2004-fl} (GOF for HMMs), \citet{Dannemann2008-ch}, \citet{Titman2010-qx}, \citet{Johnson2004-mv}, \citet{Yuan2012-tb}, \citet{Spiegelhalter2002-ia}
+
+\subsubsection{Representation of Uncertainty} \citet{Laskey2015-gz}, \citet{Costa2012-fa}
 
     While a fairly high-level treatment, \citet{Amodei2016-xi} are concerned with `AI safety', which is in essence how to make sure that there is no ``unintended and harmful behavior that [emerges] from machine learning systems''. Given the definition, much of the paper discusses concepts that are critical to AIA assurances. Among the more directly applicable topics in the scope of this paper are: safe exploration (how to learn in a safe manner), and robustness to distributional shift (a difference between training data and test data). They also discuss designing objective functions that are more appropriate. These areas are critical 
 
-\subsubsection{Not sure} , \cite{Gutfreund2016-xe} (constructs automatic arguments, perhaps similar to counter-planning?), \cite{Charif2013-vo} (agents cooperate based on abilities to accomplish goal)
+\subsubsection{Not sure} , \citet{Gutfreund2016-xe} (constructs automatic arguments, perhaps similar to counter-planning?), \citet{Charif2013-vo} (agents cooperate based on abilities to accomplish goal)
