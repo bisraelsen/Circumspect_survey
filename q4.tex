@@ -13,6 +13,8 @@ This section provides our perspective on some of the research disciplines that a
     \citet{Hadfield-Menell2016-ws}, in considering an AI safety problem, address the problem of verifying that a robot can be turned off, even when it might have an objective function that indicates that disabling the `off-switch'will reduce the chance of failure. This kind of scenario, or something like it, can easily occur with a capable enough AIA, and a complex enough set of objectives that might result in unintended consequences. They propose that one objective would be for the robot to maximize value for the human, and to not assume that it know how to perfectly measure that value.
 
 \subsubsection{Safety and Learning under nonstationarity, risk averse} \textbf{this is very related to V\&V, but different in that there aren't necessarily formal proofs?}
+    While a fairly high-level treatment, \citet{Amodei2016-xi} are concerned with `AI safety', which is in essence how to make sure that there is no ``unintended and harmful behavior that [emerges] from machine learning systems''. Given the definition, much of the paper discusses concepts that are critical to AIA assurances. Among the more directly applicable topics in the scope of this paper are: safe exploration (how to learn in a safe manner), and robustness to distributional shift (a difference between training data and test data). They also discuss designing objective functions that are more appropriate. These areas are critical 
+
     Generally stationary data is assumed in supervised ML. \citet{Sugiyama2013-ci} considers what to do when there is `covariate shift' (or when both training and test data change distribution, but their relation does not change between training and test phases), and `class-balance change' (where the class-prior probabilities are different in training and test phases, but the input distribution of each class does not change). They design and present tools that help diagnose and treat those conditions (this is follow on work for some of what is presented in \citet{Quinonero-Candela2009-fj} where they consider dataset shift). 
 
     \citet{Garcia2015-rs} perform a survey about safe reinforcement learning (RL). They state that there are two main methods: 1) modifying the optimality criterion with a safety factor, and 2) modification of the exploration process through the incorporation of external knowledge. And present a hierarchy of approaches and implementations. Safe RL is a particularly important area that requires assurances, as the systems are designed specifically to evolve without supervision.
@@ -23,28 +25,37 @@ This section provides our perspective on some of the research disciplines that a
     
 
 \subsubsection{Active Learning}
-\citet{Paul2011-vr}, \citet{Holub2008-pe}, \citet{Joshi2009-ws}, \citet{Kapoor2010-cy}, \citet{Triebel2013-ow}, \citet{MacKay1992-sp}
+    \citet{Paul2011-vr} is concerned with whether a robot can improve its own performance over time, with the goal of `life-long learning'. They use `perplexity' which is a method first introduced in language models. They adapted it to work with images; it is a measure that indicates the uncertainty in predicting a single. Over time the most perplexing images are stored and used in expanding the sample set. The ability to quantify something that is perplexing is a predecessor to being able to communicate that information to a human user. 
 
-\subsubsection{Representation learning and Feature Selection} \citet{Bengio2013-uv}, \citet{Guyon2003-fj}, \citet{Haury2011-zi}, \citet{Mikolov2013-lt}(word2vec, I want to say something about how things are ranked by similarity, and this gives some notion of how a word is represented, i.e. interpretable encoding)
+    Recently there have been several papers that attempt to use GPs as a method to actively learn, and to give probabilistic classification (see \citet{MacKay1992-sp,Triebel2016-kj,Triebel2013-ow,Triebel2013-ku,Grimmett2013-gj,Grimmett2016-yc,Berczi2015-rd,Dequaire2016-kh}). The applications survey here are all mainly related to image classification and robotics. Although many other application exist within the broader area of Bayesian optimization. Similar to above, the key insight is that if a classifier possesses a measure of uncertainty, then that uncertainty can be used for efficient search and learning, as well as reporting a measure of confidence to a user.
 
+\subsubsection{Representation learning and Feature Selection}
+    Another promising field of research is related to learning representations of data and selecting data features. These two topics are surveyed by \citet{Bengio2013-uv} and \citet{Guyon2003-fj} respectively.
 
+    In their work related to interpreting molecular signatures \citet{Haury2011-zi} investigate the influence of different feature selection methods on the accuracy, stability and interpretability of molecular signatures. They compared different feature selection methods such as: filter methods, wrapper methods, and ensemble feature selection. They found that the effects of feature learning greatly influenced the results. 
 
+    Also, \citet{Mikolov2013-lt} studied how to represent words and phrases in a vector format. Using this representation they are able to perform simple vector operations to understand similar words, and the relative relationships learned. For example the operation $airlines+German$ yields similar entries that include $Lufthansa$. This type of representation encodes information that can be checked and understood by humans.
 
-\subsubsection{Probabilistic Classification}
-Introspection stuff -- \citet{Grimmett2013-gj}, \citet{Triebel2013-ku}, \citet{Triebel2016-kj}, \citet{Berczi2015-rd}, \citet{Grimmett2016-yc}, \citet{Dequaire2016-kh}
+\subsubsection{Empirical Performance Prediction}
+    \citet{Leyton-Brown2009-yr} investigate how to empirically predict the performance of algorithms in real application. This is a topic of interest to them because they investigate algorithms that are theoretically NP-Complete. However, in practice many problems can be solved more quickly. They created features of the problems and were able to make a regression to predict the runtime of an algorithm based on the problem features.
 
-\subsubsection{Empirical Performance Prediction} \citet{Hutter2006-ak}, \citet{Leyton-Brown2009-yr}
+    \citet{Hutter2006-ak}, builds on that work by using GPs to predict the performance of algorithms. In this way the runtime can be predicted, but with a measure of uncertainty.  This kind of approach could help AIAs to predict their performance on problems they haven't encountered before.
 
-\subsubsection{Theory Guided Data Science} \citet{Faghmous2014-og}
+\subsubsection{Model checking} 
+    Many AIAs are dependent on models. To that end checking the model, and having some metric of uncertainty in its validity, is critical in being able to assure a human user of the competence and predictability of the system.
+    
+    Research for goodness-of-fit metrics for Bayesian models has been fairly popular as found in \citet{Dannemann2008-ch,Johnson2004-mv,Yuan2012-tb} and \citet{Spiegelhalter2002-ia}.
 
-\subsubsection{Understanding ML methods} \citet{Bakry2015-td}, \citet{Konolige1985-vx} (introspection theory, provides capabilities to generate assurances),  
+    \cite{MacKay_Altman2004-fl} also present methods for assessing the goodness of fit of Hidden-Markov models. Later, \citet{Titman2008-ct,Titman2012-zw,Titman2010-qx} continued that investigated more methods for Markov, Hidden-Markov, and multi-state models, and try to make more principled formal approaches.
 
-\subsubsection{More robust methods} \citet{Bashivan2015-fc},  \citet{Tellex2012-hn}
+    
+    \citet{Laskey1995-jp} investigated how to analyze the sensitivity of Bayesian networks, and \citet{Sinharay2006-yc} further investigated diagnostics for Bayesian networks.
 
-\subsubsection{Model checking} \citet{Titman2008-ct}, \citet{Laskey1995-jp} (sensitivity analysis), \citet{Sinharay2006-yc} (model diagnostics), \citet{Titman2012-zw} (HMM goodness of fit), \citet{MacKay_Altman2004-fl} (GOF for HMMs), \citet{Dannemann2008-ch}, \citet{Titman2010-qx}, \citet{Johnson2004-mv}, \citet{Yuan2012-tb}, \citet{Spiegelhalter2002-ia}
+\subsubsection{Summary}
+    The literature surveyed in this section is \emph{not} exhaustive, nor could it reasonably ever claim to be. One thing that should be painfully clear is that every field where designers was to ensure reliable and correct application of an AIA, there will be assurances that are designed. The disciplines selected in this paper are a subset that are aligned with the author's interests in unmanned vehicles.
 
-\subsubsection{Representation of Uncertainty} \citet{Laskey2015-gz}, \citet{Costa2012-fa}
+% \subsubsection{Representation of Uncertainty}
+%
+    % \citet{Costa2012-fa} and \citet{Laskey2015-gz} address how to represent uncertainty in modeling so that it isn't lost in operations like information fusion. The proprose a framework called the Uncertainty Representation and Reasoning Evaluation Framework (URREF), and suggest that it provides guidance in defining
 
-    While a fairly high-level treatment, \citet{Amodei2016-xi} are concerned with `AI safety', which is in essence how to make sure that there is no ``unintended and harmful behavior that [emerges] from machine learning systems''. Given the definition, much of the paper discusses concepts that are critical to AIA assurances. Among the more directly applicable topics in the scope of this paper are: safe exploration (how to learn in a safe manner), and robustness to distributional shift (a difference between training data and test data). They also discuss designing objective functions that are more appropriate. These areas are critical 
-
-\subsubsection{Not sure} , \citet{Gutfreund2016-xe} (constructs automatic arguments, perhaps similar to counter-planning?), \citet{Charif2013-vo} (agents cooperate based on abilities to accomplish goal)
+% \subsubsection{Not sure} , \citet{Gutfreund2016-xe} (constructs automatic arguments, perhaps similar to counter-planning?), \citet{Charif2013-vo} (agents cooperate based on abilities to accomplish goal)
