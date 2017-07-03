@@ -1,8 +1,8 @@
 \subsubsection{Component and Composite Assurances}
-Assurances can be either component or composite. The definitions are found below: \textbf{definitions aren't quite good enough yet}
+Assurances can be either component or composite. The definitions are found below:
 
 \begin{description}
-    \item [Component:] An assurance that originates from a single algorithm.
+    \item [Component:] An assurance that originates from a single algorithm. \textbf{this is a rats nest, I know what one is, but I can't define it. An algorithm can have probably give many asurances\ldots I want to say conveys a `piece of information' but that is pretty horrible too}
     \item [Composite:] The combination of more than one component assurance into a single assurance. 
 \end{description}
 
@@ -13,6 +13,6 @@ Assurances can be either component or composite. The definitions are found below
     \label{fig:assurance_mapping}
 \end{figure}
 
-\paragraph{Component Assurances:} Component assurances are perhaps the most well researched in the existing literature. This is likely because several verified component assurances are the predecessors to composite ones. A component assurance might include displaying the confidence of a classification prediction.
+\paragraph{Component Assurances:} Component assurances are perhaps the most well researched in the existing literature. This is likely because several verified component assurances are the predecessors to composite ones. A component assurance might include displaying the confidence of a classification prediction, or visualizing a model as discussed in section \ref{sec:q2}.
 
 \paragraph{Composite Assurances:} Composite assurances are assurances that are built of several components. A notable example is the work by \citet{Aitken2016-cv} who propose a measurement called `self-confidence', applicable to Partially Observable Markov Decision Processes (POMDPs). This metric combines five component assurances into a single composite assurance that is meant to distill the information into a value that a novice operator could understand easily. This paper will be discussed further in \ref{sec:survey}. 

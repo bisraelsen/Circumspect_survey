@@ -1,6 +1,4 @@
-\subsection{Quadrant III.}\label{sec:q3}
-The papers in this section do not treat trust formally, and in fact may not mention it at all, but are directly interested in the ability of humans to interpret and understand what AIAs are doing.
-
+\subsection{Quadrant III. (Explicit Assurances, Informal Trust Treatment)}\label{sec:q3}
 \subsubsection{Performance Prediction}
     \citet{Zhang2014-he} are concerned with the performance of vision systems; particularly with the common occurrence of vision systems to failure `silently', that is with no warning. They suggest that the two possible solutions are to: 1) analyze the output of the vision system to assess its confidence, and 2) analyze the input itself in order to assess the classifier's confidence. They pursue the second, with the goal of minimizing failures as well as trying to verify the safety of a classifier. They argue that the second method is more desirable because it can be applied to any classifier. In essence they learn a model of the training error associated with different images and then use this to predict the error on test images. They demonstrate that their methods on several different classification tasks and show that it predicts failure ``surprisingly reliably''.
 
@@ -63,7 +61,7 @@ The papers in this section do not treat trust formally, and in fact may not ment
 
 
 \subsubsection{Model Checking}
-    \citet{Laskey1991-mf}, with the intention of helping users of `probability based decision aids', she notes that it is infeasible to perform a decision theoretic calculation to decide if revision is necessary. She then presents a class of theoretically justified model revision indicators which are based on the idea of constructing a computationally simple alternate model and then to initiate model revision if the likelihood ratio of alternate model becomes too large.
+    \citet{Laskey1991-mf}, with the intention of helping users of `probability based decision aids', notes that it is infeasible to perform a decision theoretic calculation to decide if revision is necessary. She then presents a class of theoretically justified model revision indicators which are based on the idea of constructing a computationally simple alternate model and then to initiate model revision if the likelihood ratio of alternate model becomes too large.
 
     \citet{Zagorecki2015-qy}, discusses the `surprise index' introduced by \citet{Habbema1976-xd}. The major flaw of the surprise index is that it needs to calculate the likelihood of an observation in the context of a model, which is computationally infeasible. \citeauthor{Zagorecki2015-qy} suggests an approximation by using the log-normal distribution to approximate the distribution of values in the joint probability distribution.
 
@@ -71,3 +69,6 @@ The papers in this section do not treat trust formally, and in fact may not ment
 
 \subsubsection{Human-Involved Learning}
     Another possible way to make system assure a human user is to use the human in the learning process. \citet{Freitas2006-qo} addressed this point with regards to discovering `interesting' knowledge from data. Given such large datasets, human users require assistance from complex systems in order to find patters and other `interesting' insights. He mentions `user-driven' methods that involve a user pointing out `interesting' templates, or in another method general impressions in the form of IF-THEN rules. He compares these methods to other `data-driven' methods that have been used, and cites other research that suggests that data-driven approaches are not very effective in practice. This is a cautionary tale that many times engineering methods to assist humans is not as effective as we would like to believe.
+
+\subsubsection{Summary}
+Currently, informally designed assurances fall into several different categories listed above. Many methods focus on informing the user how the model/logic works, there is also some concern about predicting future performance. However, this is a survey of many different disciplines, analogs for these methods have not been universally adopted, or even developed in some disciplines. Technical challenges exist that make designing assurances very difficult in some cases. Generally, having humans more involved (as in visualization, or human-involved learning) helps connect the representations/functionality more human-like and thus more trustworthy.

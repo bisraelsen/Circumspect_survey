@@ -1,4 +1,4 @@
-\subsection{Quadrant IV.}\label{sec:q4}
+\subsection{Quadrant IV. (Implicit Assurances, Informal Trust Treatment)}\label{sec:q4}
 This section provides our perspective on some of the research disciplines that are working on techniques that will be critical to designing effective assurances.
 
 \subsubsection{Validation and Verification}
@@ -12,8 +12,8 @@ This section provides our perspective on some of the research disciplines that a
 
     \citet{Hadfield-Menell2016-ws}, in considering an AI safety problem, address the problem of verifying that a robot can be turned off, even when it might have an objective function that indicates that disabling the `off-switch'will reduce the chance of failure. This kind of scenario, or something like it, can easily occur with a capable enough AIA, and a complex enough set of objectives that might result in unintended consequences. They propose that one objective would be for the robot to maximize value for the human, and to not assume that it know how to perfectly measure that value.
 
-\subsubsection{Safety and Learning under nonstationarity, risk averse} \textbf{this is very related to V\&V, but different in that there aren't necessarily formal proofs?}
-    While a fairly high-level treatment, \citet{Amodei2016-xi} are concerned with `AI safety', which is in essence how to make sure that there is no ``unintended and harmful behavior that [emerges] from machine learning systems''. Given the definition, much of the paper discusses concepts that are critical to AIA assurances. Among the more directly applicable topics in the scope of this paper are: safe exploration (how to learn in a safe manner), and robustness to distributional shift (a difference between training data and test data). They also discuss designing objective functions that are more appropriate. These areas are critical 
+\subsubsection{Safety and Learning under nonstationarity, risk averse}
+    While a fairly high-level treatment, \citet{Amodei2016-xi} are concerned with `AI safety', which is in essence how to make sure that there is no ``unintended and harmful behavior that [emerges] from machine learning systems''. Given the definition, much of the paper discusses concepts that are critical to AIA assurances. Among the more directly applicable topics in the scope of this paper are: safe exploration (how to learn in a safe manner), and robustness to distributional shift (a difference between training data and test data). They also discuss designing objective functions that are more appropriate.
 
     Generally stationary data is assumed in supervised ML. \citet{Sugiyama2013-ci} considers what to do when there is `covariate shift' (or when both training and test data change distribution, but their relation does not change between training and test phases), and `class-balance change' (where the class-prior probabilities are different in training and test phases, but the input distribution of each class does not change). They design and present tools that help diagnose and treat those conditions (this is follow on work for some of what is presented in \citet{Quinonero-Candela2009-fj} where they consider dataset shift). 
 
@@ -52,7 +52,7 @@ This section provides our perspective on some of the research disciplines that a
     \citet{Laskey1995-jp} investigated how to analyze the sensitivity of Bayesian networks, and \citet{Sinharay2006-yc} further investigated diagnostics for Bayesian networks.
 
 \subsubsection{Summary}
-    The literature surveyed in this section is \emph{not} exhaustive, nor could it reasonably ever claim to be. One thing that should be painfully clear is that every field where designers was to ensure reliable and correct application of an AIA, there will be assurances that are designed. The disciplines selected in this paper are a subset that are aligned with the author's interests in unmanned vehicles.
+    The literature surveyed in this section is \emph{not} exhaustive, nor could it reasonably ever claim to be. One thing that should be painfully clear is that every field where designers want to ensure reliable and correct application of an AIA, there will be assurances that are designed. The disciplines selected in this paper are a subset that are aligned with the author's interests in unmanned vehicles.
 
 % \subsubsection{Representation of Uncertainty}
 %
