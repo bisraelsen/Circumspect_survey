@@ -3,13 +3,12 @@
 What do people who talk about `comprehensible systems', `interpretable learning', `opaque systems', and `explainable AI' really care about? This paper tries to provide a more formal look at what components of a user's trust \edit{assurances for intelligent systems} would want to influence \edit{and how this can be practically accomplished by intelligent systems}. \nisarcomm{feels like more belongs here, specifically: an overview/summary of the main arguments and key takeaways from each of the following subsections in this section: a paragraph at this part should basically outline the skeleton of the key questions and ideas that the reader should be looking out for. Again, this can be written after the rest of the section itself is more solidified...}
 
 \subsection{Motivation}
-    Generally, humans have always wanted to trust the tools and systems that they create.  To this end many metrics and methods have been created to help assure the designers and users that the tools and systems are in fact capable of being applied in certain ways. \nisarcomm{and/or behave as expected; might also be worth mentioning here that `trust' is a fuzzy concept that will be defined more formally later on (help stave off lingering questions in reader's mind)}
+    Generally, humans have always wanted to trust the tools and systems that they create.  To this end many metrics and methods have been created to help assure the designers and users that the tools and systems are in fact capable of being applied in certain ways, and/or behave as expected. Of course, at this point `trust' is quite an imprecise term, and needs to be more formally defined; this will be done in section \ref{sec:trust}
 
-    The situation has grown more complicated in recent years because the advanced capabilities of the systems that \edit{being created} can at times be difficult for even those who designed them to comprehend and predict. \edit{There are, for instance,} systems that have been designed to learn from extremely large amounts of data and expected to regularly perform on never before seen data. In some cases, such systems have been designed to perform tasks that might take humans entire lifetimes to complete. 
+    The situation has grown more complicated in recent years because the advanced capabilities of the systems being created can at times be difficult for even those who designed them to comprehend and predict. There are, for instance, systems that have been designed to learn from extremely large amounts of data and expected to regularly perform on never before seen data. In some cases, such systems have been designed to perform tasks that might take humans entire lifetimes to complete. 
 
-    Below is a small sample of some \edit{application} %research 
-    areas that exist and a possible reason why they -- perhaps unknowingly -- have an interest in creating trustworthy systems.
-    \nisarcomm{the application areas below are mostly OK [may want to trim/combine some], but your explanations of why trust matters feel weak and undifferentiated from each other. You might need to say a bit more about the potential risks/consequences or dangers/pitfalls of placing improper trust in each case, or why it is not necessarily obvious in any given area that algorithms are to be trusted, e.g. if something is `optimally' trained, then how come we can't say already say that it is actually `the best'? Or how do the needs of one particular area specifically impose different demands on trust than other areas?}
+    Below is a small sample of some application areas that exist and a possible reason why they -- perhaps unknowingly -- have an interest in creating trustworthy systems.
+    
 	% \begin{sidewaysfigure}[htbp]
         % \includegraphics[width=7.5in]{Figures/WhoCares_cleaned}%
         % \caption{A diagram showing some of the academic disciplines that want to trust AIs more fully}
@@ -17,36 +16,53 @@ What do people who talk about `comprehensible systems', `interpretable learning'
     % \end{sidewaysfigure}
 %
     \begin{description}
-        \item [Interpretable Science:] Need to trust that the models created are valid, and be able to draw insights from them
-        \item [Reliable Machine Learning:] Need to have safety guarantees for AIAs that have been deployed in real-world environments
-        \item [Algorithms:] Need to trust how algorithms will perform on empirical data \nisarcomm{this is unclear -- clarify what this means; how is `algorithms' different than reliable ML or AI/ML?}
-        \item [AI/ML:] \nisarcomm{define acronyms} Interpret how/why theoretical models function, to be able to trust them to function properly \nisarcomm{still kind of vague, clarify or be more precise }
-        \item [Government:] Regulations on the interpretability of certain algorithms \nisarcomm{again very vague -- doesn't sound different from what you have above}
-        \item [Cognitive Assistance:] Need to trust and understand recommendations given by automated personal assistants
-        \item [Medicine:] Understand why data-driven models give predictions so that the predictions can be safely followed
-        \item [HCI:] Help humans and computers interact in a more natural way, this involves finding ways for humans to trust computers more fully \nisarcomm{this feels like a rather broad category: is cognitive assistance not a part of HCI? } 
+        \item [Interpretable Science:] Scientists need to be able to trust that the models created using data analysis, and be able to draw insights from them. Scientific discoveries cannot depend on methods that are not understood.
+        \item [Reliable Machine Learning:] It is critical to have safety guarantees for AIAs that have been deployed in real-world environments. Failing to do so can result in serious accidents that could cause loss of life, or significant damage.
+        \item [Artificial Intelligence/Machine Learning:] There is a need to interpret how and why theoretical AIA models function. This is due to the need to know they are being applied correctly, but also to be able to design new methods to overcome weaknesses in the existing methods.
+        \item [Government:] Governments are beginning to enforce regulations on the interpretability of certain algorithms in order to ensure that citizens can understand why many services make the decisions and predictions that they do. A specific example are the algorithms deployed by credit agencies to approve/reject loans.
+        \item [Medicine:] Medical professionals need to understand why data-driven models give predictions so that they can choose to follow the recommendations. While AIAs can be a very useful tool, ultimately doctors are liable for the decisions they make and treatments they administer.
+        \item [Cognitive Assistance:] Systems are being designed as aids for humans to make complex decisions, such as searching and assimilating information from databases of legal proceedings. When an AIA presents perspectives and conclusions as summaries of this data, it must be able to also present evidence and logic to justify them.
     \end{description}
 
-    Revisiting a key point from the introduction, humans want to design assurances to help them appropriately trust AIAs. There are a few research fields that have formally and explicitly considered trust between humans and technology. Some examples are: e-commerce, automation, and human-robot interaction. However, due to their main goals they have not focused on explicitly designed assurances that affect trust, rather they studied implicit properties of systems that affect human trust.
+    The interests of the author lie specifically in the design of unmanned vehicles that operate in concert with human operators in uncertain environments. In this setting, it is desirable for the unmanned vehicle to be able to communicate with a human in some way in order to help them properly use the vehicle. The hope is that, in doing so, the performance of the team can be improved by appropriately utilizing the strengths of both the human and unmanned vehicle.
 
-    Conversely, there are other research fields that have informally considered how to affect the trust of designers and users using explicitly designed assurances. \edit{However,} due to their informal treatment of trust, it is unknown and unclear how effective these designed assurances might be, \edit{or what principles ought to be considered when designing assurances for general AIAs}.
+    Revisiting a key point from the introduction, humans want to design assurances to help them appropriately trust AIAs. There are a few research fields that have formally and explicitly considered trust between humans and technology. Some examples are: e-commerce, automation, and human-robot interaction. However, due to their main goals they have mainly focused on implicit properties of the systems that affect trust.
+
+    Conversely, there are other research fields that have informally considered how to affect the trust of designers and users via explicitly designed assurances. However, due to their informal treatment of trust, it is unknown and unclear how effective these designed assurances might be, or what principles ought to be considered when designing assurances for general AIAs.
 
     \input{methodology.tex}
 
 \subsection{Related Work}
-    \citet{Lillard2016-yg} addressed the role of assurances in the relationship between humans and autonomous systems, \edit{and provides much of the foundation for describing the relationships between assurances and trust in human-AIA interaction}. 
-%    . This paper is clearly related. 
-Here, the assurance framework is presented in a way that is both more general and more detailed, albeit with the same end goal of being applied in a \edit{very similar end application}. \nisarcomm{BUT YOU NEVER SAY OR DEFINE/DESCRIBE WHAT THIS END APPLICATION IS!!!!! } 
-\edit{For instance}, instead of \edit{assuming} that the user-autonomy trust loop is very strict and well structured, and that user trust does not take into account the institutional component proposed by \citet{McKnight2001-fa}, we \edit{account for} the notion of institutional trust in  human-autonomy relationships. \nisarcomm{at this point, I think reader/audience will be a bit frustrated by your extremely loose and inconsistent use of `autonomy' vs. `AIA' in phrases like `human-autonomy relationships' -- I think you ought to pick one and stick with it consistently throughout. Otherwise, be more explicit and clear up front which kinds of human-AIA systems *you* actually care about moving forward (i.e. human-autonomous vehicle systems), and then take care to mention why you are looking at more general types of AIAs instead of just focusing on autonomous vehicles (this relates to the point (ii) above: autonomous systems are relatively new, and you are looking at other AIAs to get at the core principles and insights for design of assurances)}
+    \citet{Lillard2016-yg} addressed the role of assurances in the relationship between humans and AIAs, and provides much of the foundation for describing the relationships between assurances and trust in human-AIA interaction. Here, the assurance framework is presented in a way that is both more general and more detailed, albeit with the same end goal of being applied in a very similar end application. 
+    
+    For instance, instead of assuming that the user-AIA trust loop is very strict and well structured, and that user trust does not take into account the institutional component proposed by \citet{McKnight2001-fa}, we account for the notion of institutional trust in  human-AIA relationships.
 
-    Regarding the relationship with the work of \citet{McKnight2001-fa}, who made a typology of interpersonal trust,  we adopt the position that besides being applied to the e-commerce industry their trust model also applies to relationships between humans and AIAs (as in \citet{Lillard2016-yg}). However, here it is argued that assurances cannot directly have an affect on the user \edit(trust-related behaviors) TRBs \nisarcomm{avoid McGuire-ing here: DEFINE the acronym before using it -- don't assume that reader has seen it in the text -- some readers will skip past figure and thus not know what this means}. 
-    The premise is that no autonomy (or vendor) should be able to control the TRBs of a human.
+    Regarding the relationship with the work of \citet{McKnight2001-fa}, who constructed a typology of interpersonal trust,  we adopt the position that besides being applied to the e-commerce industry their trust model also applies to relationships between humans and AIAs (as in \citet{Lillard2016-yg}). However, here it is argued that assurances cannot directly have an affect on the user trust-related behaviors (TRBs) The premise is that no autonomy (or vendor) should be able to control the TRBs of a human.
 
     The contributions of this work are to illuminate the connection between general AIA capabilities and general user trust. To classify assurances. To suggest that TRBs need to be calibrated \emph{not} trust. \textbf{add more here} \nisarcomm{not sure what last sentence means??}
 
-\textbf{\nisarcomm{ would strongly recommend that you provide simple `operational' definitions for AIA, trust, assurances, TRBs at beginning (with a contextual/concrete example of each, say in the context of the road network application) and then explain methodology, and THEN dive into each component more as you have in different subsections -- rather than waiting until after describing your methodology to first define each term separately, and then providing in depth definition for each, without any contextual example at all to guide/frame the discussion. The methodology is hard to follow without having any kind of simple definition or understanding of why each component matters, and your readers won't really get where you're going with all of this.}}
+\subsection{Motivating Application and Basic Definitions}
+    Before continuing to the detailed definitions it is useful to have a concrete example on which we can refer for grounding examples. As previously mentioned the specific interests of the author lie in the design of unmanned vehicles that can work in cooperation with human operators.
 
-\textbf{add a couple paragraphs here to give an overview of the next sub-sections, and give some key take aways, ADD A MOTIVATING EXAMPLE... THEN CAN USE THAT FOR REFERENCE IN THE NEXT SUBSECTIONS}
+    Specifically, consider an unmanned ground vehicle (UGV) in a road network with unmanned ground sensors (UGSs). The road network also contains a pursuer that the UGV is trying to evade while exiting the road network. A human operator monitors and interfaces with the UGV during operation. The operator does not have a detailed knowledge of how the UGV functions or makes decisions, but can interrogate the system, modify the decision making stance (such as `aggressive' or `conservative'), and provide information and advice to the UGV. In this situation the operator could benefit from the UGVs ability to express confidence in its ability to escape given the current sensor information, and work with the operator to modify behavior if necessary.
+
+	\begin{figure}[htbp]
+    	\centering
+     	\includegraphics[width=0.4\textwidth]{Figures/RoadNet}
+    	\caption{Application example of unmanned ground vehicle (UGV) in a road network, trying to evade a pursuer. The UGV has access to unmanned ground sensors (UGSs) (also an a unmanned aerial system (UAS) that can be used as a mobile sensor), as well as information and decision making advice from a non-expert human operator. The operator's actions towards the UGV and trust-based.}
+        \label{fig:RoadNet}
+    \end{figure}
+
+    In this scenario trust-cycle terms can be defined as follows:
+
+    \begin{description}
+        \item [Artificially Intelligent Agent:] The UGV
+        \item [Trust:] The operator's willingness to rely on the UGV when the outcome of the mission is at stake
+        \item [Trust-Related Behaviors:] The operator's behaviors towards the UGV, including the information provided, and the commands given
+        \item [Assurances:] Implicit and explicit communication from the UGV that has an effect on the operator's trust
+    \end{description}
+
+    The following sections will discuss each of the above terms in more detail, and provide more formal and general definitions.
 
 \input{aias.tex}
 \input{trust.tex}
