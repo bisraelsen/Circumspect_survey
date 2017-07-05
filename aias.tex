@@ -26,7 +26,7 @@
         \item[Artificially Intelligent Agent:] an agent that acts on a goal (internally or externally generated), and possess, to some extent, at least one of the capabilities shown in figure \ref{fig:AIcapabilities}.
     \end{description}
 
-    Of course, with such a broad definition, there will also be a broad range of different AIAs. It is argued here that it is most useful to classify that range along two axes: capability, and adaptability. The term capability refers to the scope of possible application of the AIA: does it have a certain specific application, or can it be used in many different applications? In the AI community Low capability has been termed `narrow' and high capability has been termed `broad'. Adaptability refers to the ability of the AIA to improve over time. Low adaptability has been termed `weak' and high adaptability `strong'. Figure \ref{fig:StrongWeak} is a depiction of these two axes, and where some typical AIAs might fall in that space.
+    Of course, with such a broad definition, there will also be a broad range of different AIAs. It is argued here that it is most useful to classify that range along two axes: capability, and adaptability. The term capability refers to the scope of possible application of the AIA: does it have a certain specific application, or can it be used in many different applications? In the AI community Low capability has been termed `narrow' and high capability has been termed `broad'. Adaptability refers to the ability of the AIA to improve over time \nisarcomm{Improve what, exactly? Might be worth specifying a bit more here about how learning algorithms play a strong role in characterizing AIAs nowadays, to ground this a bit more}. Low adaptability has been termed `weak' and high adaptability `strong'. Figure \ref{fig:StrongWeak} is a depiction of these two axes, and where some typical AIAs might fall in that space.
 
 	\begin{figure}[htbp]
     	\centering
@@ -35,7 +35,7 @@
         \label{fig:StrongWeak}
     \end{figure}
 
-    To make sure the point is clear, the research discipline called machine learning (ML) is a subset of the AI research landscape. Individual ML algorithms might be thought of as being a narrowly scoped AI that is contained within only one of the AIA capabilities. As some examples, consider the following systems and the capabilities that they possess.
+  Arguably we might just use the term artificial intelligence (AI) instead of AIA, however the term AI carries too much ambiguity (in its fullest meaning it would possess all capabilities from figure \ref{fig:AIcapabilities}, and more). Using AIA allows the broad inclusion \emph{any} system in the adaptability/capability plane. Figure \ref{fig:StrongWeak} shows some examples of AIAs and their places on the plane. To make sure the point is clear, the research discipline called machine learning (ML) is a subset of the AI research landscape. Individual ML algorithms might be thought of as being a narrowly scoped AI that is contained within only one of the AIA capabilities. As some examples, consider the following systems and the capabilities that they possess.
 
     \begin{enumerate}
          \item An autonomous bottle capping machine might \textbf{perceive} bottles, and \textbf{move} mechanical parts to place caps on them
@@ -43,8 +43,6 @@
          \item A virtual personal assistant might be capable of \textbf{interacting} with a user, \textbf{learning} the user's preferences, and \textbf{reasoning} about what assistance the user needs
          \item An image classifier might possess the capability to \textbf{learn} image classes from labeled examples and predict the class of never-before-seen new images.
      \end{enumerate}
-
-    Arguably we might just use the term artificial intelligence (AI) instead of AIA, however the term AI carries too much ambiguity (in its fullest meaning it would possess all capabilities from figure \ref{fig:AIcapabilities}, and more). Using AIA allows the broad inclusion \emph{any} system in the adaptability/capability plane. Figure \ref{fig:StrongWeak} shows some examples of AIAs and their places on the plane.
 
     One might also question the need to define AIAs in the first place. This is to aid in the search for and understanding of assurances. As will be shown later, different assurances are found over the entire range of AIAs, so that an automation system such as a bottle capping machine might be able to use similar assurances -- or more generally, similar principles of assurance -- as might a self-driving car, and vice-versa.
 
