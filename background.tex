@@ -1,8 +1,10 @@
 \section{Background and Motivation} \label{sec:background}
 
-What do people who talk about `comprehensible systems', `interpretable learning', `opaque systems', and `explainable AI' really care about? This paper tries to provide a more formal look at what components of a user's trust \edit{assurances for intelligent systems} would want to influence \edit{and how this can be practically accomplished by intelligent systems}. \nisarcomm{feels like more belongs here, specifically: an overview/summary of the main arguments and key takeaways from each of the following subsections in this section: a paragraph at this part should basically outline the skeleton of the key questions and ideas that the reader should be looking out for. Again, this can be written after the rest of the section itself is more solidified...}
+What do people who talk about `comprehensible systems', `interpretable learning', `opaque systems', and `explainable AI' really care about? This paper tries to provide a more formal look at what components of a user's trust assurances for intelligent systems would want to influence and how this can be practically accomplished by intelligent systems.
 
-\subsection{Motivation}
+Motivations and a grounding application are presented is sections \ref{sec:motivation} and \ref{sec:mot_example}, along with some application-specific definitions of the trust-cycle terms. A discussion of related work is in section \ref{sec:rel_work}. Assurances are presented and defined in section \ref{sec:assurances}.  Section \ref{sec:aias} defines the term AIA in a general sense, and how they relate to assurances. Section \ref{sec:trust} discusses trust, and provides a model of human-AIA trust that can be used in designing assurances. Finally, section \ref{sec:trbs} discusses trust-related behaviors and how they should be considered when designing assurances.
+
+\subsection{Motivation} \label{sec:motivation}
     Generally, humans have always wanted to trust the tools and systems that they create.  To this end many metrics and methods have been created to help assure the designers and users that the tools and systems are in fact capable of being applied in certain ways, and/or behave as expected. Of course, at this point `trust' is quite an imprecise term, and needs to be more formally defined; this will be done in section \ref{sec:trust}
 
     The situation has grown more complicated in recent years because the advanced capabilities of the systems being created can at times be difficult for even those who designed them to comprehend and predict. There are, for instance, systems that have been designed to learn from extremely large amounts of data and expected to regularly perform on never before seen data. In some cases, such systems have been designed to perform tasks that might take humans entire lifetimes to complete. 
@@ -30,30 +32,19 @@ What do people who talk about `comprehensible systems', `interpretable learning'
 
     Conversely, there are other research fields that have informally considered how to affect the trust of designers and users via explicitly designed assurances. However, due to their informal treatment of trust, it is unknown and unclear how effective these designed assurances might be, or what principles ought to be considered when designing assurances for general AIAs.
 
-    \input{methodology.tex}
-
-\subsection{Related Work}
-    \citet{Lillard2016-yg} addressed the role of assurances in the relationship between humans and AIAs, and provides much of the foundation for describing the relationships between assurances and trust in human-AIA interaction. Here, the assurance framework is presented in a way that is both more general and more detailed, albeit with the same end goal of being applied in a very similar end application. 
-    
-    For instance, instead of assuming that the user-AIA trust loop is very strict and well structured, and that user trust does not take into account the institutional component proposed by \citet{McKnight2001-fa}, we account for the notion of institutional trust in  human-AIA relationships.
-
-    Regarding the relationship with the work of \citet{McKnight2001-fa}, who constructed a typology of interpersonal trust,  we adopt the position that besides being applied to the e-commerce industry their trust model also applies to relationships between humans and AIAs (as in \citet{Lillard2016-yg}). However, here it is argued that assurances cannot directly have an affect on the user trust-related behaviors (TRBs) The premise is that no autonomy (or vendor) should be able to control the TRBs of a human.
-
-    The contributions of this work are to illuminate the connection between general AIA capabilities and general user trust. To classify assurances. To suggest that TRBs need to be calibrated \emph{not} trust. \textbf{add more here} \nisarcomm{not sure what last sentence means??}
-
-\subsection{Motivating Application and Basic Definitions}
-    Before continuing to the detailed definitions it is useful to have a concrete example on which we can refer for grounding examples. As previously mentioned the specific interests of the author lie in the design of unmanned vehicles that can work in cooperation with human operators.
+\subsection{Motivating Application and Basic Definitions} \label{sec:mot_example}
+    It is useful to have a concrete example on which we can refer for grounding examples. As previously mentioned the specific interests of the author lie in the design of unmanned vehicles that can work in cooperation with human operators.
 
     Specifically, consider an unmanned ground vehicle (UGV) in a road network with unmanned ground sensors (UGSs). The road network also contains a pursuer that the UGV is trying to evade while exiting the road network. A human operator monitors and interfaces with the UGV during operation. The operator does not have a detailed knowledge of how the UGV functions or makes decisions, but can interrogate the system, modify the decision making stance (such as `aggressive' or `conservative'), and provide information and advice to the UGV. In this situation the operator could benefit from the UGVs ability to express confidence in its ability to escape given the current sensor information, and work with the operator to modify behavior if necessary.
 
 	\begin{figure}[htbp]
     	\centering
      	\includegraphics[width=0.4\textwidth]{Figures/RoadNet}
-    	\caption{Application example of unmanned ground vehicle (UGV) in a road network, trying to evade a pursuer. The UGV has access to unmanned ground sensors (UGSs) (also an a unmanned aerial system (UAS) that can be used as a mobile sensor), as well as information and decision making advice from a non-expert human operator. The operator's actions towards the UGV and trust-based.}
+    	\caption{Application example of unmanned ground vehicle (UGV) in a road network, trying to evade a pursuer. The UGV has access to unmanned ground sensors (UGSs) (also an unmanned aerial vehicle (UAV) that can be used as a mobile sensor), as well as information and decision making advice from a non-expert human operator. The operator's actions towards the UGV and trust-based.}
         \label{fig:RoadNet}
     \end{figure}
 
-    In this scenario trust-cycle terms can be defined as follows:
+    In this scenario the trust-cycle terms can be simply defined as follows:
 
     \begin{description}
         \item [Artificially Intelligent Agent:] The UGV
@@ -62,9 +53,14 @@ What do people who talk about `comprehensible systems', `interpretable learning'
         \item [Assurances:] Implicit and explicit communication from the UGV that has an effect on the operator's trust
     \end{description}
 
-    The following sections will discuss each of the above terms in more detail, and provide more formal and general definitions.
+\subsection{Related Work}\label{sec:rel_work}
+    \citet{Lillard2016-yg} addressed the role of assurances in the relationship between humans and AIAs, and provides much of the foundation for describing the relationships between assurances and trust in human-AIA interaction. Here, the assurance framework is presented in a way that is both more general and more detailed, albeit with the same end goal of being applied in a very similar end application. 
+    
+    For instance, instead of assuming that the user-AIA trust loop is very strict and well structured, and that user trust does not take into account the institutional component proposed by \citet{McKnight2001-fa}, we account for the notion of institutional trust in  human-AIA relationships.
 
+    Regarding the relationship with the work of \citet{McKnight2001-fa}, who constructed a typology of interpersonal trust,  we adopt the position that besides being applied to the e-commerce industry their trust model also applies to relationships between humans and AIAs (as in \citet{Lillard2016-yg}). However, here it is argued that assurances cannot directly have an affect on the user trust-related behaviors (TRBs). The premise is that no autonomy (or vendor) should be able to control the TRBs of a human.
+
+\input{assurances.tex}
 \input{aias.tex}
 \input{trust.tex}
 \input{trbs.tex}
-\input{assurances.tex}
