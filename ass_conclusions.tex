@@ -1,12 +1,18 @@
-\subsection{A Refined Perspective On Assurances} \label{sec:assurances_refined}
-Given the body of literature surveyed, assurances will now be classified in the following subsections.
 \input{ass_ei.tex}
-\input{ass_st.tex}
 \input{ass_cc.tex}
+\input{ass_st.tex}
 \input{ass_tt.tex}
 
 \subsubsection{The Imprecise Nature of Assurances}\label{sec:imprecise}
     Due to the nature of trust (and humans in general), a single assurance might be targeted at influencing the competence dimension of trust, but it may also have effects on other dimensions. As an example an assurance aimed at influencing predictability may also have an affect on the probability of depending.
 
     Besides being difficult to separate effects on a single user, individual users are different as well. Thus no assurance will have an identical effect when given to two separate users. This makes it difficult to have precise effects on user trust behaviors.
-\nisarcomm{elaborate a bit more...might be worth giving specific examples...what are the implications and big open questions/opportunities?}
+
+    \begin{enumerate}
+        \item An AIA gives a `planning-predictability' assurance, and due to the increased interpretability the user also believes the AIA to be more competent
+        \item An AIA gives a `learning-competence' assurance (i.e. a test accuracy of a calssifier), and the user believes that the AIA is also more predictable because it has high competence
+    \end{enumerate}
+
+    These simple examples highlight the fact that different users can have multiple trust dimensions affected by an assurance even though that assurance was only targeted at one dimension of trust. This is important to understand because there can't be expectations that working with human users is going to be a very precise science.
+
+    There are probably ways of communicating assurances that are more precise than others, such as displaying a probability distribution rather than on a maximum likelihood. This gets into some considerations about how the presentation of information affects the ability of a human to understand.
