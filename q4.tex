@@ -17,7 +17,6 @@ This section provides our perspective on some of the research disciplines that a
     Generally, stationary data (data whose distribution does not change after training) is assumed in supervised ML. \citet{Sugiyama2013-ci} considers what to do when there is `covariate shift' (or when both training and test data change distribution, but their relation does not change between training and test phases), and `class-balance change' (where the class-prior probabilities are different in training and test phases, but the input distribution of each class does not change). They design and present tools that help diagnose and treat those conditions (this is follow on work for some of what is presented in \citet{Quinonero-Candela2009-fj} where they consider dataset shift). A key approach is to use importance sampling, which involves weighting the training loss by the ration between the probability of the test data and that of the training data.
 
     \citet{Hadfield-Menell2016-ws}, in considering an AI safety problem, address the problem of verifying that a robot can be turned off, even when it might have an objective function that indicates that disabling the `off-switch' will reduce the chance of failure. This kind of scenario, or something similar, can easily occur with a sufficiently sophisticated and capable AIA, and a complex enough set of objectives that might result in unintended consequences. They propose that one objective would be for the robot to maximize value for the human, and to not assume that it knows how to perfectly measure that value. 
-    % \nisarcomm{note that some of Anca Dragan's recent work with Pieter Abeel and Stuart Russell also looks at this from the inverse reinforcement learning viewpoint...but they do not consider formal V\&V}
 
     \citet{Da_Veiga2012-gh} discuss a form of safety where they are concerned with nonparametric classification and regression with constraints. More specifically, they are concerned about learning Gaussian process (GP) models with inequality constraints, and present a method to do this by using conditional expectations of the truncated multivariate normal distribution (or Tallis formulas). This is not the only work that references learning with constrained GPs. It is also not the only work that considers constrained modeling, but it would take too long to review all of those papers. The main claim here is that constrained models are a way to guarantee the properties of a model within some specifications.
 
@@ -48,30 +47,11 @@ This section provides our perspective on some of the research disciplines that a
     
     One of the main limitations is that these are supervised learning methods that, according to \cite{Leyton-Brown2009-yr} require a lot of data to train properly, training data is not always easily available to some AIAs. Although, using GPs like \cite{Hutter2006-ak} should allow active (i.e. data efficient) learning of the EHMs.
 
-% \subsubsection{Model checking}
-% \nisarcomm{is this section kind not similar to the other model checking section from earlier?? Also feels a bit empty -- listing of papers, but no insights/connecting ideas?}
-% Many AIAs are dependent on models. To that end checking the model, and having some metric of uncertainty in its validity, is critical in being able to assure a human user of the competence and predictability of the system.
-    %
-    % Research for goodness-of-fit metrics for Bayesian models has been fairly popular as found in \citet{Dannemann2008-ch,Johnson2004-mv,Yuan2012-tb} and \citet{Spiegelhalter2002-ia}.
-%
-    % \cite{MacKay_Altman2004-fl} also present methods for assessing the goodness of fit of Hidden-Markov models. Later, \citet{Titman2008-ct,Titman2012-zw,Titman2010-qx} continued that investigated more methods for Markov, Hidden-Markov, and multi-state models, and try to make more principled formal approaches.
-%
-    %
-    % \citet{Laskey1995-jp} investigated how to analyze the sensitivity of Bayesian networks, and \citet{Sinharay2006-yc} further investigated diagnostics for Bayesian networks.
-
 \subsubsection{Summary}
-    The literature surveyed in this section is \emph{not} exhaustive, nor could it reasonably ever claim to be. One thing that should be painfully clear is that every field where designers want to ensure reliable and correct application of an AIA, there will be assurances that are designed. The disciplines selected in this paper are a subset that are aligned with the author's interests in unmanned vehicles.
+    The literature surveyed in this section is \emph{not} exhaustive, nor could it reasonably ever claim to be. One thing that should be painfully clear is that in every field where designers want to ensure reliable and correct application of an AIA, there will be assurances that are designed. The disciplines selected in this paper are a subset that are aligned with the author's interests in unmanned vehicles.
     
     Specifically we see that V\&V offers great promise for assurances in human-AIA trust relationships. Having an AIA that is validated (and somehow communicating this to users) should affect their competence trust dimension, although this would need to be verified. Of course, as specifications break down the AIA would need to be able to give appropriate assurances to the human in that situation as well. Similar reasoning leads to the benefits about the literature that considers safety and learning under uncertainty, AIAs designed with these methods will be more predictable and competent in a wider variety of situations.
 
     Active learning involves the AIA being able to quantify uncertainty in its own model, and then selecting new experiences to reduce that uncertainty. These types of algorithms are precursors for giving assurances related to certain AIA capabilities. Making better representations and features can in turn make models more readily interpretable by humans. Although there can be a trade-off between accuracy and interpretability several studies have shown that learning with expert added structure both improves interpretability, while only losing a little interpretability. However, that comes at the cost of needing to design said features and representations.
 
     Finally, making models like EHMs that can predict empirical performance can be useful in situations where AIAs encounter unknown environments. For example, given an environment with these features the AIA should be able to perform at this level. 
-
-
-
-% \subsubsection{Representation of Uncertainty}
-%
-    % \citet{Costa2012-fa} and \citet{Laskey2015-gz} address how to represent uncertainty in modeling so that it isn't lost in operations like information fusion. The proprose a framework called the Uncertainty Representation and Reasoning Evaluation Framework (URREF), and suggest that it provides guidance in defining
-
-% \subsubsection{Not sure} , \citet{Gutfreund2016-xe} (constructs automatic arguments, perhaps similar to counter-planning?), \citet{Charif2013-vo} (agents cooperate based on abilities to accomplish goal)

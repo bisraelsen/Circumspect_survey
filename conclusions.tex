@@ -1,20 +1,23 @@
 \section{Discussion}\label{sec:discussion} 
-    From the review of Quadrants I. through IV. of the formal/informal, explicit/implicit plane (see figure \ref{fig:trust_assurance_intention} several categories for assurances present themselves, and they can be described in a more refined manner.
+    From the review of Quadrants I. through IV. of the formal/informal, explicit/implicit plane (see figure \ref{fig:trust_assurance_intention}), several categories for assurances present themselves, and assurances can be described in a more comprehensive manner.
 
     \input{ass_conclusions.tex}
+    \input{distrust.tex}
 
 \section{Conclusions}\label{sec:conclusions}
-\nisarcomm{I will deliberately hold off from commenting here in too much detail at this juncture, to give you the opportunity to make revisions here until after the other edits above are made... But I will caution that an important thing to state here (especially during your presentation) is what was actually learned, i.e. what are the major points that you came away with after this survey that you weren't aware of before? (recall Dale's question to Matt at end of his MS talk, i.e. what are the actual conclusions? Note that conclusions can also include pointers/statements of open questions and opportunities, e.g. 'An important conclusion is that blah blah blah is still an open problem, even though much work in specific cases of blah blah has been proposed...')}
-
     Now, more than ever, there is a great need for humans to be able to trust the AIAs that we are creating. Assurances are the method by which AIAs can encourage humans to trust them appropriately, and to then use them appropriately. We have presented here a definition, case for, and survey of assurances in the context of human-AIA trust relationships. These assurances have been classified according to different properties.
     
-    The survey was performed from a standpoint of designing an unmanned ground vehicle that is working in concert with a human supervisor. However, the theoretical framework, and classification of assurances is meant to be general in order to apply to a broad range of AIAs.
+    The survey was performed, to some extent, from a standpoint of designing an unmanned ground vehicle that is working in concert with a human supervisor. However, the theoretical framework, and classification of assurances is meant to be general in order to apply to a broad range of AIAs.
+
+    While the basic definition of assurances (i.e. feedback to user trust, in the human-AIA trust cycle) is simple from a theoretical standpoint, the exercise of gathering related literature helped to illuminate some important considerations and details regarding the design of assurances. These include the observations that assurances can be implicit or explicit, component or composite, tutoring or telling, and that they can be classified by their source AIA capability and target user trust dimension.
 
     We propose that, when possible, TRBs should be calibrated instead of trust. This is due to the nature of subjective surveys and human psychology, which is that a human might rate their trust higher, but act no differently (as discussed in \cite{Dzindolet2003-ts}). 
 
-    Generally opportunities for future research include performing experiments to test methods from \hyperref{Quadrant III.}{sec:q3} and identifying their effects. Furthermore, the fields of Validation and Verification, Representation Learning, Active Learning, Safety, Empirical Performance Prediction, and Model checking seem to be ripe for use in explicit assurances.
+    From the survey we learned that much of the formal research has focused on implicit properties of AIAs, which were not designed to affect trust, but that are a property of the AIA itself. We learn that trust can be measured by user's actions, which we call TRBs, or by self-reported measures in the form of questionnaires. Due to the inherent differences between people, TRBs are the more quantitative way to measure the effects of assurances, in some sense an AIA should care more about appropriate TRBs than appropriate trust as measuring trust is quite subjective.
 
-    \input{distrust.tex}
+    There is sometimes an understanding that AIAs should be more `human-like' to be more trustworthy, but we have seen that explicit assurances can use simulated attributes of a human to improve and degrade the user TRBs (adding human-like motions makes an AIA more trustworthy in a working scenario, while adding human-like reaction times in a coin entrustment game reduces trustworthiness). It is common, in order to have more interpretable models, to use a simple global model, and a more complex local model when accuracy is needed. There are many different situations in which assurances must be used (i.e. make models, evidence, or reasoning more predictable, or to show competence, or to display or communicate assurances in certain ways), and so there will never be a single perfect assurance that performs the best in all situations.
+
+    There is a fairly large body of research that is focused, in some way, on influencing trust in human-AIA relationships. However, there is probably a larger portion of research that deals with techniques that would be useful in designing assurances, but that has not directly or consciously considered trust as a formal design goal. Research from these areas (such as V\&V, active learning, and safety) should provide a rich collection of methods to be studied and formally applied to human-AIA trust relationships.
 
 \newpage
 
