@@ -1,11 +1,11 @@
 \section{Background and Motivation} \label{sec:background}
 
-What do people who talk about `comprehensible systems', `interpretable learning', `opaque systems', and `explainable AI' really care about? This paper provides a formal comprehensive look at what components of a user's trust assurances for intelligent systems would want to influence, and how this can be practically accomplished by intelligent systems.
+What do people who talk about `comprehensible systems', `interpretable learning', `opaque systems', and `explainable AI' really care about? This document investigates, in a formal and comprehensive manner, which dimensions of a user's trust should be influenced by the assurances of an AIA, as well as how this might be practically accomplished.
 
 Motivations and a grounding application are presented is sections \ref{sec:motivation} and \ref{sec:mot_example}, along with some application-specific definitions of the trust-cycle terms. A discussion of related work is in section \ref{sec:rel_work}. Assurances are presented and defined in section \ref{sec:assurances}.  Section \ref{sec:aias} defines the term AIA in a general sense, and how they relate to assurances. Section \ref{sec:trust} discusses trust, and provides a model of human-AIA trust that can be used in designing assurances. Finally, section \ref{sec:trbs} discusses trust-related behaviors and how they should be considered when designing assurances.
 
 \subsection{Motivation} \label{sec:motivation}
-    Generally, humans have always wanted to trust the tools and systems that they create.  To this end many metrics and methods have been created to help assure the designers and users that the tools and systems are in fact capable of being applied in certain ways, and/or will behave as expected. Of course, at this point `trust' is quite an imprecise term, and needs to be more formally defined; this will be done in section \ref{sec:trust}
+    Generally, humans have always wanted to trust the tools and systems that they create.  To this end many metrics and methods have been created to help assure the designers and users that the tools and systems are in fact capable of being applied in certain ways, and/or will behave as expected. Of course, at this point in the document `trust' is quite an imprecise term, and needs to be more formally defined; this will be done in section \ref{sec:trust}
 
     The situation has grown more complicated in recent years because the advanced capabilities of the systems being created can at times be difficult for even those who designed them to comprehend and predict. There are, for instance, systems that have been designed to learn from extremely large amounts of data and expected to regularly perform on never before seen data. In some cases, such systems have been designed to perform tasks that might take humans entire lifetimes to complete. Below is a small sample of some application areas that exist and a possible reason why they -- perhaps unknowingly -- have an interest in creating trustworthy systems.
 
@@ -38,7 +38,7 @@ Motivations and a grounding application are presented is sections \ref{sec:motiv
 
     \begin{description}
         \item [Artificially Intelligent Agent:] The UGV, this problem is difficult because the pursuer is only observed sporadically, and does not follow a known course. The UGV must make decisions under uncertainty, with little information. 
-        \item [Trust:] The operator's willingness to rely on the UGV when the outcome of the mission is at stake, such as in a scenario where the UGV is carrying a valuable payload.
+        \item [Trust:] The operator's willingness to rely on the UGV when the outcome of the mission is at stake, such as in a scenario where the UGV is carrying a valuable payload that might be.
         \item [Trust-Related Behaviors:] The operator's behaviors towards the UGV, including the information provided, and the commands given. This might take the form of approving/rejecting the UGV plan upfront, or the possibility of involving real-time communication and adjustments to new information that the operator receives.
         \item [Assurances:] Implicit and explicit communication from the UGV that has an effect on the operator's trust. An assurance might be in the form of communicating the probability of success for a given plan, or communicating that the mission is not proceeding as expected.
     \end{description}
