@@ -12,6 +12,20 @@
 \usepackage{booktabs} % For formal tables
 \usepackage[ruled]{algorithm2e} % For algorithms
 \usepackage{subcaption}
+\usepackage[printwatermark]{xwatermark}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\newsavebox\mybox
+\savebox\mybox{\tikz[color=red,opacity=0.3]\node{WORKING DRAFT};}
+\newwatermark*[
+  allpages,
+  angle=45,
+  scale=6,
+  xpos=-35,
+  ypos=30
+]{\usebox\mybox}
 
 % Metadata Information
 \acmJournal{CSUR}
@@ -47,7 +61,7 @@
 \begin{document}
 % Title portion
 \title{``I can assure you [\ldots] that it's going to be all right''} 
- \titlenote{HAL 9000, 2001 A Space Odyssey, full quote: ``I know everything hasn't been quite right with me, but I can assure you now, very confidently, that it's going to be all right again. %...  I know I've made some very poor decisions recently, but I can give you my complete assurance that my work will be back to normal. I've still got the greatest enthusiasm and confidence in the mission. And I want to help you.''
+ \titlenote{HAL 9000, 2001 A Space Odyssey, full quote: ``I know everything hasn't been quite right with me, but I can assure you now, very confidently, that it's going to be all right again.
  }
  \subtitle{A definition, case for, and survey of algorithmic assurances in human-autonomy trust relationships}
  % \subtitlenote{Subtitle note}
@@ -69,7 +83,7 @@
     }
 
 \begin{abstract}
-    As technology become more advanced, those who design, use and are otherwise affected by it want to know that it will perform correctly, and understand why it does what it does, and how to use it appropriately. In essence they want to be able to \emph{trust} the systems that are being designed. In this survey we present \emph{assurances} that are the method by which users can understand how to trust this technology. Trust between humans and autonomy is reviewed, and the implications for the design of assurances are highlighted. A survey of research that has been performed with respect to assurances is performed, and several key ideas are extracted in order to refine the definition of assurances. Several directions for future research are identified and discussed.
+    As technology become more advanced, those who design, use and are otherwise affected by it want to know that it will perform correctly, and understand why it does what it does, and how to use it appropriately. In essence they want to be able to \emph{trust} the systems that are being designed. In this survey we present \emph{assurances} that are the method by which users can understand how to trust this technology. Trust between humans and autonomy is reviewed, and the implications for the design of assurances are highlighted. A survey of existing research regarding assurances is presented, and several key ideas are extracted in order to refine the definition of assurances. Several directions for future research are identified and discussed.
 \end{abstract}
 
 
@@ -133,6 +147,7 @@
 \input{intro.tex}
 \input{background.tex}
 \input{survey.tex}
+\input{synthesis.tex}
 \input{conclusions.tex}
 
 \bibliographystyle{ACM-Reference-Format}
