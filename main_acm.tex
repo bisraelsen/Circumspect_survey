@@ -1,6 +1,6 @@
 \listfiles
 \RequirePackage{rotating}
-\documentclass[manuscript, review, screen]{acmart}
+\documentclass[manuscript, screen]{acmart}
 
 % bibliography
 % using biblatex isn't very smart because journals are pretty picky. Instead use the default natbib package
@@ -20,13 +20,13 @@
 
 \newsavebox\mybox
 \savebox\mybox{\tikz[color=red,opacity=0.3]\node{WORKING DRAFT};}
-\newwatermark*[
-  allpages,
-  angle=45,
-  scale=6,
-  xpos=-35,
-  ypos=30
-]{\usebox\mybox}
+% \newwatermark*[
+  % allpages,
+  % angle=45,
+  % scale=6,
+  % xpos=-35,
+  % ypos=30
+% ]{\usebox\mybox}
 
 % Metadata Information
 \acmJournal{CSUR}
