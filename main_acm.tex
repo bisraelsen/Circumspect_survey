@@ -1,6 +1,8 @@
 \listfiles
 \RequirePackage{rotating}
-\documentclass[format=acmsmall, screen]{acmart}
+\documentclass[format=manuscript]{acmart}
+% \documentclass[format=manuscript, screen,review=true]{acmart}
+% \documentclass[format=acmsmall, screen]{acmart}
 
 % bibliography
 % using biblatex isn't very smart because journals are pretty picky. Instead use the default natbib package
@@ -58,6 +60,8 @@
 \newcommand{\edit}[1]{{\color{blue} #1}}
 \newcommand{\hlr}[1]{{\color{red} #1}}
 
+\received{October 2017}
+
 % Document starts
 \begin{document}
 % Title portion
@@ -70,33 +74,33 @@
     \authornote{The corresponding author}
     \orcid{0000-0003-1602-1685}
     \email{brett.israelsen@colorado.edu}
-    \affiliation{%
-        \institution{University of Colorado, Boulder}
-        \institution{Department of Computer Science}
-        \city{Boulder}
-        \country{USA}
-    }
-    \affiliation{%
-        \institution{RECUV}
-    }
-    \affiliation{%
-        \institution{C-UAS}
-    }
+    % \affiliation{%
+        % \institution{University of Colorado, Boulder}
+        % \department{Department of Computer Science}
+        % \city{Boulder}
+        % \state{CO}
+        % \country{USA}
+    % }
+    % \affiliation{%
+        % \institution{RECUV}
+    % }
+    % \affiliation{%
+        % \institution{C-UAS}
+    % }
 \author{Nisar Ahmed}
-    % \authornote{The corresponding author}
-    % \orcid{0000-0003-1602-1685}
     \email{nisar.ahmed@colorado.edu}
     \affiliation{%
-        \institution{University of Colorado, Boulder}
-        \institution{Ann and H.J. Smead Aerospace Engineering Sciences}
+        \institution{University of Colorado Boulder}
+        % \department{Ann and H.J. Smead Aerospace Engineering Sciences}
         \city{Boulder}
+        \state{CO}
         \country{USA}
     }
     \affiliation{%
-        \institution{RECUV}
+        \institution{\href{http://www.colorado.edu/recuv/}{Research and Engineering Center for Unmanned Vehicles (RECUV)}}
     }
     \affiliation{%
-        \institution{C-UAS}
+        \institution{\href{https://c-uas.org/}{Center for Unmanned Aircraft Systems (C-UAS)}}
     }
 
 \begin{abstract}
