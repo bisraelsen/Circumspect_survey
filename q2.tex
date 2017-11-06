@@ -13,7 +13,7 @@ The interpretation of commands component is meant to quantify how well the objec
 Finally, past performance is meant to add in empirical experience from past missions, in order to make up for theoretical oversights and account for learning-based processes. 
 Self-confidence is reported as a single value between $-1$ (complete lack of confidence in achieving mission objectives) and $1$ (complete confidence in achieving mission objectives); a self-confidence value of $0$ reflects total uncertainty. 
 Each of the component assurances could be useful on its own, but the composite `sum' of the factors is meant to distill the information from the five different areas, so that a (possibly novice) user can quickly and easily evaluate the ability of the AIA to perform in a given situation. 
-Currently, only one of the five algorithms (Expected Outcome Assessment) has been developed quantitatively, but there is continuing work on the other metrics and perform human experiments to validate the usefulness of the self-confidence metrics in AIA applications. Other approaches for computing and communicating machine self-confidence have also been proposed for more specific AIA applications \cite{Hutchins2015-if, Kaipa2015-hy, Zagorecki2015-qy, Kuter2015-qh}. 
+Currently, only one of the five metrics (Expected Outcome Assessment) has been developed quantitatively, but there is continuing work on the other metrics and perform human experiments to validate the usefulness of the self-confidence metrics for AIAs. Other approaches for computing and communicating AIA self-confidence have also been proposed for more specific applications \cite{Hutchins2015-if, Kaipa2015-hy, Zagorecki2015-qy, Kuter2015-qh}. 
 
 Related to the idea of machine introspection and self-confidence, another important line of work is the detection of and correction of appropriate (and inappropriate) uses of AIAs \cite{Muir1994-ow,Kaniarasu2013-ho}. 
 \citet{Kaniarasu2013-ho} examined whether or not misuse and disuse (user over-/under-trust, in their terminology) can be detected and then calibrated to be within the AIA's competency boundaries. 
@@ -31,7 +31,7 @@ Along similar lines, \citet{Chadalavada2015-wx} experimentally showed the effect
 These works provide strong support for `natural communication' assurances aimed at predictability. 
 
 It is also natural for humans to explicitly explain their reasoning, decisions, and actions when interacting with other humans. 
-\citet{Wang2016-id} explore this idea in an experiment where a human and robot investigate a town, where the robot could detect potentially dangerous phenomena and recommend that the human wear protective gear if it sensed danger. 
+\citet{Wang2016-id} explore this idea in an experiment where a human and robot investigate an urban environment, where the robot could detect potentially dangerous phenomena and recommend that the human wear protective gear if it sensed danger. 
 However, the human could choose to not accept the recommendation based on their trust in the robot and their desire to avoid the delays associated with donning the protective gear. 
 The robot provided explanations for its recommendations, and reported its ability to take certain actions, by translating the robot's POMDP planning model into human-understandable statements, e.g.: ``I think the doctor's office is safe'', ``My sensors have detected traces of dangerous chemicals'', or ``My image processing will fail to detect armed gunmen 30\% of the time''. 
 The experiment used two levels of robot capability: `high', and `low'; and three levels of explanations: `confidence level', `observation', and `none'. 
@@ -39,6 +39,7 @@ It was found that explanations helped build trust when the robot's ability was l
 Generally, confidence level and observation explanations had similar effects on trust, which showed improvements over no explanations. 
 However, the explanations did not have a significant effect when the robot's capability was high. 
 This suggests that, in some cases, some kinds of assurances are overridden by other `stronger' ones, i.e.  explanations (explicitly designed for affecting trust) can be rendered useless by high reliability (an implicit assurance). 
+However, this work does not assess how much changes are trust are due to explanation content that helps the user actually understand the robot's decision making vs. the fact that the robot is attempting to provide some kind of explanation. 
 
 \citet{Chen2014-dk} develop a formal trust-based framework for making autonomous agent decision-making processes and situational awareness (SA) \cite{Endsley1995-ie} more transparent for military operations. Their SA-based Agent Transparency (SAT) model uses explicit feedback from the agent to operator to support the three levels of an operator's SA. 
 The first level -- Basic Information -- includes understanding the purpose, process, and performance of the system. 
@@ -48,10 +49,10 @@ The authors propose that two major components of communication are display of in
 However, the authors note that there are many considerations to take into account when trying to communicate information to human users (for example, numerical probabilities can be confusing and may need to be replaced by confidence limits or ranges). 
 This work emphasizes the importance of different levels of assurances: in some situations, only a certain subset of information will be needed. 
 A key limitation is that this approach is largely notional; not all of the reporting capabilities required by the SAT framework are available to AIAs at this time. 
-This is due to design limitations as well as theoretical limitations (i.e. no established methods exist to quantify the future performance of a model in a completely novel environment). 
+This is due to design limitations as well as theoretical limitations (i.e. no methods exist to quantify the future performance of a model in a completely novel environment). 
 
 \subsubsection{Summary}
-Explicit assurances have been formally considered vis-a-vis formal trust models in the following ways:
+Explicit assurances have been formally considered vis-a-vis formal trust models as follows:
 \begin{itemize}
     \item Making internal functions of an AIA transparent to users (i.e. explicit cues helping users understand different AIA capabilities) -- this includes consideration of how explanations can be generated for users, as well as how they should be presented. This can also include consideration of meta-level reasoning, i.e. explaining \textit{how} an AIA makes decisions, perceives, learns, etc., and not just \textit{what} it specifically decided, perceived, learned, etc. 
 		%%Assurances can only be effective if a user can perceive them.
