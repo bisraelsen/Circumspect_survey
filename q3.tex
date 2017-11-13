@@ -7,8 +7,9 @@ These approaches allow the AIA to assess capability and present appropriate assu
 
 %%The second paragraph that was here belongs entirely with self-confidence in previous section. I removed the text and shifted the references to Q2. These were explicitly papers about self-confidence, so I'm not sure why they were included here. 
 
-Other assurances for machine learning algorithms are inspired by the well-known trade-off between accuracy and interpretability, whereby improving the accuracy of a learner generally reduces its interpretability. \citet{Ruping2006-xj} asks how classification results and the accuracy-interpretability trade-off can be made more transparent to those who design and use classifiers, by investigating the combined use of simpler global models and more complex local models that are built around learning results (\citet{Otte2013-oo} and \citet{Ribeiro2016-uc} implement similar ideas as well). 
-Figure \ref{fig:ruping} illustrates this idea on a simple example: the left (global) model can be used as a large scale interpretable model of the learner's decision-making, while the more complex local model (shown on the right) can be used when more precise understanding of a specific decision made by the learner is required. 
+Other assurances for machine learning algorithms are inspired by the well-known trade-off between accuracy and interpretability, whereby improving the accuracy of a learner generally reduces its interpretability. \citet{Ruping2006-xj} asks how classification results and the accuracy-interpretability trade-off can be made more transparent to those who design and use classifiers, by combining simpler global models with more complex local models that are built around learning results (\citet{Otte2013-oo} and \citet{Ribeiro2016-uc} implement similar ideas as well). 
+Figure \ref{fig:ruping} illustrates this idea. 
+%%--nra: cut this, already in caption: the left (global) model can be used as a large scale interpretable model of the learner's decision-making, while the more complex local model (shown on the right) can be used when more precise understanding of a specific decision made by the learner is required. 
 %%While his focus was on classification, the methods could also be useful in regression as well.
 \citet{Van_Belle2013-ph} suggested three ways to ascertain the level of interpretability and potential utility of learned models (compare to categories proposed by \citet{Lipton2016-ug}): 1) Map them to domain knowledge; 2) Ensure safe operation across the full operational range of model inputs; and 3) Assess whether important non-linear effects are accurately accounted for. 
 This work identifies certain strengths and weaknesses of different techniques, but ultimately concludes that no method is clearly best in all situations. 
@@ -21,8 +22,8 @@ points out that \emph{real} interpretability in complex tasks still requires exp
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.65\textwidth]{Figures/global_local}
-    \caption{Example of simple global interpretable learning model on the left, and on the right a more complex locally interpretable learning model that can be used when more detail is necessary.}
+    \includegraphics[width=0.5\textwidth]{Figures/global_local}
+    \caption{Example of simple global interpretable learning model on the left, and on the right a more complex locally interpretable learning model that can be used when more precise understanding of a specific decision made by the learner is required. }
     \label{fig:ruping}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -65,13 +66,17 @@ Other scaled up user-driven approaches, e.g. based on crowd-sourcing \citet{Chan
 Finally, moving on from ML-oriented approaches, one can also consider approaches rooted in Validation and Verification (V\&V). V\&V typically refers to the use of formal methods to guarantee the performance of a system within some set of specifications. However, not all practitioners are aware that V\&V provides ways to assure users. A prime example is given by \citet{Raman2013-mz}, who developed a way by which a user can provide natural language specifications to a robot and a `correct-by-construction' controller will be built if the specification is valid. Otherwise, the robot will provide an explanation about which specification(s) will cause failure. This approach is studied with the goal of implementing the system on a robot assistant in a hospital. Their method involves parsing natural language input (``Go to the kitchen''), and converting that into a linear temporal logic (LTL) task specification. This is then used to synthesize a robot controller if possible; otherwise, the `unrealizable' specifications are communicated back to the user. This approach is promising in that it presents a way to communicate that a specification cannot be met. But, it does not formally account for effects on user trust or TRBs in formulating explanations. The expression of assurances is also asymmetrically limited to cases where the robot cannot meet the specifications. 
 
 \subsubsection{Summary}
-    There are a few main approaches that researchers have used to create explicit assurances without formally considering trust models or effects:
-    \begin{itemize}
-        \item Making AIA capabilities more interpretable -- using techniques to simplify models, visualize data, explain reasoning and decision making, or to involve humans directly in the learning process. %is an attempt to create methods that are well-suited to convey assurances to human users. The output of these methods is the assurance, their interpretable form is well-suited to expressing that assurance.
-        \item Predicting AIA performance -- %it is critical to predict performance in order for humans to understand how AIAs will behave in possible scenarios. By using methods that can predict performance, 
-				designers can give AIAs the capability to explicitly communicate regarding competence, predictability, and situational normality to human users in different scenarios. 
-        \item Ensuring capability of AIAs -- approaches such as model checking or formal V\&V allow the AIA to assess whether it is still functioning according to its design; this information can be quite useful in making explicit assurances for human users.
-    \end{itemize}
+    There are a few main approaches that researchers have used to create explicit assurances without formally considering trust models or effects: 
+    \textit{Making AIA capabilities more interpretable} -- using techniques to simplify models, visualize data, explain reasoning and decision making, or to involve humans directly in the learning process; 
+     \textit{Predicting AIA performance} -- designers can give AIAs the capability to explicitly communicate regarding competence, predictability, and situational normality to human users in different scenarios; 
+     \textit{Ensuring capability of AIAs} -- approaches such as model checking or formal V\&V allow the AIA to assess whether it is still functioning according to its design; this information can be quite useful in making explicit assurances for human users.
+
+% \begin{itemize}
+%         \item Making AIA capabilities more interpretable -- using techniques to simplify models, visualize data, explain reasoning and decision making, or to involve humans directly in the learning process. %is an attempt to create methods that are well-suited to convey assurances to human users. The output of these methods is the assurance, their interpretable form is well-suited to expressing that assurance.
+%         \item Predicting AIA performance -- %it is critical to predict performance in order for humans to understand how AIAs will behave in possible scenarios. By using methods that can predict performance, 
+% 				designers can give AIAs the capability to explicitly communicate regarding competence, predictability, and situational normality to human users in different scenarios. 
+%         \item Ensuring capability of AIAs -- approaches such as model checking or formal V\&V allow the AIA to assess whether it is still functioning according to its design; this information can be quite useful in making explicit assurances for human users.
+%     \end{itemize}
 
 The underlying hypothesis in this body of research is that the proposed methods \emph{should} affect the user's perception of the `competency' and `predictability' of the AIA, or the `situational normality' of the task being performed. However, none of this has been tested by user experimentation, e.g. that gathers and analyzes self-reported changes in trust. Similarly, there has been no formalization of how the effects that the proposed assurances have on TRBs might be quantified in different applications. In essence this work is only contains a small subset of important considerations for designing assurances, but includes several methods for assurance design. 
 Indeed, the research in this quadrant is mainly focused on what AIA engineers and designers \emph{think} needs to be explained to or interpreted for users/stakeholders, or what assurance they \emph{think} users should have. 
