@@ -1,13 +1,18 @@
 \listfiles
 % \RequirePackage{rotating}
-\documentclass[format=manuscript]{acmart}
-% \documentclass[format=manuscript, screen,review=true]{acmart}
+% \documentclass[format=manuscript]{acmart}
+\documentclass[format=manuscript, screen,review=true]{acmart}
 %\documentclass[format=acmsmall, screen]{acmart}
 
 % bibliography
 % using biblatex isn't very smart because journals are pretty picky. Instead use the default natbib package
-% \usepackage[backend=biber,style=trad-abbrv]{biblatex}
+% \usepackage[backend=biber,style=trad-abbrv,citecounter=true]{biblatex}
 % \addbibresource{References.bib}
+%
+% \renewcommand{\finentrypunct}{%
+  % \addperiod\space
+  % (Cited \arabic{citecounter}~time\ifnumequal{\value{citecounter}}{1}{}{s})%
+% }
 
 %\setcitestyle{super,sort&compress}
 % \citestyle{acmauthoryear}
@@ -164,6 +169,7 @@
 \input{synthesis.tex}
 \input{conclusions.tex}
 %%
+% \printbibliography
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{References}
 \end{document}
