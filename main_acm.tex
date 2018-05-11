@@ -26,14 +26,14 @@
 \usepackage{nameref}
 
 \newsavebox\mybox
-\savebox\mybox{\tikz[color=red,opacity=0.3]\node{WORKING DRAFT};}
-% \newwatermark*[
-  % allpages,
-  % angle=45,
-  % scale=6,
-  % xpos=-35,
-  % ypos=30
-% ]{\usebox\mybox}
+\savebox\mybox{\tikz[color=red,opacity=0.3]\node{1st Revision};}
+\newwatermark*[
+  allpages,
+  angle=45,
+  scale=6,
+  xpos=-35,
+  ypos=30
+]{\usebox\mybox}
 
 % Metadata Information
 \acmJournal{CSUR}
@@ -62,6 +62,7 @@
 \newcommand{\Pl}{\textbf{Pl}}
 \newcommand{\R}{\textbf{R}}
 \newcommand{\nisarcomm}[1]{{\color{red} (NRA: #1)}}
+\newcommand{\brettcomm}[1]{{\color{blue} (BWI: \textbf{#1})}}
 \newcommand{\edit}[1]{{\color{blue} #1}}
 \newcommand{\hlr}[1]{{\color{red} #1}}
 
@@ -165,8 +166,8 @@
 
 \input{intro.tex}
 \input{background.tex}
-\input{survey.tex}
 \input{synthesis.tex}
+\input{future_work.tex}
 \input{conclusions.tex}
 %%
 % \printbibliography
