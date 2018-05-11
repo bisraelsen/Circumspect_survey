@@ -1,0 +1,17 @@
+session_name: main-pane-height
+start_directory: './'
+windows:
+- layout: main-vertical
+  options:
+    main-pane-width: 165
+  panes:
+  - shell_command:
+    - vim main_acm.tex
+    - \ll
+    - \lt
+    focus: true
+  - shell_command:
+    - ls
+  - shell_command:
+    - echo "moo"
+  window_name: my window name
