@@ -1,0 +1,28 @@
+\subsection{Two Axes of Investigation}
+The current landscape of assurance research is well separated by two axes: 1) the role of `trust', and 2) the origin of the assurance. Identifying these two axes is useful because it identifies some of the main `disciplines' in assurance research. We also refer to these groups in the remainder of this section.
+
+\subsubsection{The Role of Trust}
+Currently researches fall into roughly one of two groups: 1) those who have formally addressed the topic of trust between humans and AIAs of some form, and 2) those who informally considered trust (or concepts related to trust). We will discuss each of these axes in a little more detail so that we can reference them in the remainder of the section.
+
+Here we consider formal treatment of trust to include those researchers who acknowledge a human trust model and who gather data from human users in order to formally measure the effect of assurances on trust. Informal treatment of trust includes those who reference the concept and/or components of trust without a specific trust definition/model, and who do not gather user data to verify the effects of proposed assurances. 
+
+\subsubsection{The Origin of the Assurance}
+Another way to divide the research landscape is by the origins of the assurances being investigated. The first group consider what we call `implicit' assurances, which encompass any assurances that are \emph{not intentionally designed} into the AIA to influence trust or TRBs. The second group consider `explicit' assurances, which are \emph{explicitly/intentionally created} by a designer with the intent of affecting a user's trust. Implicit assurances can be thought of as side-effects of the design process.
+
+It is perhaps easiest to appreciate this distinction via examples: HAL 9000 could have been designed with a circular `red-eye' looking sensor because it was cost-effective; however it is possible that users who interact with HAL might find the `red-eye' sensor to be suspicious, and thus lose trust in HAL. Conversely, the same `red-eye' may have been explicitly designed and selected based on studies that indicated users trust AIAs with `red-eye' sensors moreso than AIAs with `green-eye' sensors.
+
+Consider another example based on the VIP escort problem from Section~\ref{sec:mot_example}. A new `assurance engineer' named Dave has just been hired to improve the interface between human supervisors, and the UGV systems. As he investigates how the system has been used he discovers that human supervisors have been misusing the UGVs because they mistakenly thought it incapable of navigating certain terrain because of its size. The resulting misuse was an unforeseen consequence of the size of the vehicle. In an attempt to reduce the misuse of the UGVs, Dave decides to give the UGVs the capability to assure human supervisors regarding their ability to navigate over different terrains. In essence Dave replaced an \emph{implicit} (undesigned, side-effect) assurance with an \emph{explicit} (designed for the purpose of assurance) one. 
+
+\subsubsection{The Current Landscape}
+Much of the research that formally considers trust has focused on implicit assurances, presumably to observe whether it is even possible for machines/technology to affect a user's trust. Conversely, much of the research regarding explicit assurances is based around \emph{notions} of the need for users to `understand' what the systems are doing (i.e. getting close to the idea of trust, without expressly acknowledging it). It is possible to argue that someone who finds that reliability affects a user's trust is investigating an explicit assurance, but for the purposes of this paper we try to stay true to the \emph{intent of the researcher when performing their work}.
+
+More recently, as seen by a large spike in interest in `interpretable', and `explainable' AIAs in government, academic, and public circles, we have seen the emergence of groups who acknowledge that the concept of trust in human-AIA relationships, and who want to design systems accordingly.
+
+To help solidify the landscape here are some descriptions of the different kinds of research aims:
+
+\begin{itemize}
+    \item Implicit Assurances, Formal Trust Treatment -- Gather user data, consider a trust model, consider assurances that are implicit (i.e. those who care about human-AIA trust, but not the specific assurance designs themselves)
+    \item Explicit Assurances, Formal Trust Treatment -- Gather user data, consider a trust model, consider assurances that are explicit (i.e. those who formally acknowledge human-AIA trust, and design assurances to affect it)
+    \item Explicit Assurances, Informal Trust Treatment -- Do not gather data from users, reference trust (or its components interpretability, etc..), consider assurances that are explicit (i.e. those who know that the concept of `trust' is important, but that only use an informal notion of it when designing assurances)
+    \item Implicit Assurances, Informal Trust Treatment -- Not interested in affects on user trust, but reference (possibly only allude to) concepts that are related to trust as defined in this paper. Investigate approaches for creating AIAs with improved properties or characteristics. This work is subtly different from that in Quadrant III in the degree/intent to which trust concepts were considered. In Quadrant III trust components were clearly the main focus of the research, whereas in this quadrant the relationship to trust is only visible to someone who knows what they are looking for (i.e. those whose work is arguably relevant for designing assurances, but don't know it)
+\end{itemize}
