@@ -1,16 +1,15 @@
-\subsection{Calculating, Designing, and Planning Explicit Assurances}
-    Recall that an assurance is defined as \emph{any} behavior or property of an AIA that affects a user's trust; an explicit assurance is any assurance that was consciously implemented/applied by the designer with the express intention of influencing a user's TRBs/trust (whether or not the means for doing so conforms to a formal trust concept). As such, it is possible to design assuring properties into the system a priori. It is likewise possible to design assuring behaviors into an AIA. From the literature, several key high-level issues emerge pertaining to assurance implementation: (1) uncertainty quantification; (2) complexity reduction; (3) assurance by design; and (4) planning strategies for assurances. 
+Recall that an assurance is defined as \emph{any} behavior or property of an AIA that affects a user's trust; an explicit assurance is any assurance that was consciously implemented/applied by the designer with the express intention of influencing a user's TRBs/trust (whether or not the means for doing so conforms to a formal trust concept). As such, it is possible to design assuring properties into the system a priori. It is likewise possible to design assuring behaviors into an AIA. From the literature, several key high-level issues emerge pertaining to assurance implementation: (1) uncertainty quantification; (2) complexity reduction; (3) assurance by design; and (4) planning strategies for assurances. 
 
-    \brettcomm{DISCUSS IMPLICIT VS EXPLICIT ASSURANCES HERE---PROBABLY SOMETHING LIKE A PARAGRAPH OR SO}
+\brettcomm{DISCUSS IMPLICIT VS EXPLICIT ASSURANCES HERE---PROBABLY SOMETHING LIKE A PARAGRAPH OR SO}
 
-    \begin{itemize}
-        \item Quantifying Uncertainty
-        \item Reducing Complexity
-        \item Assurance by Design
-        \item Planning Strategies of Assurance
-    \end{itemize}
+\begin{itemize}
+    \item Quantifying Uncertainty
+    \item Reducing Complexity
+    \item Assurance by Design
+    \item Planning Strategies of Assurance
+\end{itemize}
 
-\subsubsection{Quantifying Uncertainty} %%nra: awkward sentence: Being able to quantify the different kinds of uncertainty in the AIA is necessary before attempting to express that uncertainty to a human user. 
+\subsection{Quantifying Uncertainty} %%nra: awkward sentence: Being able to quantify the different kinds of uncertainty in the AIA is necessary before attempting to express that uncertainty to a human user. 
     An AIA must have some way to assess and quantify uncertainty before attempting to express those uncertainties to a human user. 
     There are several different kinds of uncertainty that might be considered, e.g. uncertainty in sensing, uncertainty in planning, and uncertainty in locomotion. 
     A model or method needs to be incorporated in the AIA that will represent the different kinds of uncertainty to the human user in some way. 
@@ -50,7 +49,7 @@
     On the other hand, approaches that seek `post hoc' explanations of complex models and algorithms offer more promise. 
     This is partly because the idea of `interpretability' is not universally well-defined, and thus does not offer a single tangible goal. Rather, there exists a continuum of interpretability based on the complexity of the problem, the time required for a user to interpret (e.g. a few seconds vs. a few months of study, depending on the application), the expertise of the user, and other factors. However, assurances that can be automatically generated to provide user-specific and model/method-agnostic explanations/interpretations of complex AIA processes would provide the best of both worlds. These ideas are much more aligned with the efforts of \cite{Ruping2006-xj} and others who seek models with scalable resolution and accuracy.
 
-\subsubsection{Assurance by Design}
+\subsection{Assurance by Design}
     No matter how much engineers and system designers like to think about automating everything, humans will realistically need to be involved at some level of AIA operation as well as assurance design for the foreseeable future, since the human-AIA trust cycle cannot be properly managed without taking human inputs into consideration. 
     The problems of uncertainty quantification and complexity reduction can largely leverage existing methods to generate explicit assurances `on the fly' as needed for human users. 
     We have also seen that several strategies are available to directly engineer AIAs to be as meaningful and transparent to humans as possible from the outset through direct `consequential' forms of interaction. 
@@ -65,7 +64,7 @@
 
     Aside from relying on HITL, it is also possible to modify standard decision making and learning approaches (e.g. as discussed in the previous section) to make the methods inherently more transparent and assuring to users. For example, one might restructure a neural net architecture or a decision tree to make it more interpretable \cite{Choi2016-by,Abdollahi2016-vn,Jovanovic2016-gw}. However, there are no universally established principles yet for how this can/should be done.
 
-\subsubsection{Planning Explicit Assurances}
+\subsection{Planning Explicit Assurances}
     Computational resources are needed for an AIA to formulate and communicate assurances, as well as assess whether such assurances are eliciting the desired TRBs from users. This naturally raises the question of whether/how AIAs can formulate plans to achieve the goal of effectively and appropriately expressing assurances to a human user. 
 
     As mentioned earlier, not all AIAs are capable of planning. 
