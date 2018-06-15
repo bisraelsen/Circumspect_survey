@@ -1,36 +1,41 @@
+\section{Survey of Methods for Calculating Assurances} \label{sec:synthesis}
+    \brettcomm{BRING IN SOME MATERIAL FROM LIPTON, GUNNING, WELLER, AND DOSHI-VELEZ}
+    The definition given in Section~\ref{sec:assurances} gives a good definition and classification of assurances, but doesn't give very many practical insights into how assurances might be designed. In this section we review the related literature to understand what approaches have been used in order to calculate assurances.
+    
+    Figure~\ref{fig:refined_assurances} combines material from Section~\ref{sec:definitions} in order to make a more detailed version of Figure~\ref{fig:SimpleTrust_one_way}. In this section we perform a survey of the methods of calculation that have been used in literature. We have distilled the common concepts down to the following different approaches that will be discussed further.
+
+    \begin{itemize}
+        \item Integral Assurance
+        \begin{itemize}
+            \item Human-like Behavior
+            \item Value Alignment
+            \item Interpretable Models
+            \item User Interaction
+        \end{itemize}
+        \item Supplemental Assurance
+        \begin{itemize}
+            \item User Assessment
+            \item AIA Self-Assessment
+            \begin{itemize}
+                \item Quantify Uncertainty
+                \item Reduce Complexity
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.85\textwidth]{Figures/RefinedTrust_one_way}
+        \caption{Detailed extension of Figure~\ref{fig:SimpleTrust_one_way}. The AIA, User, and User TRBs blocks are defined as in Section~\ref{sec:background} (with the exception of the `Perception' blocks added to the AIA and User boxes). The AIA Assurances box has been filled using insights from the survey. The grey shaded boxes will not be discussed in this work; we focus on elements that a designer can address given an AIA with a fixed set of capabilities.}
+        \label{fig:refined_assurances}
+    \end{figure}
+
 \input{methodology.tex}
-
-\section{A Survey of Assurances} \label{sec:survey}
-%%\edit{\textbf{RECOUNT CITED PAPERS IN EACH SECTION, AND UPDATE THE FIGURE}}
-Now that AIA, trust, TRBs, and assurances have been defined the survey of assurances is now presented. There are many different ways in which this survey could be organized; we choose to present it based on the different goals of the main groups of researchers who have been working in efforts related to assurances.
-
-Early in reading the related literature, two main groups emerged: 1) those researchers who have formally addressed the topic of trust between humans and AIAs of some form, and 2) a much larger body of those who informally considered trust (or concepts related to trust). Here we consider formal treatment of trust to include those who acknowledge a human trust model and who gather data from human users in order to formally measure the effect of assurances on trust. Informal treatment of trust includes those who reference the concept and/or components of trust without a specific trust definition/model, and who do not gather user data to verify the effects of proposed assurances. 
-
-Another way to divide the research landscape is by the kinds of assurances investigated. 
-The first group consider what we call `implicit' assurances, which encompass any assurances that are not \emph{intentionally designed} into the AIA to influence trust or TRBs. The second group consider `explicit' assurances, which are \emph{explicitly/intentionally created} by a designer with the intent of affecting a user's trust. 
-Implicit assurances can be thought of as side-effects of the design process. 
-For example HAL 9000 could have been designed with a circular `red-eye' looking sensor because it was cost-effective; however it is possible that users who interact with HAL might find the `red-eye' sensor to be suspicious, and thus lose trust in HAL. 
-Conversely, the same `red-eye' may have been explicitly designed and selected based on studies that indicated users trust AIAs with `red-eye' sensors moreso than AIAs with `green-eye' sensors.
-
-Much of the research that formally considers trust has focused on implicit assurances, presumably to investigate whether it is even possible to affect a user's trust. It can be argued that someone who finds that reliability affects a user's trust is investigating an explicit assurance, but for the purposes of this paper we try to stay true to the \emph{intent of the researcher when performing their work}. More recently, as seen by a large spike in interest in `interpretable', and `explainable' AIAs in government, academic, and public circles, we have seen the emergence of groups who acknowledge that the concept of trust in human-AIA relationships, and who want to design systems accordingly.
-
-In view of the four main groups of research, we organize the survey by creating four quadrants shown in Figure~\ref{fig:trust_assurance_intention}. In the remainder of this section we survey each of these quadrants separately, in order to gain some understanding of the lessons that each has to offer when we consider the design of assurances.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.65\textwidth]{Figures/Trust_vs_Assurance_Intention.pdf}
-    \caption{Figure depicting how many of the papers surveyed here consider trust both formally and informally, as well as those who investigate explicit and implicit assurances}
-    \label{fig:trust_assurance_intention}
-\end{figure}
-
-\begin{itemize}
-    \item Quadrant I. (implicit assurances, formal trust treatment) -- Gather user data, consider a trust model, consider assurances that are implicit (i.e. those who care about human-AIA trust, but not the specific assurance designs themselves)
-    \item Quadrant II. (explicit assurances, formal trust treatment) -- Gather user data, consider a trust model, consider assurances that are explicit (i.e. those who formally acknowledge human-AIA trust, and design assurances to affect it)
-    \item Quadrant III. (explicit assurances, informal trust treatment) -- Do not gather data from users, reference trust (or its components interpretability, etc..), consider assurances that are explicit (i.e. those who know that the concept of `trust' is important, but that only use an informal notion of it when designing assurances)
-    \item Quadrant IV. (implicit assurances, informal trust treatment) -- Not interested in affects on user trust, but reference (possibly only allude to) concepts that are related to trust as defined in this paper. Investigate approaches for creating AIAs with improved properties or characteristics. This work is subtly different from that in Quadrant III in the degree/intent to which trust concepts were considered. In Quadrant III trust components were clearly the main focus of the research, whereas in this quadrant the relationship to trust is only visible to someone who knows what they are looking for (i.e. those whose work is arguably relevant for designing assurances, but don't know it)
-\end{itemize}
-
-\input{q1.tex}
-\input{q2.tex}
-\input{q3.tex}
-\input{q4.tex}
+\input{humanlike_behavior.tex}
+\input{value_alignment.tex}
+\input{user_interaction.tex}
+\input{interp_models.tex}
+\input{visualization_dr.tex}
+\input{aia_self_assessment.tex}
+\input{user_assessment.tex}
+% \input{calc_design_plan.tex}

@@ -1,0 +1,39 @@
+\subsection{Human-Like Behavior} \label{sec:human_behavior}
+In trying to enable AIAs to better participate in trust-relationships with human users many have been inspired by the natural analog of trust-relationships between two humans. In essence they ask: what kinds of communication do humans use during interaction that helps them to understand and trust each other? This idea was investigated by \cite{Tripp2011-rx} who compared human trust in other humans against human trust in intelligent interactive technology, which in this case was represented by Microsoft Access, an intelligent recommendation assistant, and Facebook. They found that, as the technology becomes more `human-like', self-reported levels of trust in technology become more similar to levels of trust in other humans. 
+
+\citet{De_Visser2018-kd} specifically discusses different methods by which AIAs can be more human-like in order to `repair trust' with humans (here trust repair is roughly analogous to assurances, but focusing on re-building trust after it is lost). Among several other possibilities, they suggest that an AIA might repair trust by anthropomorphizing (responding using a human communication channel), or by explaining their actions. \brettcomm{Perhaps discuss other methods?}
+
+Generally, we do not have algorithms that describe how humans interact, and must settle for heuristics, or best attempts to create human-like behavior via algorithms. From a high level, there are two main ways that researchers have been addressing this challenge: Direct communication, and mannerisims.
+
+\paragraph{Direct Communication:}
+In designing assurances that use direct communication, the communication can take many different forms. One popular approach is to use motion or gestures.\citet{Szafir2014-ok} investigated how to enable `Assisted Free Flyer' robots (quad-copters that are made to interact with humans in close spaces) to communicate by using gestures. In doing so they use `motion primitives' (a basic vocabulary of movements) that were inspired by animation \cite{Van_Breemen2004-rz}. In their evaluations of these primitives with human participants, they found that human users significantly found the AFFs to be more natural, and felt safer around them. Later \citet{Szafir2015-iy} also experimentally showed the effectiveness of using a quad-copter's `turn signal' lighting to help users more easily interpret the intended movements and actions. These works provide strong support for `natural communication' assurances aimed at predictability.
+
+\citet{Dragan2013-wd} investigate `legible motion planning' (LMP). LMP is, in essence, planned robotic physical movements and gestures that, by themselves, convey intended actions and goals. They are meant to improve a user's ability to understand and predict where the robot is trying to move. Their insight is that legible motion is used by humans, and is important for situations in which a robot and person are collaboratively working in close proximity to each other. Similarly, in more recent work \citet{Kwon2018-xt} investigates calculating trajectories that convey `incapability', which is \emph{what} the AIA is trying to do, and \emph{why} it is unable to do so. \cite{Dragan2013-wd} calculated sub-optimal paths in order to communicate \emph{intent} of a gesture, by gathering data from human participants they were able to find the parameters for their cost function that best matched the expectations. Likewise \cite{Kwon2018-xt} tested several different objectives using user studies to guide the selection. See also \cite{Admoni2016-db} for related work.
+
+As good example in the domain of natural language communication, at Google/IO 2018, `Google Duplex' (\cite{Google2018-eb}) was introduced through a demo where it called a business establishment to make a reservation. One of the striking characteristics of the system is that it was very difficult (if not impossible) to detect whether the Duplex voice was a human or not. This applied both for the words that is spoke and the accent of the voice. In order to achieve this impressive result, they trained a recurrent neural network (RNN) on anonymized phone conversation data.
+
+\brettcomm{Add something about etiquette?}
+
+\paragraph{Mannerisms:}
+\citet{Salem2015-md} investigated the effects of autonomous task errors, task types, and `system personality' on cooperation and trust for humans who observed a domestic robot performing house tasks, such that the robot implicitly showed competence by its mannerisms and successes/failures during tasks. In this case the mannerisms and competency of the robot were completely under control and hard-coded into the system. Regardless, when participants were asked to cooperate with the robot on certain other tasks, the faulty operation of the robot was found to affect the self-reported trust levels of the participants.
+
+\citet{Wu2016-ei} investigated how a person's decisions in a coin entrustment game are affected by their belief in whether they are competing against an AIA or another human player (which, unbeknownst to participants, was in fact an AI with some programmed human-like idiosyncrasies, e.g. variable wait times between turns). Trust in this context was measured directly by the number of coins a participant was willing to lose by putting them at risk to the other player. The experiment found that the participants trusted the AI opponent more than they trusted the `human' opponent; the authors suggest that this may be due to the perception that the AI opponent did not have feelings and operated in a more predictable and consistent `machine-like' way. Given that the `human' was an AI as well, this experiment illustrates that `machine-like' behavioral consistency can lead to implicit positive effects the trust of the participant in certain contexts.
+
+Returning to the case of Google Duplex, another striking characteristic was that Duplex used mannerisims of speech such as saying `um\ldots', including pauses, and sometimes using shortened sentences, which made it even more difficult to distinguish between it and a real human. And during the demo calls, the human on the other end of the line was none the wiser, and trusted that they were in fact speaking to a human.
+
+\paragraph{\textbf{Grounding Example:}}
+{\em
+In the case of the `VIP Escort' problem (described in Section~\ref{sec:mot_example}), human-like behavior might be used as an assurance in the following way:
+
+We make the following assumptions
+
+\begin{itemize}
+    \item The UGV is about to begin an attempt at escaping the road-network
+    \item The operator can observe all the actions of the UGV
+    \item The UGV has been designed with the ability to use gestures in order to indicate its `incapability' as in \cite{Kwon2018-xt}
+\end{itemize}
+
+As the UGV begins the escort problem, the human supervisor is monitoring progress. As the UGV reaches a certain intersection of the road network the supervisor expects the UGV to take a certain path, but it does not. However, the supervisor was able to recognize that the UGV couldn't take that path becasue it was unable to do so.
+}
+
+\paragraph{\textbf{Discussion of Example:}} In this case the UGV is able to maintain appropriate trust of the supervisor because the supervisor was able to interpret the direct communication that UGV was using. This highlights the assuring effects that human-like communication/behaviors can have on users.
