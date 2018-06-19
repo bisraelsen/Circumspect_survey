@@ -1,8 +1,9 @@
 \subsection{Human-Like Behavior} \label{sec:human_behavior}
-In trying to enable AIAs to better participate in trust-relationships with human users many have been inspired by the natural analog of trust-relationships between two humans. In essence they ask: what kinds of communication do humans use during interaction that helps them to understand and trust each other? This idea was investigated by \cite{Tripp2011-rx} who compared human trust in other humans against human trust in intelligent interactive technology, which in this case was represented by Microsoft Access, an intelligent recommendation assistant, and Facebook. They found that, as the technology becomes more `human-like', self-reported levels of trust in technology become more similar to levels of trust in other humans. 
+In trying to enable AIAs to better participate in trust-relationships with human users many have been inspired by the natural analog of trust-relationships between two humans. Humans are used to forming trusting relationships with other humans. In essence they ask: what kinds of communication do humans use during interaction that helps them to understand and trust each other? This idea was investigated by \cite{Tripp2011-rx} who compared human trust in other humans against human trust in intelligent interactive technology, which in this case was represented by Microsoft Access, an intelligent recommendation assistant, and Facebook. They found that, as the technology becomes more `human-like', self-reported levels of trust in technology become more similar to levels of trust in other humans.
 
 \citet{De_Visser2018-kd} specifically discusses different methods by which AIAs can be more human-like in order to `repair trust' with humans (here trust repair is roughly analogous to assurances, but focusing on re-building trust after it is lost). Among several other possibilities, they suggest that an AIA might repair trust by anthropomorphizing (responding using a human communication channel), or by explaining their actions. \brettcomm{Perhaps discuss other methods?}
 
+\subsubsection{Common Approaches}
 Generally, we do not have algorithms that describe how humans interact, and must settle for heuristics, or best attempts to create human-like behavior via algorithms. From a high level, there are two main ways that researchers have been addressing this challenge: Direct communication, and mannerisims.
 
 \paragraph{Direct Communication:}
@@ -21,8 +22,7 @@ As good example in the domain of natural language communication, at Google/IO 20
 
 Returning to the case of Google Duplex, another striking characteristic was that Duplex used mannerisims of speech such as saying `um\ldots', including pauses, and sometimes using shortened sentences, which made it even more difficult to distinguish between it and a real human. And during the demo calls, the human on the other end of the line was none the wiser, and trusted that they were in fact speaking to a human.
 
-\paragraph{\textbf{Grounding Example:}}
-{\em
+\subsubsection{Grounding Example:}
 In the case of the `VIP Escort' problem (described in Section~\ref{sec:mot_example}), human-like behavior might be used as an assurance in the following way:
 
 We make the following assumptions
@@ -33,7 +33,6 @@ We make the following assumptions
     \item The UGV has been designed with the ability to use gestures in order to indicate its `incapability' as in \cite{Kwon2018-xt}
 \end{itemize}
 
-As the UGV begins the escort problem, the human supervisor is monitoring progress. As the UGV reaches a certain intersection of the road network the supervisor expects the UGV to take a certain path, but it does not. However, the supervisor was able to recognize that the UGV couldn't take that path becasue it was unable to do so.
-}
+As the UGV begins the escort problem, the human supervisor is monitoring progress. As the UGV reaches a certain intersection of the road network the supervisor expects the UGV to take a path $A$, but it does not. However, before choosing to take path $B$, the UGV attempted to traverse $A$. Due to the attempt the supervisor was able to surmise that the UGV wanted to take that path but couldn't due to some limitation.
 
 \paragraph{\textbf{Discussion of Example:}} In this case the UGV is able to maintain appropriate trust of the supervisor because the supervisor was able to interpret the direct communication that UGV was using. This highlights the assuring effects that human-like communication/behaviors can have on users.

@@ -4,38 +4,18 @@
     
     Figure~\ref{fig:refined_assurances} combines material from Section~\ref{sec:definitions} in order to make a more detailed version of Figure~\ref{fig:SimpleTrust_one_way}. In this section we perform a survey of the methods of calculation that have been used in literature. We have distilled the common concepts down to the following different approaches that will be discussed further.
 
-    \begin{itemize}
-        \item Integral Assurance
-        \begin{itemize}
-            \item Human-like Behavior
-            \item Value Alignment
-            \item Interpretable Models
-            \item User Interaction
-        \end{itemize}
-        \item Supplemental Assurance
-        \begin{itemize}
-            \item User Assessment
-            \item AIA Self-Assessment
-            \begin{itemize}
-                \item Quantify Uncertainty
-                \item Reduce Complexity
-            \end{itemize}
-        \end{itemize}
-    \end{itemize}
-
     \begin{figure}[htbp]
         \centering
-        \includegraphics[width=0.85\textwidth]{Figures/RefinedTrust_one_way}
-        \caption{Detailed extension of Figure~\ref{fig:SimpleTrust_one_way}. The AIA, User, and User TRBs blocks are defined as in Section~\ref{sec:background} (with the exception of the `Perception' blocks added to the AIA and User boxes). The AIA Assurances box has been filled using insights from the survey. The grey shaded boxes will not be discussed in this work; we focus on elements that a designer can address given an AIA with a fixed set of capabilities.}
-        \label{fig:refined_assurances}
+        \includegraphics[width=0.85\textwidth]{Figures/Algorithmic_approach.pdf}
+        \caption{Figure depicting the continuum of Algorithmic assurances. To the left are `Integral Assurances' that are integral to the key functions of the AIA. On the left are `Supplemental Assurances' that are supplemental to the key functions of the AIA.}
+        \label{fig:assurance_continuum}
     \end{figure}
 
 \input{methodology.tex}
-\input{humanlike_behavior.tex}
 \input{value_alignment.tex}
-\input{user_interaction.tex}
 \input{interp_models.tex}
-\input{visualization_dr.tex}
+\input{humanlike_behavior.tex}
+\input{user_interaction.tex}
 \input{aia_self_assessment.tex}
+\input{visualization_dr.tex}
 \input{user_assessment.tex}
-% \input{calc_design_plan.tex}
