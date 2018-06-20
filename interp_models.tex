@@ -2,9 +2,9 @@
 \citet{Doshi-Velez2017-xy} give an argument for why interpretability is critical in AIA systems when they say that interpretability `is used to confirm other important desiderata of ML systems'. They use the words `interpretable' and `explainable' interchangeably. In contrast we treat them as distinct topics. Interpretable models, are defined here as those models that are intrinsically interpretable, and are \emph{integral} to the AIA. This is opposed to `explainable' models which are discussed in Section~\ref{sec:reduce_complexity}, and are \emph{supplemental} to the AIA. A model might be both interpretable \emph{and} explainable, but this is not necessarily the case.
 
 \subsubsection{Common Approaches:}
-typically focus on evaluating what models are interpretable via human trials. models based on human intuition
+There are a couple of main approaches we find in the literature. The first is to \emph{assess} existing models, via trials, to quantify interpretability. This is typically done with certain classes of models such as decision trees, versus decision tables et cetera. Secondly, researchers focus on \emph{creating} interpretable models by using humans in the process.
 
-\paragraph{Which Models Are Inherently Interpretable:}
+\paragraph{Assessing Interpretability:}
 \citet{Van_Belle2013-ph} suggested three ways to ascertain the level of interpretability and potential utility of learned models (compare to categories proposed by \citet{Lipton2016-ug}): 1) Map them to domain knowledge; 2) Ensure safe operation across the full operational range of model inputs; and 3) Assess whether important non-linear effects are accurately accounted for. This work identifies certain strengths and weaknesses of different techniques, but ultimately concludes that no method is clearly best in all situations.
 
 Along similar lines, \citet{Huysmans2011-th} compared decision trees, decision tables, propositional if-then rules, and oblique rule sets to understand which set of methods is `most interpretable'. It was experimentally determined that decision trees and tables tend to be easier to interpret, but it is noted that each method could perform better than others in different applications. For example decision trees and tables are typically better suited for answering a symbolic question (which requires a local understanding of a model) like: \emph{how does the model classify observation $X$'?} ; This is in contrast to a spatial question (which requires a global understanding of the model) like: \emph{is it correct that applicants with a high income are more likely to be accepted than applicants with a low income?}
@@ -17,7 +17,9 @@ Along similar lines, \citet{Huysmans2011-th} compared decision trees, decision t
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\paragraph{What Makes An Interpretable Model:}
+Having quantified the interpretability of a model given different classes of problems, and different requirements of users the appropriate model can then be selected during design to fit the needs of a specific application.
+
+\paragraph{Creating Interpretable Models:}
 \citet{Park2016-ld} point out that real interpretability in complex tasks still requires expert knowledge to make sense of complicated features; in essence: \emph{people make interpretable models}. For instance, \citet{Jovanovic2016-gw} use `Tree-Lasso' (TL) logistic regression with domain knowledge (i.e. medical diagnostic codes) to group similar conditions, and then use TL regression again on that information to develop a sparser model. \citet{Zycinski2012-jj} also use domain knowledge to structure a data matrix before feature selection and classification. See also \citet{Zhang2018-no,Khoa2018-gh} for other related examples.
 
 \citet{Kumar2016-yw,Faghmous2014-og} argues that interpretable models are \emph{necessary} in data science when studying scientific phenomena such as environmental effects. They propose using `theory guided data science' (TGDS) to provide theoretically interpretable structures to data science problems. As one example of TGDS, \citet{Morrison2016-fz} address the situation where an imperfect analytical model is available for chemical reaction kinetics: the theoretical reaction equations are well known, but a `stochastic operator' is added on top of this to account for uncertainties and modeling errors.
