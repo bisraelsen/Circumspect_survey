@@ -1,10 +1,39 @@
 \subsection{Value Alignment} \label{sec:value_alignment}
-
+Here we define `value alignment' as the design of AIAs that such that they are aligned with human values. Value alignment is more commonly known as `AI Alignment' in AI research (see \cite{Yudkowsky2001-hb,Bensinger2014-ul}), but we refer to it as value alignment as it is more clear in the context of assurances. \citet{Gordon_Worley2018-xy} states: ``\ldots the problem of AI alignment is to produce AI that is aligned with human values\ldots''. An AIA with aligned values will be considered by users to be more predictable (and thus more competent), because the AIA will be more likely to act in expected, `natural', ways.
 
 \subsubsection{Common Approaches:}
+Generally value alignment is concerned with the following topics (see \cite{Gordon_Worley2018-xy,Amodei2016-xi}): Negative side effects, reward hacking/gaming, scalable oversight and absent supervisors, safe exploration, robustness to distributional shifts, safe interruptibility, self modification, robustness to adversaries, ontology, idealized decision theory and logical uncertainty, vingean reflection, corrigibility, and value learning~\footnote{Readers interested in detailed descriptions of these categories should see \cite{Gordon_Worley2018-xy,Amodei2016-xi}}.
 
-\paragraph{stuff:}
+Among the more directly applicable topics in the scope of this paper are: reward hacking/gaming (taking advantage of imperfections in specification), safe exploration (how to learn in a safe manner), robustness to distributional shift (a difference between training data and test data), and design/learning of appropriate objective functions \cite{Hadfield-Menell2016-ws,Da_Veiga2012-gh,Garcia2015-rs}.
 
+Some of these topics are not yet well formalized, however progress is being made, here we review some of the more practical approaches.
+
+\paragraph{Reward Hacking/Gaming:}
+Reward hacking is what happens when the rewards for an AIA are based on flawed specifications, or objective functions (such as objective functions with loop-holes). A popular example from \citet{Bostrom2014-fz} (roughly summarized here) is a robot that has an objective of making paper clips, it then decides to take over the world in order to maximize its resources and ability to make more paper clips; this highlights the point that sometimes `simple' objective functions can result in unintended/unsafe behaviors.
+
+Even humans tend to reward hack/game, so the problem is far from solved. However, researchers have made use of practical approaches to attempt to align the values of AIAs with those of human users. One approach is to involve a human in the actual learning process. By doing so the human is able to encode a, possibly complex, objective function into the AIA. In theory, this provides an indirect way for users to build trust in the learning process by better understanding the `machine's perspective' (i.e. getting a sense for what it knows and doesn't know) and enabling mutual `calibration' of human-machine reasoning (rather than allowing users to simply attribute human understanding and learning processes onto the machine).
+
+For instance, \citet{Freitas2006-qo} compared two approaches to discovering `interesting' knowledge from large data sets, based on the idea that human users require assistance from complex systems in order to find useful patterns and other interesting insights. He mentions `user-driven' methods that involve a user suggesting interesting templates or providing general impressions in the form of IF-THEN rules. These are then compared to different `data-driven' methods, using other research to suggest that data-driven approaches are not very effective in practice.
+
+Having said that, user-driven approaches may not fare any better when compared over many users, as each user will likely have different preferences. Other scaled up user-driven approaches, e.g. based on crowd-sourcing \citet{Chang2017-kl}, can also achieve better accuracy for labeling tasks while also exploring new or ambiguous classes that can be ignored with traditional approaches (especially if training data sets are biased or very limited). \citet{Chang2017-kl} also consider a similar, scaled up, `user-driven' approach called `Revolt' that crowd-sources the labeling of images. It is able to attain high accuracy labeling, while also exploring new or ambiguous classes that can be ignored with traditional approaches.
+
+\paragraph{Safety:}
+While a fairly high-level treatment, \citet{Amodei2016-xi} are concerned with `AI safety', which is in essence: how to make sure that there is no ``unintended and harmful behavior that [emerges] from machine learning systems''.
+
+Another related field is safe reinforcement learning (safe RL), which considers reinforcement learning is environments where failure is extremely costly, such as when using an expensive aerospace vehicle. Safe RL is a particularly important area that requires assurances, as the systems are designed specifically to evolve without supervision. \citet{Garcia2015-rs} perform a survey about safe RL highlight two main methods: 1) modification of the optimality criterion with a safety factor, and 2) modification of the exploration process through the incorporation of external knowledge. They present a useful hierarchy of approaches and implementations.
+
+As one example, \citet{Lipton2016-dq} design an `intrinsic fear' RL approach that uses a deep Q-network (DQN) and a `supervised danger model'. The danger model stores the likelihood of entering a catastrophe state within a `short number of steps'. This model can be learned by detecting catastrophes through experience and can be improved over time. \citet{Curran2016-ij}, in a more specific application, asks how a robot can learn when a task is too risky, and then avoid those situations, or ask for help. To do this, they use a hierarchical POMDP planner that explicitly represents failures as additional state-action pairs.
+
+Finally, moving on from ML-oriented approaches, one can also consider approaches rooted in Validation and Verification (V\&V). V\&V typically refers to the use of formal methods to guarantee the performance of a system within some set of specifications. However, not all practitioners are aware that V\&V provides ways to assure users. A prime example is given by \citet{Raman2013-mz}, who developed a way by which a user can provide natural language specifications to a robot and a `correct-by-construction' controller will be built if the specification is valid. Otherwise, the robot will provide an explanation about which specification(s) will cause failure. This approach is studied with the goal of implementing the system on a robot assistant in a hospital. Their method involves parsing natural language input (``Go to the kitchen''), and converting that into a linear temporal logic (LTL) task specification. This is then used to synthesize a robot controller if possible; otherwise, the `unrealizable' specifications are communicated back to the user. This approach is promising in that it presents a way to communicate that a specification cannot be met. But, it does not formally account for effects on user trust or TRBs in formulating explanations. The expression of assurances is also asymmetrically limited to cases where the robot cannot meet the specifications. 
+
+In the context of a practical self-driving car application, \citet{Ghosh2016-dl} presents a framework called Trusted Machine Learning (TML) for making ML models fit pre-determined `trustworthiness' constraints. Unlike most other kinds of assurances considered so far, these constraints are handed down by a certification authority as requirements to the ML system designer, and are not meant to be exposed to/determined by users. However, in principle, such hard assurances could be exposed to users in certain contexts. The key idea is to utilize tools from formal methods to provide theoretical proof of the functionality of the system. Note that, in the formal methods literature, such proofs and their supporting evidence are what are referred to as `assurances'; we earlier denoted these as `hard assurances', in contrast to the other kinds of `soft assurances' considered here. 
+
+\paragraph{Learning Under Nonstationarity:}
+Learning under nonstationarity refers to the real challenge of training a model based on data from one distribution while taking into account that the test distribution will likely move (i.e. be nonstationary) or `shift' through time. \citet{Quinonero-Candela2009-fj} address many different aspects of this problem.
+
+\citet{Sugiyama2013-ci} suggest approaches for addressing 1) `covariate shift' (training and test input data follow different distributions), and 2) `class-balance change' (where the class-prior probabilities are different in training and test phases, but where there is no covariate shift). A key approach to addressing both problems is to use `importance sampling' which involves weighting the training loss according to the ratio between $p^\prime(x)$ and $p(x)$; this ration is referred to as the `importance'. \citet{Charikar2017-kr} address the problem of learning from `untrusted' data; this data could be untrusted due to adversarial attack or nonstationarity.
+
+\brettcomm{add some references about robust estimation and control?}
 
 \subsubsection{Grounding Example:}
 In the case of the `VIP Escort' problem (described in Section~\ref{sec:mot_example}), value alignment might be used as an assurance in the following way:
@@ -13,8 +42,10 @@ We make the following assumptions
 
 \begin{itemize}
     \item The UGV has just begun an attempt to escape the road-network
-    \item 
-    \item 
+    \item The UGV uses safe RL to learn its escape policy
+    \item The operator is able to observe the UGV during its entire escape attempt
 \end{itemize}
 
-\paragraph{\textbf{Discussion of Example:}} 
+The operator has used several different UGVs for similar tasks. This newer model uses `safe RL' to learn its policy. When observing the UGV's attempt at escape the operator notices a difference in how the UGV operates. Whereas the older UGV models would sometimes do risky things, this UGV seems to avoid dangerous situations much better. 
+
+\paragraph{\textbf{Discussion of Example:}} In this case, safe RL enabled the UGV to treat situations that an operator might classify as `dangerous' with more care. With this integral capability the UGV assures the operator that it is more competent.
