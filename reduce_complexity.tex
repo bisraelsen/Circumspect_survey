@@ -1,0 +1,21 @@
+\paragraph{Reduce Complexity} \label{sec:reduce_complexity}
+Main ideas: 1) make explanation, 2) operate on black-box model, 3) styles of explanation, 4) 
+
+\citet{Olah2018-rp} talk about `intepretability' but are really thinking about explanation, or making something interpretable.
+
+\citet{Abdollahi2018-uw} talk about different kinds of explanations that can be made. `neighbor style', `influence style', and `keyword style'
+
+\citet{Huang2017-lk} using `algorithmic teaching'~\cite{Balbach2009-jw} as inspiration. Algorithmic teaching involves having a model of a students learning algorithm, and then presenting training examples to allow the student to learn a target model. In this case the student is the human user, and the teacher is the robot that is trying to teach the human its own objective function by presenting a set of (optimal) training examples. We consider these training examples to be assurances herein.
+
+\citet{Hayes2017-nt} put an abstraction with `communicable predicates' over the state space, and are able to explain controller policies in natural language.
+
+In some cases it is desirable to maintain a complex, less interpretable model and then apply `first principles' to explain the results to the user. \citet{Lacave2002-cu} address this from the perspective of explaining probabilistic inference in Bayesian networks -- specifically, \emph{how} and \emph{why} a Bayesian network reaches a conclusion given some imputed evidence. 
+They present three properties of explanation: 1) content (what to explain), 2) communication (how to explain), and 3) adaptation (how to adapt based on who the user is). %%It is not possible to cover all of the ideas that they present in their paper, but they are key to the idea of designing assurances. 
+Several key points for designing assurances arise from considering the differences between explaining evidence (i.e. data), the model (i.e. the Bayesian network itself), or the reasoning (i.e. the inference process). 
+%These are three key considerations in making assurances. 
+Also important is whether an explanation is meant to be descriptive or aimed at ensuring comprehension, as well as whether explanations need to be on a macro or micro scale relative for parts of the Bayesian network (similar to globally/locally interpretable learned models \cite{Ruping2006-xj}). 
+The authors also consider whether explanations should occur by two-way interaction between system and user, by natural language interaction, or by probabilities. Finally, considering adaptation, another key point for designing assurances in general applications and contexts is that not all users will require (or desire) the same kinds of assurances. This paper points out many challenges and considerations in designing assurances for probabilistic algorithms, and illustrates that %(as with the `No free lunch' theorem) 
+there is no single `best' assurance that will address every possible situation. 
+Other discussion regarding how probabilistic and statistical explanations can be presented is found in \cite{Rouse1986-dz,Wallace2001-fm,Kuhn1997-qc,Lomas2012-ie,Swartout1983-ko}; 
+aforementioned works like \cite{Kuhn1997-qc} highlight the importance of framing effects and other cognitive biases for these methods. 
+
