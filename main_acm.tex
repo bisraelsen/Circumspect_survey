@@ -77,7 +77,6 @@
  \subtitle{A definition, case for, and survey of algorithmic assurances in human-autonomy trust relationships}
  % \subtitlenote{Subtitle note}
 \author{Brett W. Israelsen}
-    \authornote{The corresponding author}
     \orcid{0000-0003-1602-1685}
     \email{brett.israelsen@colorado.edu}
     % \affiliation{%
@@ -94,6 +93,7 @@
         % \institution{C-UAS}
     % }
 \author{Nisar R. Ahmed}
+\authornote{The corresponding author}
     \email{nisar.ahmed@colorado.edu}
     \affiliation{%
         \institution{University of Colorado Boulder}
@@ -103,14 +103,18 @@
         \country{USA}
     }
     \affiliation{%
-        \institution{\href{http://www.colorado.edu/recuv/}{Research and Engineering Center for Unmanned Vehicles (RECUV)}}
+        \institution{\href{https://cohrint.info/}{Cooperative Human-Robot Intelligence  Laboratory (COHRINT)}}
     }
     \affiliation{%
-        \institution{\href{https://c-uas.org/}{Center for Unmanned Aircraft Systems (C-UAS)}}
+        \institution{\href{http://www.colorado.edu/recuv/}{Research and Engineering Center for Unmanned Vehicles (RECUV)}}
     }
+    %CUAS affiliation is not needed/considered
+    %\affiliation{%
+    %    \institution{\href{https://c-uas.org/}{Center for Unmanned Aircraft Systems (C-UAS)}}
+    %}
 
 \begin{abstract}
-    As technology becomes more advanced, those who design, use and are otherwise affected by it want to know that it will perform correctly, and understand why it does what it does, and how to use it appropriately. In essence they want to be able to \emph{trust} the systems that are being designed. In this survey we present \emph{assurances} which are the method by which users can understand how to trust autonomous systems. Trust between humans and autonomy is reviewed, and the implications for the design of assurances are highlighted. A survey of existing research related to algorithmic assurances is presented. Much of the surveyed research originates from fields such as interpretable, comprehensible, transparent, and explainable machine learning, as well as human-computer interaction, human-robot interaction, and e-commerce. Several key ideas are extracted from this work in order to refine the definition of assurances. The design of assurances is found to be highly dependent not only on the capabilities of the autonomous system, but on the characteristics of the human user, and the appropriate trust-related behaviors. Several directions for future research are identified and discussed.
+    With the advent of artificially intelligent autonomous systems, those who design, use and are otherwise affected by this technology want to know that it will perform correctly, and understand why it does what it does, and how to use it appropriately. That is, they want to be able to \emph{trust} such systems. This work provides a survey of \emph{algorithmic assurances} that allow users to calibrate their trust. Trust between humans and autonomy is reviewed, and the implications for the design of assurances are highlighted \nisarcomm{--todo: revise...this makes the goal of the paper unclear.} A survey of existing research related to algorithmic assurances is presented. Much of the surveyed research originates from fields such as interpretable, comprehensible, transparent, and explainable machine learning, as well as human-computer interaction, human-robot interaction, and e-commerce. Several key ideas are extracted from this work in order to refine the definition of assurances. The design of assurances is found to be highly dependent not only on the capabilities of the autonomous system, but on the characteristics of the human user, and the appropriate trust-related behaviors. Several directions for future research are identified and discussed. \nisarcomm{need to polish this up later...feels like a lot of words that describes details, but that aren't getting at the real core arguments of the paper...}
 \end{abstract}
 
 \begin{CCSXML}
@@ -164,12 +168,28 @@
 
 \maketitle
 
+%%Please keep section headers in this part of the document for easier identification and separability and editing, need to avoid spaghetti code as much as possible.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}\label{sec:introduction}
 \input{intro.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Motivation and Background} \label{sec:background}
 \input{background.tex}
-\input{definitions.tex}
+%%%\input{definitions.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Survey of Algorithmic Assurances} \label{sec:synthesis}
 \input{survey.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Future Work} \label{sec:future_work}
 \input{future_work.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}\label{sec:conclusions}
 \input{conclusions.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %%
 % \printbibliography
 \bibliographystyle{ACM-Reference-Format}
