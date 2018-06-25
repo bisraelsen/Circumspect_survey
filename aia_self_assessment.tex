@@ -14,9 +14,11 @@ In the case of the `VIP Escort' problem (described in Section~\ref{sec:mot_examp
 We make the following assumptions
 
 \begin{itemize}
-    \item The UGV has just begun an attempt to escape the road-network
-    \item 
-    \item 
+    \item The UGV is about to being an attempt to escape the road-network
+    \item The UGV is using the `solver quality' metric mentioned by \citet{Aitken2016-fb}
+    \item The operator has access to an interface where they can view the self-confidence metric calculated by the UGV
 \end{itemize}
 
-\paragraph{\textbf{Discussion of Example:}} 
+Before the UGV begins its attempt it is able to assess its `solver quality' given the specific, unseen road-network, based on similarities between the current network and ones that it has encountered before. The UGV reports that it has high confidence in its solver quality, and the operator is assured that they can trust the solver in this situation.
+
+\paragraph{\textbf{Discussion of Example:}} In this case the UGV is able to assure the operator of the quality of the solver in the specific road-network. Generally, the UGV reduced what could be a very complex analysis into a simple format for the operator to interpret. This is in contrast to the operator viewing policies, models, algorithms, and complex probability distributions.
