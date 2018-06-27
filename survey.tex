@@ -2,12 +2,18 @@
     Whereas others have noted the \textit{existence} of assurances, we now directly consider the question: what, exactly, \textit{are} assurances, and how can they be \textit{practically designed} into AIAs? 
     This section surveys the related literature to understand what algorithmic approaches can be used to design AIA assurances. \nisarcomm{for me todo: make sure this lines up with end of previous Assurances section in background}
     
-    The algorithms use to generate assurances naturally lie on a continuum of `integration', which is the level to which the core functions of the AIA depend on the assurance; Figure~\ref{fig:assurance_continuum} illustrates this continuum. In the literature we have identified seven main categories for designed assurances. Within each category similar algorithms are used for design. These categories will each be defined and discussed in more detail in this section.
+    As discussed in Sec.~\ref{sec:assurances} there are many different ways of classifying assurances. In evaluating different practical approaches to designing assurances we have found that it is easiest to consider the level of `integration' of the assurance in the AIA. The level of integration refers to the extent to which the core functionality of the AIA is dependent on the existence of the assurance. Assurances naturally lie on a continuum between being totally integral to the core function of the AIA, and not being integral at all. Figure~\ref{fig:assurance_continuum} illustrates this continuum. For simplicity we will sometimes refer generally to assurances as `integral' or `supplemental' based on whether they lie on the left or right side of the figure respectively. In the literature we have identified seven main categories for designed assurances that span this continuum. Within each category similar algorithms are used for design; these categories will each be defined and discussed in more detail later in this section.
+    
+    First, we'll discuss some high-level observations: 
+    Understanding the level of integration of different assurances is useful because it can indicate at which point assurances need to enter the design process. For example, an assurance that is integral to the AIA must necessarily be considered from early on in the design process, whereas one that is supplemental can typically be added later.
+    While no assurance can \emph{gurarantee} appropriate TRBs from a user, the nature of integral assurances implies that certain acts of the AIA can be guaranteed.
+    Integral assurances are useful for those who want guaranteed performance from an AIA, supplemental assurances by there nature cannot guaranteed appropriate TRBs are focused on some level of interface with humans, and cannot be guaranteed.
+    Note that, a single assurance cannot be both integral and supplemental. However, by combination of multiple assurances an AIA could include an assortment of integral and supplemental assurances.
 
-    \begin{figure}[!b]%[htbp]
+    \begin{figure}[!t]%[htbp]
         \centering
         \includegraphics[width=1.0\textwidth]{Figures/Assurance_Integration.pdf}
-        \caption{Figure depicting the continuum of Algorithmic assurances. To the left are those methods that are integral to the key functions of the AIA. On the right are assurances that are not integral to performance; we call these `supplemental' as they are supplemental to the key functions of the AIA.}
+        \caption{Figure depicting the continuum of the level of integration of algorithmic assurances. To the left are those assurances that are integral to the key functions of the AIA. On the right are assurances that are not integral to performance, also called `supplemental' assurances.}
         \label{fig:assurance_continuum}
     \end{figure}
 
