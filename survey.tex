@@ -1,20 +1,15 @@
 %survey.tex
-    %\brettcomm{BRING IN SOME MATERIAL FROM LIPTON, GUNNING, WELLER, AND DOSHI-VELEZ}
-    %The definition given in Section~\ref{sec:assurances} gives a good definition and classification of assurances, but doesn't give very many practical insights into how assurances might be designed. 
     Whereas others have noted the \textit{existence} of assurances, we now directly consider the question: what, exactly, \textit{are} assurances, and how can they be \textit{practically designed} into AIAs? 
     This section surveys the related literature to understand what algorithmic approaches can be used to design AIA assurances. \nisarcomm{for me todo: make sure this lines up with end of previous Assurances section in background}
     
-    \brettcomm{Insert discussion about `assurance integration continuum' here}
-    % \nisarcomm{not sure about this parag - necessary??}
-    % Figure~\ref{fig:refined_assurances} combines material from Section~\ref{sec:definitions} in order to make a more detailed version of Figure~\ref{fig:SimpleTrust_one_way}. In this section we perform a survey of the methods of calculation that have been used in literature. We have distilled the common concepts down to the following different approaches that will be discussed further.
+    The algorithms use to generate assurances naturally lie on a continuum of `integration', which is the level to which the core functions of the AIA depend on the assurance; Figure~\ref{fig:assurance_continuum} illustrates this continuum. In the literature we have identified seven main categories for designed assurances. Within each category similar algorithms are used for design. These categories will each be defined and discussed in more detail in this section.
 
-    \begin{figure}[b]%[htbp]
+    \begin{figure}[!b]%[htbp]
         \centering
         \includegraphics[width=1.0\textwidth]{Figures/Assurance_Integration.pdf}
-        \caption{Figure depicting the continuum of Algorithmic assurances. To the left are `Integral Assurances' that are integral to the key functions of the AIA. On the left are `Supplemental Assurances' that are supplemental to the key functions of the AIA. }
+        \caption{Figure depicting the continuum of Algorithmic assurances. To the left are those methods that are integral to the key functions of the AIA. On the right are assurances that are not integral to performance; we call these `supplemental' as they are supplemental to the key functions of the AIA.}
         \label{fig:assurance_continuum}
     \end{figure}
-\nisarcomm{note: generally should keep figures only on top and bottom of pages, as matter of style}
 
 \input{methodology.tex}
 \input{value_alignment.tex}
