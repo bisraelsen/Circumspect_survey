@@ -1,13 +1,14 @@
-%%(i) assurance argument: what specifically is the assurance signal? 
-%%(ii) what is mechanism for generating appropriate TRBs? 
-%%(iii) how can designers build/exploit for AIA assurances, i.e. what techniques available for ...?: 
-%%(a) ...  
-%%(b) ...
-%%(c) ...
+%%(i) assurance argument: what specifically is the assurance signal/rationale? -- whereas user interaction techniques of previous section generally tend to provide integral assurances (i.e. designed as part of core functionality of AIA capabilities) that introspectively compensate for shortcomings in AIA capabilities, similar introspective assurances can also be generated to determine and inform users of competency limits/boundaries of AIA capabilities *without requiring* user interaction or intervention -- and thus can be considered as supplementary to or separate from core AIA functionality. That is:  assurances can be provided to introspectively determine and explain/interpret limits of what AIA can do or knows, etc. for the sake of the user, without requiring modification of underlying AIA design.  In this sense, self-assessments can provide users with insights on one or both of the following related concerns: what can the AIA actually do and what does it know? and, what is required of/by the AIA to actually do the assigned task?  The first concerns identifying set of tasks in `reach set' of AIA; the second concerns figuring out what would be needed to do current task [need to refine this...trying to distinguish between questions that lead to insights about competency and situation normality via complexity reduction, vs. insights that inform predictability via uncertainty]... but basic analogy [can be mapped to UGV] is subordinate/delegate telling supervisor what it is/is not capable of, vs telling supervisor what it would need to be able to carry out specific task at hand or what the possible outcomes would be for that specific task (so, self-assessment can have contrasting focus on AIA itself on general capabilities vs. on the task at hand in relation to how AIA would perform on it specifically)...
+%%(ii) what is mechanism for generating appropriate TRBs? -- Key targets are competency and situational normality dimensions in terms of explaining AIA functionality, whereas predictability is key target for task oriented assurances. Assurances from self-assessment paradigms are typified by frameworks like `machine self-confidence'[] and explainable Bayesian inference[] -- these operate on the results of `black box' AIA component outcomes in a post hoc manner, unlike interpretable models discussed earlier (which force AIA components to be inherently `understandable' to users). Viewed differently: whereas interpretable models are more `bottom up', self-assessment is more of a `top down'/drill down process: latter is less constrained in choice of models/techniques for AIA capabilities, but also must rely on ability to suitably decompose these same AIA functions across different task contexts and 
+%%(iii) how can designers build/exploit for AIA assurances, i.e. what techniques available for getting assurances from self-assessment?: 
+%%(a) complexity reduction...  
+%%(b) uncertainty...
+
 
 \subsection{AIA Self-Assessment} \label{sec:aia_self_assessment}
 
 \subsubsection{Common Approaches:}
+\nisarcomm{Need to say a bit more about what the motivation/general idea here is, to continue flow from other previous sections...}
 The literature in this category can be split into two high-level categories. The first concern is for an AIA to be able to account for its uncertanties (i.e. uncertainty in its models of its world, sensors, and capabilities). The second is to attempt to reduce its complex, `uninterpretable', capabilities into more interpretable ones.
 
 Here the AIA makes an active attempt at processing data and making information available to the user. This is done in a post-hoc manner, or in a way such that the quantification of uncertainty is more supplemental, rather than integral, to the main functions of the AIA.
