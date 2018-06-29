@@ -7,8 +7,7 @@
     %What do people who talk about `comprehensible systems', `interpretable learning', `opaque systems', and `explainable AI' really, fundamentally, care about?
     %Whether formally acknowledged or not, human designers and users want \emph{assurances} to help them appropriately `trust' autonomous and artificially intelligent systems. 
     %%\nisarcomm{for me todo: some of this might be redundant given the intro, basically repeating the same question/points made above?...might be worth trimming down a bit or moving to back for `recap'...include foglights here for this section}
-    The need for designed assurances has grown considerably in recent years, as the advanced capabilities of intelligent systems have become more difficult to comprehend and predict \cite{Doshi-Velez2017-xy, Weller2017-zx, Lipton2016-ug, Gunning2017-ih}. 
-    When researchers discuss concepts like `comprehensible systems', `interpretable learning', `transparent systems', and `explainable AI', they are really interested in making deliberately designed mechanisms to help designers and users appropriately `trust' autonomous and artificially intelligent systems as they perform their tasks. 
+    The need for designed assurances has grown considerably in recent years, as the advanced capabilities of intelligent systems have become more difficult to comprehend and predict \cite{Doshi-Velez2017-xy, Weller2017-zx, Lipton2016-ug, Gunning2017-ih}. When researchers discuss concepts like `comprehensible systems', `interpretable learning', `transparent systems', and `explainable AI', they are really interested in making deliberately designed mechanisms to help designers and users appropriately `trust' autonomous and artificially intelligent systems as they perform their tasks. 
     For example, many systems are designed to learn from extremely large amounts of data and are expected to regularly perform on never before seen data---yet, it is rarely obvious if such data conforms to assumptions made at design time. 
     Other systems are designed to perform tasks that are too `dirty, dull, and dangerous' for humans; the separation of users from these tasks often makes it difficult for them to understand whether these systems are performing as desired. 
     The authors, for instance, are interested in the design of unmanned robotic vehicle systems that operate in concert with remote human operators in uncertain dynamic environments. 
@@ -27,7 +26,7 @@
     %Generally, humans want to `trust' 
     %\footnote{Of course, at this point `trust' is quite an imprecise term, and will be defined more formally in Section~\ref{sec:trust}}
     %the tools and systems that they create. 
-    To begin with, definitions for the trust cycle in Fig. ~\ref{fig:SimpleTrust_one_way} are given to ground the concept of assurances. A running application example is then provided to compare/contrast technical ideas and implementations of algorithmic assurances throughout the survey in Section \ref{sec:synthesis}. 
+    To begin with, definitions for the trust cycle in Fig. ~\ref{fig:SimpleTrust_one_way} are given to formally ground the concept of assurances. A running application example is then provided to compare/contrast technical ideas and implementations of algorithmic assurances throughout the survey in Section \ref{sec:synthesis}. 
      
      
     
@@ -81,7 +80,7 @@
 
     One way to construct an autonomous UGV path planner is to discretize time and spatial variables to build a partially observable Markov decision process (POMDP) model \cite{Kochenderfer2015-uu} of the navigation task. 
     The ideal POMDP solution is an optimal UGV action selection policy that will, \emph{on average}, maximize some utility function whose optimum value coincides with desirable UGV behaviors (i.e. avoiding the pursuer and exiting quickly). 
-    POMDP policies can be found by any number of sophisticated approximations that operate on probability distributions for the unknown pursuer state, which in turn can be found via Bayesian sensor fusion \cite{Ahmed2017-hmmrbpf}. 
+    POMDP policies can be found by any number of sophisticated approximations that operate on probability distributions for the unknown pursuer state, which in turn can be found via Bayesian sensor fusion \cite{Ahmed2017-xt}. 
     This defines at least two AIA capabilities per Fig. \ref{fig:AIcapabilities}: knowledge representation and planning \footnote{consideration of lower-level UGV state estimation and control also leads to perception and motor control/execution.}. 
     The trust-cycle terms here can then be defined as follows relative to the supervisor (user): \textit{AIA:} the combined POMDP planning and data fusion agent, which must make decisions under uncertainty; %(the pursuer is only observed sporadically and follows an unknown course); 
     \textit{Trust:} the supervisor's willingness to rely on the UGV's planning and data fusion algorithms when the safety of the VIP being escorted is at stake;  
