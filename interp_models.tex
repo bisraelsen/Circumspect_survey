@@ -6,7 +6,7 @@
 %%(b) creating interpretable models: compress this section into key ideas with citations of relevant papers/methods: model could be interpretable from outset like a decision tree (at the expense of performance), or could be less interpretable from outset and then post-fit with another interpretable model. Important thing to note is that most of these are designed around machine learning and pattern recognition problems -- and as such require that the tasks being performed by the AIA to be mappable to these kinds of problems; this generally means that some form of training data is required for supervised or unsupervised learning. ALSO: second approach of building a more interpretable model around an intial model technically counts as a `supplementary' method, in that this interpretable -- DOES THIS ALREADY COME LATER IN SURVEY???
 %%(c) human-in-loop learning -- very similar to value alignment, except that not necessarily only concerned with learning utility, but also other kinds of features or useful tidbits that aid in AIA decision making -- follows same theory of mind argument from before: user will have same mental grounding as AIA, so trust can be calibrated appropriately to get better understanding of predictability, competence, and situation normality...Julie Shah's work on learning LTL rules from data?? can maybe leave (c) out for time being....
 \subsection{Interpretable Models and Processes} \label{sec:interp_models}
-\nisarcomm{add `processes' to label of this category...}
+%%\nisarcomm{add `processes' to label of this category...}
 Another way to provide assurances about AIA conformance to user intent frames is to expose the models and algorithmic processes governing its actions directly to the user. If these models and processes also happen to be easy for users to interpret, then the user can (ideally) acquire a well-formed and highly predictive `theory of mind' for the AIA's behavior, with little or no effort . 
 \citet{Doshi-Velez2017-xy} give an argument for why interpretability is critical in AIA systems since interpretability `is used to confirm other important desiderata of [machine learning] systems'. 
 Yet, perhaps unsurprisingly, `interpretability' and the attendant desiderata still elude formal universally accepted definitions. 
@@ -29,7 +29,7 @@ Essentially, allowing the user to access and examine an interpretable model/proc
 This gives the user a `mental model' of what the AIA would consider to be situational normality and how AIA would respond in different situations (predictability and competence). 
 The caveat here is that incorrect TRBs may arise if the user mis-interprets or only understands part of the model/process. 
 This is a significant risk in highly complex or specialized problems, where users may not actually have sufficient training or expertise. This also poses concerns for how/when user can access interpretable AIA components. 
-Unlike value alignment (where user accesses assurances only through behavior of AIA itself), the user has more freedom in deciding when and how to `peek under the hood'. This relates to assurances based on information visualization discussed later, except that here the information being given to the user are the actual AIA algorithms themselves, as opposed to by products or after effects of those algorithms. \nisarcomm{I need to trim this down a bit?}
+Unlike value alignment (where user accesses assurances only through behavior of AIA itself), the user has more freedom in deciding when and how to `peek under the hood'. This relates to assurances based on information visualization discussed later, except that here the information being given to the user are the actual AIA algorithms themselves, as opposed to by products or after effects of those algorithms. %%\nisarcomm{I need to trim this down a bit?}
 
 \paragraph{Assessing Interpretability:}
 \citet{Van_Belle2013-ph} suggested three ways to ascertain the level of interpretability and potential utility of learned models (compare to categories proposed by \citet{Lipton2016-ug}): 1) Map them to domain knowledge; 2) Ensure safe operation across the full operational range of model inputs; and 3) Assess whether important non-linear effects are accurately accounted for. This work identifies certain strengths and weaknesses of different techniques, but ultimately concludes that no method is clearly best in all situations. 
@@ -40,7 +40,10 @@ Along similar lines, \citet{Huysmans2011-th} compared decision trees, decision t
 Having quantified the interpretability of a model given different classes of problems, and different requirements of users the appropriate model can then be selected during design to fit the needs of a specific application.
 
 \paragraph{Interpretable Model Synthesis:}
-\citet{Ruping2006-xj} asks how classification results and the accuracy-interpretability trade-off can be made more transparent to those who design and use classifiers. He explores one approach by combining simpler global models with more complex local models that are built around learning results (\citet{Otte2013-oo} and \citet{Ribeiro2016-uc} implement similar ideas as well). Figure \ref{fig:ruping} illustrates this idea. \brettcomm{The explanation of Fig.~\ref{fig:ruping} could be something like: `The classification boundary is generally a horizontal line. However, for a small region on the right hand side the boundary is shaped roughly like a square root starting from the horizontal line'.---I like the example of \emph{how} global/local could be used}
+\citet{Ruping2006-xj} asks how classification results and the accuracy-interpretability trade-off can be made more transparent to those who design and use classifiers. He explores one approach by combining simpler global models with more complex local models that are built around learning results (\citet{Otte2013-oo} and \citet{Ribeiro2016-uc} implement similar ideas as well). 
+Figure \ref{fig:ruping} illustrates this idea. 
+The explanation of Fig.~\ref{fig:ruping} could be something like: `The classification boundary is generally a horizontal line. However, for a small region on the right hand side the boundary is shaped roughly quadratic starting from the horizontal line'.
+%\brettcomm{The explanation of Fig.~\ref{fig:ruping} could be something like: `The classification boundary is generally a horizontal line. However, for a small region on the right hand side the boundary is shaped roughly like a square root starting from the horizontal line'.---I like the example of \emph{how} global/local could be used}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
@@ -63,9 +66,7 @@ Contrary to the belief that interpretable models are necessarily worse performin
 This kind of approach is also illustrated by those who use those who use `theory guided data science' (TGDS~\cite{Kumar2016-yw,Faghmous2014-og}). As one example \citet{Morrison2016-fz} address the situation where an imperfect analytical model is available for chemical reaction kinetics: the theoretical reaction equations are well known, but a `stochastic operator' is added on top of this to account for uncertainties and modeling errors. In adopting this approach the model becomes interpretable (to experts).
 
 \subsubsection{Grounding Example:}
-In the case of the `VIP Escort' problem (described in Section~\ref{sec:mot_example}), interpretable models might be used as an assurance in the following way:
-
-We make the following assumptions
+In the case of the `VIP Escort' problem (described in Section~\ref{sec:mot_example}), interpretable models might be used as an assurance in the following way, starting with the assumptions that:
 
 \begin{itemize}
     \item The UGV has just begun an attempt to escape the road-network

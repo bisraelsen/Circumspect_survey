@@ -99,15 +99,14 @@ For instance, in the context of classification problems, \citet{Sugiyama2013-ci}
 Similarly, \citet{Charikar2017-kr} address learning from `untrusted' data, which could be subject adversarial attack or unknown nonstationarity. 
 %A key approach to addressing both problems is to use `importance sampling' which involves weighting the training loss according to the ratio between $p^\prime(x)$ and $p(x)$; this ratio is referred to as the `importance'. \citet{Charikar2017-kr} address the problem of learning from `untrusted' data; this data could be untrusted due to adversarial attack or nonstationarity.
 
-These methods can be more generally adapted and developed beyond learning tasks, in order to evaluate the sensitivity of as-designed AIA's capabilities to possible changes in task context not captured/considered at design time (an example of coping with `unknown unknowns') \nisarcomm{somehow need to point out that unlike AIA self-assessment methods, these methods are integral fxns and not supplementary...perhaps mention later?}. 
-If the sensitivities imply a significant deviation in $U_A(s,a)$ or $a^*$ from expected values (i.e. from user intent frame as initially understood), or indicate the presence of new $(s,a)$ pairs that are not accounted for by $U(s,a)$ (e.g. test data that is very far from training data), then the AIA can inform the user accordingly and thus possibly opt out of performing tasks that are now potentially `out of scope'. This provides direct low-level behavioral assurances about changes in predictability, competence, and situation normality, though these may not be immediately understood non-expert users at a higher-level \nisarcomm{...clean up}. As such, these methods are related to introspective AIA self-assessment methods discussed later. 
+These methods can be more generally adapted and developed beyond learning tasks, in order to evaluate the sensitivity of as-designed AIA's capabilities to possible changes in task context not captured/considered at design time (an example of coping with `unknown unknowns').  %\nisarcomm{somehow need to point out that unlike AIA self-assessment methods, these methods are integral fxns and not supplementary...perhaps mention later?}. 
+If the sensitivities imply a significant deviation in $U_A(s,a)$ or $a^*$ from expected values (i.e. from user intent frame as initially understood), or indicate the presence of new $(s,a)$ pairs that are not accounted for by $U(s,a)$ (e.g. test data that is very far from the training set), then the AIA can inform the user accordingly and thus possibly opt out of performing tasks that are now potentially `out of scope'. This provides direct low-level behavioral assurances about changes in predictability, competence, and situation normality, though these may not be immediately understood by non-expert users. %%at a higher-level %%\nisarcomm{...clean up}. 
+%As such, these methods are related to introspective AIA self-assessment methods discussed later. 
 
 %%%When an AIA can cope with nonstationary covariates and/or class-balance then it will perform more consistently, and human users will be able to more appropriately trust it.
 
 \subsubsection{Grounding Example:}
-In the case of the `VIP Escort' problem (described in Section~\ref{sec:mot_example}), value alignment might be used as an assurance in the following way:
-
-We make the following assumptions
+In the case of the `VIP Escort' problem (described in Section~\ref{sec:mot_example}), value alignment might be used as an assurance in the following way, starting with the assumptions that:
 
 \begin{itemize}
     \item The UGV has just begun an attempt to escape the road-network

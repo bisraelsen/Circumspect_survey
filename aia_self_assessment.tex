@@ -7,14 +7,14 @@
 
 \subsection{AIA Self-Assessment} \label{sec:aia_self_assessment}
 
-The techniques of previous section generally tend to provide integral assurances (i.e. designed as part of core functionality of AIA capabilities) that are artifacts of interactive algorithms designed to compensate for shortcomings in AIA capabilities. This section focuses on introspective assurances that inform users of competency limits and boundaries of AIA capabilities without requiring user interaction and that can generally separated from core AIA functionality (i.e. without requiring modification of underlying AIA design).  These self-assessments can provide users with insights on either or both of the following related issues: (i) what information and tasks are actually within the AIA's reach?, and (ii) what is required by the AIA to actually do its assigned task? 
+The techniques of previous section generally tend to provide integral assurances (i.e. designed as part of core functionality of AIA capabilities) that are artifacts of interactive algorithms designed to compensate for shortcomings in AIA capabilities. This section focuses on introspective assurances that inform users of competency limits and boundaries of AIA capabilities without requiring user interaction, and that can generally be separated from core AIA functionality (i.e. without requiring modification of underlying AIA design).  These self-assessments can provide users with insights regarding either or both of the following related issues: (i) what information and tasks are actually within the AIA's reach?, and (ii) what is required by the AIA to actually do its assigned task? 
 In contrast to user interaction techniques: the analogy here is of a subordinate telling a supervisor what she is/is not capable of, or telling the supervisor what she would need to be able to carry out specific task at hand to achieve a specific outcome, or what the possible outcomes actually would be for that specific task. 
 
 %%Such assurances provide windows into the competency and situation normality via complexity reduction, vs. insights that inform predictability via uncertainty]... but basic analogy [can be mapped to UGV] is subordinate/delegate telling supervisor what it is/is not capable of, vs telling supervisor what it would need to be able to carry out specific task at hand or what the possible outcomes would be for that specific task
 
 \subsubsection{Common Approaches:}
 %\nisarcomm{Need to say a bit more about what the motivation/general idea here is, to continue flow from other previous sections...}
-The literature in this category can be split into two high-level categories. 
+The literature in this section can be split into two high-level categories. 
 The first set deals with how an AIA can algorithmically account for its uncertainties in its models of its task, environment, operating context, and capabilities. 
 These kinds of assurances help inform the predictability and situation normality aspects of trust. 
 The second set of methods attempt to algorithmically reduce complex `uninterpretable' models or processes that underlie AIA capabilities into more interpretable ones by providing explanations. 
@@ -24,9 +24,7 @@ Here the AIA makes an active attempt at processing data and making information a
 \input{reduce_complexity.tex}
 
 \subsubsection{Grounding Example:}
-In the case of the `VIP Escort' problem (described in Section~\ref{sec:mot_example}), self-assessment might be used as an assurance in the following way:
-
-We make the following assumptions
+In the case of the `VIP Escort' problem (described in Section~\ref{sec:mot_example}), self-assessment might be used as an assurance in the following way, starting with the assumptions that:
 
 \begin{itemize}
     \item The UGV is about to being an attempt to escape the road-network
@@ -34,6 +32,6 @@ We make the following assumptions
     \item The operator has access to an interface where they can view the self-confidence metric calculated by the UGV
 \end{itemize}
 
-Before the UGV begins its attempt it is able to assess its `solver quality' given the specific, unseen road-network, based on similarities between the current network and ones that it has encountered before. The UGV reports that it has high confidence in its solver quality, and the operator is assured that they can trust the solver in this situation.
+Before the UGV begins its attempt it is able to assess its `solver quality' given the specific, unseen road-network, based on similarities between the current network and ones that it has encountered before (i.e. problem features that are important to determining the quality of the approximate solution produced by the policy). The UGV reports that it has high confidence in its solver quality, and the operator is assured that they can trust the solver in this situation.
 
 \paragraph{\textbf{Discussion of Example:}} In this case the UGV is able to assure the operator of the quality of the solver in the specific road-network. Generally, the UGV reduced what could be a very complex analysis into a simple format for the operator to interpret. This is in contrast to the operator viewing policies, models, algorithms, and complex probability distributions.
