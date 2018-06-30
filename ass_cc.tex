@@ -1,13 +1,11 @@
-\subsubsection{Component and Composite}
-A component assurance is an assurance that originates from a single AIA capability source, and targets a single trust dimension target. Component assurances are perhaps the most well researched in the existing literature. A component assurance might include displaying the confidence of a classification prediction, or visualizing a model.
+\emph{Component and Composite:}
+A component assurance is an assurance that originates from a single AIA capability source, and targets a single trust dimension target. Component assurances are perhaps the most well researched in the existing literature. A component assurance might include displaying the confidence of a classification prediction, or visualizing a model. A composite assurance is the combination of more than one component assurance into a single assurance. Composite assurances are assurances that are built of several component ones. A notable example is the work by \citet{Aitken2016-cv} who propose a measurement called `self-confidence'. They propose that this metric combine five component assurances into a single composite assurance that is meant to distill the information into a value that a novice operator could understand easily. Figure \ref{fig:assurance_mapping} illustrates the concepts of component and composite assurances. 
 
-A composite assurance is the combination of more than one component assurance into a single assurance. Composite assurances are assurances that are built of several component ones. A notable example is the work by \citet{Aitken2016-cv} who propose a measurement called `self-confidence', applicable to Partially Observable Markov Decision Processes (POMDPs). They propose that this metric combine five component assurances into a single composite assurance that is meant to distill the information into a value that a novice operator could understand easily. Figure \ref{fig:assurance_mapping} illustrates the concepts of component and composite assurances. 
-
-There is still much to be learned in this domain. How can component assurances be combined to create a composite one? Also, To what extent can component and composite assurances be used in concert to provide assurances for users of differing expertise? Are the effects of a composite assurance equal to the sum of its components?
+How can component assurances be combined to create a composite one? Also, To what extent can component and composite assurances be used in concert to provide assurances for users of differing expertise? Are the effects of a composite assurance equal to the sum of its components?
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{Figures/Assurance_component_composite.pdf}
+    \includegraphics[width=0.7\textwidth]{Figures/Assurance_component_composite.pdf}
     \caption{Figure illustrating the difference between component and composite assurances. The existence of multiple assurances does not imply a composite assurance, rather the combination of multiple component assurances into a single assurance constitutes a composite assurance. On the left there are two component assurances $a1$ and $a2$, whereas on the right only $a3$ affects the trust dimension.}
     \label{fig:assurance_mapping}
 \end{figure}
