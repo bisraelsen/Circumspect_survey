@@ -7,11 +7,18 @@
 
 \subsection{AIA Self-Assessment} \label{sec:aia_self_assessment}
 
-\subsubsection{Common Approaches:}
-\nisarcomm{Need to say a bit more about what the motivation/general idea here is, to continue flow from other previous sections...}
-The literature in this category can be split into two high-level categories. The first concern is for an AIA to be able to account for its uncertanties (i.e. uncertainty in its models of its world, sensors, and capabilities). The second is to attempt to reduce its complex, `uninterpretable', capabilities into more interpretable ones.
+The techniques of previous section generally tend to provide integral assurances (i.e. designed as part of core functionality of AIA capabilities) that are artifacts of interactive algorithms designed to compensate for shortcomings in AIA capabilities. This section focuses on introspective assurances that inform users of competency limits and boundaries of AIA capabilities without requiring user interaction and that can generally separated from core AIA functionality (i.e. without requiring modification of underlying AIA design).  These self-assessments can provide users with insights on either or both of the following related issues: (i) what information and tasks are actually within the AIA's reach?, and (ii) what is required by the AIA to actually do its assigned task? 
+In contrast to user interaction techniques: the analogy here is of a subordinate telling a supervisor what she is/is not capable of, or telling the supervisor what she would need to be able to carry out specific task at hand to achieve a specific outcome, or what the possible outcomes actually would be for that specific task. 
 
-Here the AIA makes an active attempt at processing data and making information available to the user. This is done in a post-hoc manner, or in a way such that the quantification of uncertainty is more supplemental, rather than integral, to the main functions of the AIA.
+%%Such assurances provide windows into the competency and situation normality via complexity reduction, vs. insights that inform predictability via uncertainty]... but basic analogy [can be mapped to UGV] is subordinate/delegate telling supervisor what it is/is not capable of, vs telling supervisor what it would need to be able to carry out specific task at hand or what the possible outcomes would be for that specific task
+
+\subsubsection{Common Approaches:}
+%\nisarcomm{Need to say a bit more about what the motivation/general idea here is, to continue flow from other previous sections...}
+The literature in this category can be split into two high-level categories. 
+The first set deals with how an AIA can algorithmically account for its uncertainties in its models of its task, environment, operating context, and capabilities. 
+These kinds of assurances help inform the predictability and situation normality aspects of trust. 
+The second set of methods attempt to algorithmically reduce complex `uninterpretable' models or processes that underlie AIA capabilities into more interpretable ones by providing explanations. 
+Here the AIA makes an active attempt at processing data and making information available to the user to inform the competency aspect of trust. %%This is done in a post-hoc manner, or in a way such that the quantification of uncertainty is more supplemental, rather than integral, to the main functions of the AIA.
 
 \input{quantify_uncertainty.tex}
 \input{reduce_complexity.tex}
