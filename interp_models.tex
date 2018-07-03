@@ -1,12 +1,9 @@
 \subsection{Interpretable Models and Processes} \label{sec:interp_models}
-%%\nisarcomm{add `processes' to label of this category...}
 Another way to provide assurances about AIA conformance to user intent frames is to expose the models and algorithmic processes governing its actions directly to the user. If these models and processes also happen to be easy for users to interpret, then the user can (ideally) acquire a well-formed and highly predictive `theory of mind' for the AIA's behavior, with little or no effort . 
 \citet{Doshi-Velez2017-xy} give an argument for why interpretability is critical in AIA systems since interpretability `is used to confirm other important desiderata of [machine learning] systems'. 
 Yet, perhaps unsurprisingly, `interpretability' and the attendant desiderata still elude formal universally accepted definitions. 
-%%Based on our survey, and building on the `easily accessible theory of mind' notion: we define an interpretable model or process here as one which can be fully comprehended by a typical human user, to the degree that the user herself could (given access to the model/process, and enough time and resources for performing required intermediate computations) precisely predict the results that an AIA would obtain on a given task. In other words: a model or process made so easy to understand that a human could do it. \nisarcomm{need to think carefully about implications of this definition: in principle any human could execute any algorithm given enough time/computation, so this isn't saying much...something else needed here to refine this idea...}. 
 They also use the words `interpretable' and `explainable' interchangeably. In contrast, we treat them as distinct descriptors. We discuss models that are inherently interpretable here, and models that can be understood by explanation in Section~\ref{sec:reduce_complexity}.  The difference is that interpretability (in our view) implies that the actual process/model used by an AIA is self-explanatory, whereas explainable models can be made interpretable by post hoc operations but do not necessarily explain the actual model/process used by an AIA. 
 Being able to interpret the actual model/process used by an AIA helps human users to more appropriately understand their behaviors, and thus exhibit appropriate TRBs in turn. This approach to assurance also captures broader AIA processes and models that rely on rules, heuristics, etc., rather than just those that rely on optimization of some particular utility. 
-%%\nisarcomm{need to unpack this still further -- see tex comments above }
 
 \subsubsection{Common Approaches:}
 Two main approaches to designing interpretable AIA models and processes are considered here. 
@@ -15,7 +12,6 @@ This is typically done with certain classes of models or solution processes, e.g
 The second is to \emph{synthesize interpretable models/processes} by leveraging human designer input during the model/solution-building process. 
 The first approach requires pre-defined measures of interpretability, and thus some mechanism for capturing ability to gain insights into competence, predictability, and situation normality. This also presupposes that the model/process candidates are inherently interpretable along these lines to begin with, which may rule out certain model/process families that perform well on certain tasks. 
 The second approach allows designers to apply domain knowledge to determine metrics for interpretability, although this can lead to solutions that do not perform as well as those that are less interpretable. 
-%%\nisarcomm{where and hwo do (intrinsic) assurances fall out of these?}
 
 What is the assurance mechanism that potentially leads to proper TRBs in either approach? 
 Essentially, allowing the user to access and examine an interpretable model/process also allows them to simultaneously assess competency, predictability, and situational normality components of trust. If the models/processes are interpretable, then a user would understand exactly how the AIA would perform its task (i.e. down to a mechanical/programmatic level). 
@@ -26,17 +22,13 @@ Unlike value alignment (where user accesses assurances only through behavior of 
 
 \paragraph{Assessing Interpretability:}
 \citet{Van_Belle2013-ph} suggested three ways to ascertain the level of interpretability and potential utility of learned models (compare to categories proposed by \citet{Lipton2016-ug}): 1) Map them to domain knowledge; 2) Ensure safe operation across the full operational range of model inputs; and 3) Assess whether important non-linear effects are accurately accounted for. This work identifies certain strengths and weaknesses of different techniques, but ultimately concludes that no method is clearly best in all situations. 
-%%%\nisarcomm{need to say a little bit more about the actual methods proposed -- how does one, for instance, go about doing 1 or 2 or 3? don't need to give specific details, but mention what techniques available}
-%
 Along similar lines, \citet{Huysmans2011-th} compared decision trees, decision tables, propositional if-then rules, and oblique rule sets to understand which set of methods is `most interpretable'. It was experimentally determined that decision trees and tables tend to be easier to interpret, but it is noted that each method could perform better than others in different applications. For example decision trees and tables are typically better suited for answering a symbolic question (which requires a local understanding of a model) like: \emph{how does the model classify observation $X$'?}. This is in contrast to a spatial question (which requires a global understanding of the model) like: \emph{is it correct that applicants with a high income are more likely to be accepted than applicants with a low income?}
-%
 Having quantified the interpretability of a model given different classes of problems, and different requirements of users the appropriate model can then be selected during design to fit the needs of a specific application.
 
 \paragraph{Interpretable Model Synthesis:}
 \citet{Ruping2006-xj} asks how classification results and the accuracy-interpretability trade-off can be made more transparent to those who design and use classifiers. He explores one approach by combining simpler global models with more complex local models that are built around learning results (\citet{Otte2013-oo} and \citet{Ribeiro2016-uc} implement similar ideas as well). 
 Figure \ref{fig:ruping} illustrates this idea. 
 The explanation of Fig.~\ref{fig:ruping} could be something like: `The classification boundary is generally a horizontal line. However, for a small region on the right hand side the boundary is shaped roughly quadratic starting from the horizontal line'.
-%\brettcomm{The explanation of Fig.~\ref{fig:ruping} could be something like: `The classification boundary is generally a horizontal line. However, for a small region on the right hand side the boundary is shaped roughly like a square root starting from the horizontal line'.---I like the example of \emph{how} global/local could be used}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]

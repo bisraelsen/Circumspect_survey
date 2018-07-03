@@ -17,34 +17,28 @@ To begin with, definitions for the trust cycle elements in Fig.~\ref{fig:SimpleT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Trust Cycle Definitions} \label{sec:trust_definitions}
-\input{definitions.tex} %%re-merging and heavily editing this subsection
+\input{definitions.tex} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Recurring Example Application} \label{sec:mot_example}
-    %\nisarcomm{for me todo: edit, trim down a bit; what makes this dull, dirty, dangerous task?}
-    %It is useful to have a concrete grounding example. 
     To illustrate the assurances surveyed in the next section, a running example application based on the ``VIP escort'' problem~\cite{Humphrey2012-lr} is provided, motivated by the authors' work in unmanned systems. 
-    %Consider the ``VIP escort'' problem \cite{Humphrey2012-lr}, which serves as a useful analog for surveillance and reconnaissance operations. 
     An unmanned ground vehicle (UGV) leads a small convoy through a road network monitored by friendly unattended ground sensors (UGS). The road network also contains a hostile pursuer that the UGV is trying to evade while exiting the network as quickly as possible. 
     The pursuer's location is unknown but can be estimated using intermittent data from the UGS, which only sense portions of the network and can produce false alarms. The UGV's decision space involves selecting a sequence of actions (i.e. go straight, turn left, turn right, go back, stay in place). The UGS data, UGV motion, and pursuer behavior are all stochastic, and the problems of decision making and sensing are strongly coupled: some trajectories through the network allow the UGV to localize the pursuer before heading to the exit (but incur a high time penalty); other trajectories afford rapid exit with high pursuer location uncertainty (increasing the risk of getting caught by the pursuer, which can take multiple paths). 
     A human supervisor monitors the UGV during operation. 
-    The supervisor does not have detailed knowledge of the UGV -- but can interrogate its actions, modify its decision making stance (`aggressive' vs. `conservative'), and provide extra information about the pursuer (which is sporadically observed and follows an unknown course). %%locations and actions. 
-    %%The supervisor could benefit from the UGV's capability to express confidence in its ability to escape given the current sensor information, and work with the AIA to modify behavior or information if necessary. 
+    The supervisor does not have detailed knowledge of the UGV -- but can interrogate its actions, modify its decision making stance (`aggressive' vs. `conservative'), and provide extra information about the pursuer (which is sporadically observed and follows an unknown course). 
     
 	\begin{figure}[t]%[htbp]
     	\centering
      	\includegraphics[width=0.5\textwidth]{Figures/RoadNet}
-    	\caption{Application example of unmanned ground vehicle (UGV) in a road network, trying to evade a pursuer, using information from unmanned ground sensors (UGSs), as well as information from a human supervisor.} %The operator's actions towards the UGV are trust-based.}
+    	\caption{Application example of unmanned ground vehicle (UGV) in a road network, trying to evade a pursuer, using information from unmanned ground sensors (UGSs), as well as information from a human supervisor.} 
         \label{fig:RoadNet}
     \end{figure}
-
-%%\nisarcomm{for me todo: garnish with some pics of UGV/operator? should UGV being doing something else like gathering intel from UGS, etc.? what makes this task so dull, dirty, dangerous?}
 
     One way to construct an autonomous UGV path planner is to discretize time and spatial variables to build a partially observable Markov decision process (POMDP) model \cite{Kochenderfer2015-uu} of the navigation task. 
     The ideal POMDP solution is an optimal UGV action selection policy that will, \emph{on average}, maximize some utility function whose optimum value coincides with desirable UGV behaviors (i.e. avoiding the pursuer and exiting quickly). 
     POMDP policies can be found by any number of sophisticated approximations that operate on probability distributions for the unknown pursuer state, which in turn can be found via Bayesian sensor fusion \cite{Ahmed2017-ph}. 
     This defines at least two AIA capabilities per Fig. \ref{fig:AIcapabilities}: knowledge representation and planning \footnote{consideration of lower-level UGV state estimation and control also leads to perception and motor control/execution.}. 
-    The trust-cycle terms here can then be defined as follows relative to the supervisor (user): \textit{AIA:} the combined POMDP planning and data fusion agent, which must make decisions under uncertainty; %(the pursuer is only observed sporadically and follows an unknown course); 
+    The trust-cycle terms here can then be defined as follows relative to the supervisor (user): \textit{AIA:} the combined POMDP planning and data fusion agent, which must make decisions under uncertainty; 
     \textit{Trust:} the supervisor's willingness to rely on the UGV's planning and data fusion algorithms when the safety of the VIP being escorted is at stake;  
     \textit{TRBs:} supervisor's behaviors that indicate trust (or lack thereof) in the UGV's planner; these include approving/rejecting the planner's actions, or real-time adjustments of the data fusion output based on what the supervisor receives from other intelligence sources; \textit{Assurances:} properties and behaviors of the planning agent that effect the supervisor's trust, e.g. communication of the escape success probability, reports that unexpected UGS data have been registered, or explanations of actions taken. 
