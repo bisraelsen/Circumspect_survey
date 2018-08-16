@@ -54,6 +54,7 @@
 %\setcopyright{usgovmixed}
 %\setcopyright{cagov}
 %\setcopyright{cagovmixed}
+\input{ccs_classification.tex}
 
 % DOI
 \acmDOI{0000001.0000001}
@@ -72,28 +73,15 @@
 \begin{document}
 % Title portion
 \title{``Dave\ldots I can assure you \ldots that it's going to be all right \ldots''} 
- \titlenote{HAL 9000, \textit{2001 A Space Odyssey}, full quote: ``Just what do you think you're doing, Dave? Dave, I really think I'm entitled to an answer to that question. I know everything hasn't been quite right with me, but I can assure you now, very confidently, that it's going to be all right again.''
+\titlenote{HAL 9000, \textit{2001 A Space Odyssey}, full quote: ``Just what do you think you're doing, Dave? Dave, I really think I'm entitled to an answer to that question. I know everything hasn't been quite right with me, but I can assure you now, very confidently, that it's going to be all right again.''
  }
- \subtitle{A definition, case for, and survey of algorithmic assurances in human-autonomy trust relationships}
- % \subtitlenote{Subtitle note}
+\subtitle{A definition, case for, and survey of algorithmic assurances in human-autonomy trust relationships}
+% \subtitlenote{Subtitle note}
 \author{Brett W. Israelsen}
+\authornote{Corresponding author}
     \orcid{0000-0003-1602-1685}
     \email{brett.israelsen@colorado.edu}
-    % \affiliation{%
-        % \institution{University of Colorado, Boulder}
-        % \department{Department of Computer Science}
-        % \city{Boulder}
-        % \state{CO}
-        % \country{USA}
-    % }
-    % \affiliation{%
-        % \institution{RECUV}
-    % }
-    % \affiliation{%
-        % \institution{C-UAS}
-    % }
 \author{Nisar R. Ahmed}
-\authornote{The corresponding author}
     \email{nisar.ahmed@colorado.edu}
     \affiliation{%
         \institution{University of Colorado Boulder}
@@ -108,65 +96,16 @@
     \affiliation{%
         \institution{\href{http://www.colorado.edu/recuv/}{Research and Engineering Center for Unmanned Vehicles (RECUV)}}
     }
-    %CUAS affiliation is not needed/considered
-    %\affiliation{%
-    %    \institution{\href{https://c-uas.org/}{Center for Unmanned Aircraft Systems (C-UAS)}}
-    %}
 
 \begin{abstract}
     Those who design, use, and are otherwise affected by advanced, technologies like artificially intelligent, autonomous systems want to know that these systems will perform correctly, understand the reasons behind their actions, and know how to use them appropriately. 
-    In short: they want to be able to \emph{trust} such systems. Consequently, designers have devised various kinds of assurances for assessing trust.  
-    Typically, however, these assessments are ad hoc, and have not been formally related to each other or to formal trust models.  This paper presents a survey of \emph{algorithmic assurances} that allow users to calibrate their trust in autonomous artificially intelligent agents and use such autonomous agents more appropriately. To this end algorithmic assurances are first formally defined, and classified, from the perspective of formally modeled trust relationships. The survey is then performed using research from related communities such as machine learning, human-computer interaction, human-robot interaction, e-commerce, and others. The literature for different classes of assurances are identified with seven different levels of integration for artificially intelligent agents; these classes are useful for practitioners and system designers. Recommendations and directions for future work are also presented.
+    In short: they want to be able to \emph{trust} such systems. Consequently, designers have devised various kinds of assurances for assessing trust.
+    Typically, however, these assessments are ad hoc, and have not been formally related to each other or to formal trust models.  This paper presents a survey of \emph{algorithmic assurances} that allow users to calibrate their trust in autonomous artificially intelligent agents and use such autonomous agents more appropriately. To this end algorithmic assurances are first formally defined, and classified, from the perspective of formally modeled trust relationships. The survey is then performed using research from related communities such as machine learning, human-computer interaction, human-robot interaction, e-commerce, and several others. The survey identifies classes of algorithms that naturally fall into seven different categories that affect the system's core functionality to differing degrees. Common approaches within each of these classes are identified and discussed; benefits and drawbacks of different approaches are also investigated. The presented classification can be directly useful to designers of advanced artificially intelligent agents, who are concerned about trust and appropriate use. Many remaining questions and opportunities for future research are also presented.
 \end{abstract}
 
-\begin{CCSXML}
-<ccs2012>
-<concept>
-<concept_id>10003120</concept_id>
-<concept_desc>Human-centered computing</concept_desc>
-<concept_significance>500</concept_significance>
-</concept>
-<concept>
-<concept_id>10010147.10010178</concept_id>
-<concept_desc>Computing methodologies~Artificial intelligence</concept_desc>
-<concept_significance>500</concept_significance>
-</concept>
-<concept>
-<concept_id>10010147.10010257</concept_id>
-<concept_desc>Computing methodologies~Machine learning</concept_desc>
-<concept_significance>500</concept_significance>
-</concept>
-<concept>
-<concept_id>10010147.10010341.10010342</concept_id>
-<concept_desc>Computing methodologies~Model development and analysis</concept_desc>
-<concept_significance>500</concept_significance>
-</concept>
-<concept>
-<concept_id>10010405</concept_id>
-<concept_desc>Applied computing</concept_desc>
-<concept_significance>500</concept_significance>
-</concept>
-<concept>
-<concept_id>10002978.10003029</concept_id>
-<concept_desc>Security and privacy~Human and societal aspects of security and privacy</concept_desc>
-<concept_significance>300</concept_significance>
-</concept>
-</ccs2012>
-\end{CCSXML}
+\keywords{human-computer trust, interpretable machine learning, explainable artificial intelligence, transparency, accountability, fairness, algorithmic assurances}
 
-% \ccsdesc[500]{Human-centered computing}
-% \ccsdesc[500]{Computing methodologies~Artificial intelligence}
-% \ccsdesc[500]{Computing methodologies~Machine learning}
-% \ccsdesc[500]{Computing methodologies~Model development and analysis}
-% \ccsdesc[500]{Applied computing}
-% \ccsdesc[300]{Security and privacy~Human and societal aspects of security and privacy}
-
-% We no longer use \terms command
-% \terms{Algorithms, Assurances, Trust}
-
-\keywords{human-computer trust, interpretable machine learning, explainable artificial intelligence}
-
-\thanks{This work was funded by a research gift from Northrop-Grumman Aerospace Systems and by the Center for Unmanned Aircraft Systems (C-UAS), a National Science Foundation Industry/University Cooperative Research Center (I/UCRC) under NSF Award No. CNS-1650468 along with significant contributions from C-UAS industry members.}
+\thanks{The authors acknowledge the helpful feedback of Michael Mozer, and Eric Frew, as well as that of the reviewers. This work was funded by a research gift from Northrop-Grumman Aerospace Systems and by the Center for Unmanned Aircraft Systems (C-UAS), a National Science Foundation Industry/University Cooperative Research Center (I/UCRC) under NSF Award No. CNS-1650468 along with significant contributions from C-UAS industry members.}
 
 \maketitle
 
