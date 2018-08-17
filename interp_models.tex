@@ -10,7 +10,7 @@ Two main approaches to designing interpretable AIA models and processes are cons
 The first is to \emph{assess an existing set of candidate models/processes} in order to evaluate their interpretability in the context of a particular task, and then select the best candidate. 
 This is typically done with certain classes of models or solution processes, e.g. whether to use decision trees vs. decision tables for a given planning task. 
 The second is to \emph{synthesize interpretable models/processes} by leveraging human designer input during the model/solution-building process. 
-The first approach requires pre-defined measures of interpretability, and thus some mechanism for capturing ability to gain insights into competence, predictability, and situation normality. This also presupposes that the model/process candidates are inherently interpretable along these lines to begin with, which may rule out certain model/process families that perform well on certain tasks. 
+The first approach requires pre-defined measures of interpretability, and thus some mechanism for capturing ability to gain insights into competence, predictability, and situation normality. This also presupposes that the candidates are inherently interpretable along these lines to begin with, which may rule out methods that perform well on certain tasks. 
 The second approach allows designers to apply domain knowledge to determine metrics for interpretability, although this can lead to solutions that do not perform as well as those that are less interpretable. 
 
 What is the assurance mechanism that potentially leads to proper TRBs in either approach? 
@@ -33,9 +33,10 @@ The explanation of Fig.~\ref{fig:ruping} could be something like: `The classific
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{Figures/global_local}
+    \includegraphics[width=0.45\textwidth]{Figures/global_local}
     \caption{Example of simple global interpretable learning model on the left, and on the right a more complex locally interpretable learning model that can be used when more precise understanding of a specific decision made by the learner is required. }
     \label{fig:ruping}
+    \vspace{-0.1 in}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 

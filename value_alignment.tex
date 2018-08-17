@@ -7,7 +7,8 @@ Such mapping of user intent frames to utility functions has two positive benefit
 Firstly, it ensures that AIA behaviors can themselves be used as assurances: users will tend to trust AIA's more if they are `well-behaved' and acting in accordance with their desired intent than if they are not. 
 Secondly, an AIA can generate assurances via auxiliary behaviors that help ensure its utility function is aligned with the user's intent frame.  Since it is practically quite challenging to encode user preferences and intent frames into utility functions, the process of \emph{value alignment}\footnote{Value alignment is more commonly known as `AI Alignment' in AI research~\cite{Yudkowsky2001-hb,Bensinger2014-ul}.} leads to many different algorithmic strategies for generating assurances. 
 
-Consider a generic decision-making problem where an AIA that must make a choice $a \in {\mathcal A}$ given some task state $s \in {\mathcal S}$, with scalar utility function $U_A(a,s)$ and possible sets of actions and states ${\mathcal A}$ and ${\mathcal S}$. If a user's true utility is represented by scalar function $U_H(a,s)$, then in the ideal situation the AIA seeks the optimal decision $a^* \in {\mathcal A}$ such that, for any $s \in {\mathcal S}$,
+Consider a generic decision-making problem where an AIA that must make choice $a \in {\mathcal A}$ given some task state $s \in {\mathcal S}$, with scalar utility function $U_A(a,s)$. %and possible sets of actions and states ${\mathcal A}$ and ${\mathcal S}$. 
+If a user's true utility is represented by scalar function $U_H(a,s)$, then in the ideal situation the AIA seeks the optimal decision $a^* \in {\mathcal A}$ such that, for any $s \in {\mathcal S}$,
 \begin{align*}
     a* = \arg\max_{\mathcal A} U_A(a,s) = \arg \max_{\mathcal A} U_H(a,s). 
 \end{align*}
