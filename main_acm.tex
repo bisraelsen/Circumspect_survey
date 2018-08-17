@@ -91,16 +91,18 @@
         \country{USA}
     }
     \affiliation{%
-        \institution{\href{https://cohrint.info/}{Cooperative Human-Robot Intelligence  Laboratory (COHRINT)}}
+        \institution{%\href{https://cohrint.info/}
+        {Cooperative Human-Robot Intelligence  Laboratory (COHRINT)}}
     }
     \affiliation{%
-        \institution{\href{http://www.colorado.edu/recuv/}{Research and Engineering Center for Unmanned Vehicles (RECUV)}}
+        \institution{%\href{http://www.colorado.edu/recuv/}
+        {Research and Engineering Center for Unmanned Vehicles (RECUV)}}
     }
 
 \begin{abstract}
-    People who design, use, and are affected by autonomous artificially intelligent agents want to be able to \emph{trust} such agents -- that is, to know that these agents will perform correctly, to understand the reasoning behind their actions, and to know how to use them appropriately.  %Consequently, designers have devised 
-    Many different frameworks and mechanisms have been devised to assess and influence human trust in artificially intelligent agents. However, these approaches are typically ad hoc, and have not been formally related to each other or to formal trust models. This paper presents a survey of \emph{algorithmic assurances}, i.e. programmed components of agent operation that are expressly designed to calibrate user trust in artificially intelligent agents. %, so that they can be used appropriately. 
-    Algorithmic assurances are first formally defined and classified from the perspective of formally modeled human-artificially intelligent agent trust relationships. Building on these definitions, a synthesis of research across communities such as machine learning, human-computer interaction, robotics, e-commerce, and others reveals that assurance algorithms naturally fall along a spectrum in terms of their impact on an agent's core functionality, with seven notable classes ranging from integral assurances (which are part of an agent's core functionality) to supplemental assurances (which have no direct effect on agent performance). Common approaches within each of these classes are identified and discussed; benefits and drawbacks of different approaches are also investigated. This spectrum and set of classifications can be directly useful to designers of advanced artificially intelligent agents, who are concerned about trust and appropriate use. Remaining questions and opportunities for future research are also presented.
+    People who design, use, and are affected by autonomous artificially intelligent agents want to be able to \emph{trust} such agents -- that is, to know that these agents will perform correctly, to understand the reasoning behind their actions, and to know how to use them appropriately. 
+    Many techniques have been devised to assess and influence human trust in artificially intelligent agents. However, these approaches are typically ad hoc, and have not been formally related to each other or to formal trust models. This paper presents a survey of \emph{algorithmic assurances}, i.e. programmed components of agent operation that are expressly designed to calibrate user trust in artificially intelligent agents. 
+    Algorithmic assurances are first formally defined and classified from the perspective of formally modeled human-artificially intelligent agent trust relationships. Building on these definitions, a synthesis of research across communities such as machine learning, human-computer interaction, robotics, e-commerce, and others reveals that assurance algorithms naturally fall along a spectrum in terms of their impact on an agent's core functionality, with seven notable classes ranging from integral assurances (which impact an agent's core functionality) to supplemental assurances (which have no direct effect on agent performance). Common approaches within each of these classes are identified and discussed; benefits and drawbacks of different approaches are also investigated. %%This spectrum and set of classifications can be directly useful to designers of advanced artificially intelligent agents, who are concerned about trust and appropriate use. %%Remaining questions and opportunities for future research are also presented.
 \end{abstract}
 
 \keywords{human-computer trust, interpretable machine learning, explainable artificial intelligence, transparency, accountability, fairness, algorithmic assurances}
@@ -126,6 +128,8 @@
 \input{future_work.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{-0.1 in}
+
 \section{Conclusions}\label{sec:conclusions}
 \input{conclusions.tex}
 
